@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=375,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <title>tags-Demo</title>
+    </head>
+    <body>
+        <div id="scale-wrapper" >
+            <span id="p">开始</span>
+            <!-- <iframe src="http://www.taobao.com" style="width:100%;">
+
+            </iframe> -->
+        </div>
+        <script src="./js/zepto.js"></script>
+        <script src="./js/ww_test.js"></script>
+        <script type="text/javascript">
+               //动态生成iframe判断
+                // var iframe = document.createElement("iframe");
+                // iframe.src = 'http://www.amazon.co.jp/';
+                //     iframe.onload = function(){        
+                //         alert("Local iframe is now loaded.");    
+                //     };
+                //     // iframe.onreadystatechange = function(){
+                //     //     console.log(iframe.readyState);
+                //     //     if (iframe.readyState == "complete"){
+                //     //         alert("Local iframe is now loaded.");
+                //     //     }
+                //     // };
+
+                    var iframe = document.createElement("iframe");
+iframe.src = "http://www.amazon.co.jp";
+
+if (iframe.attachEvent){
+    iframe.attachEvent("onload", function(){
+        alert("Local iframe is now loaded.");
+    });
+} else {
+    iframe.onload = function(){
+        alert("Local iframe is now loaded.");
+    };
+}
+
+                
+                document.body.appendChild(iframe);
+
+                //页面存在iframe
+                // if(window.frames["iframeName"].document.readyState=="complete"){ 
+                //     alert("已经加载完毕");   
+                // }
+
+
+                window.onerror = function(msg,url,line){
+                    //https不上报
+                    console.log(msg);
+                }
+        </script>
+    </body>
+</html>
+
+
+
+
+

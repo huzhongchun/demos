@@ -1,0 +1,167 @@
+body,html{
+    background: url("../images/sub_bg.png") 0 -40px no-repeat;
+    background-size: 100% auto;
+}
+
+
+
+.nick-box{
+    display: block;
+    width: 321px;
+    height: 48px;
+    line-height: 48px;
+    background: url("../images/nick_box.png") center no-repeat;
+    background-size: 100% auto;
+    font-size: 0;
+    margin: 35px auto 30px;
+}
+.nick-box .box-name{
+    font-size: 16px;
+    color: #557290;
+    padding: 0 16px;
+}
+.nick-box input{
+    display: inline-block;
+    border: 0;
+    width: 245px;
+    font-size: 18px;
+    color: #000;
+    padding: 5px 0 ;
+    border-bottom: 1px solid #ccc;
+}
+
+.mobile-box{
+    display: block;
+    width: 321px;
+    height: 46px;
+    line-height: 46px;
+    background: url("../images/mobile_box.png") center no-repeat;
+    background-size: 100% auto;
+    font-size: 0;
+    margin: 0 auto 30px;
+}
+.mobile-box .box-name{
+    font-size: 16px;
+    color: #557290;
+    padding: 0 16px;
+}
+.mobile-box input{
+    display: inline-block;
+    border: 0;
+    width: 230px;
+    font-size: 18px;
+    color: #000;
+    padding: 5px 0 ;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.join-box{
+    display: block;
+    width: 321px;
+    height: 46px;
+    line-height: 46px;
+    background: url("../images/mobile_box.png") center no-repeat;
+    background-size: 100% auto;
+    font-size: 0;
+    margin: 0 auto 30px;
+
+}
+.join-box .box-name{
+    font-size: 16px;
+    color: #557290;
+    padding: 0 16px;
+}
+.join-box input{
+    display: inline-block;
+    border: 0;
+    width: 200px;
+    font-size: 18px;
+    color: #000;
+    padding: 5px 0 ;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.message-box{
+    display: block;
+    width: 321px;
+    height: 46px;
+    line-height: 46px;
+    background: url("../images/mobile_box.png") center no-repeat;
+    background-size: 100% auto;
+    font-size: 0;
+    margin: 0 auto 30px;
+}
+.message-box .box-name{
+    font-size: 16px;
+    color: #557290;
+    padding: 0 16px;
+}
+.message-box input{
+    display: inline-block;
+    border: 0;
+    width: 200px;
+    font-size: 18px;
+    color: #000;
+    padding: 5px 0 ;
+    border-bottom: 1px solid #ccc;
+}
+
+.verify-code-box{
+    display: block;
+    width: 324px;
+    margin: 0 auto 30px;
+    font-size: 0;
+}
+
+.code-box{
+    display: inline-block;
+    width: 206px;
+    height: 44px;
+    line-height: 44px;
+    background: url("../images/code_box.png") center no-repeat;
+    background-size: 100% auto;
+    font-size: 0;
+    margin-right: 14px;
+    vertical-align: middle;
+}
+.code-box .box-name{
+    font-size: 16px;
+    color: #557290;
+    padding: 0 16px;
+}
+.code-box input{
+    display: inline-block;
+    border: 0;
+    width: 110px;
+    font-size: 18px;
+    color: #000;
+    padding: 5px 0 ;
+    border-bottom: 1px solid #ccc;
+
+}
+.get-code-btn{
+    display: inline-block;
+    width: 104px;
+    height: 45px;
+    line-height: 45px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+    color: #557290;
+    background: url("../images/code_btn.png") center no-repeat;
+    background-size: 100% auto;
+}
+
+.submit-btn{
+    width: 323px;
+    height: 60px;
+    margin: 40px auto 10px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 16px;
+    color: #fff;
+    background: url("../images/submit_btn.png") center no-repeat;
+    background-size: 100% auto;
+}

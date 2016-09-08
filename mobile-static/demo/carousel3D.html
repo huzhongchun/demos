@@ -1,0 +1,139 @@
+<style>
+    /**new css*/
+
+    #carousel3d #carousel3D-boxs{
+        width: 250px;
+        height: 165px;
+        margin: 10px auto;
+    }
+    #carousel3d{
+        overflow: hidden;
+    }
+    #carousel3d .img-item img{
+        width: 100%;
+    }
+    #carousel3d .carousel-dots-area{
+        text-align: center;
+        margin-top: 10px;
+    }
+    #carousel3d b.carousel-dot-selected {
+        background: #ed145b;
+    }
+    #carousel3d b {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #ed145b;
+        border-radius: 10px;
+        margin-right: 5px;
+    }
+</style>
+<div id="carousel3d">
+    <p class="font-weight">组件名称：左右滑动3d轮播</p>
+    <div class="show-area">
+        <div id="carousel3D-boxs">
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-706bb.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-99.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/mz1-4.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="carousel3d-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+                <!--各个参数说明 <p>（类型） key: key值</p>-->
+            <p>（string）id: 父元素的id名，默认：carousel3D-boxs </p>
+            <p>（index）index:  最开始展示的条目序列，默认：0</p>
+            <p>（int）perspective: 3D效果的景深，默认： 600,</p>
+            <p>（int）rotateY:  两侧展示条目的旋转角度，默认：75,</p>
+            <p>（float）transitionTime: 动画的持续时间，默认  0.8,</p>
+            <p>（boolean）isShowDots: 是否展示“状态点” ，默认：true ,</p>
+            <p>（boolean）isPlayAuto: 是否自动播放，默认：false,</p>
+            <p>（string）autoPlayDirection: 自动播放的切换方向，默认：right,</p>
+            <p>（int）autoPlayChangeTime: 自动播放的切换时间间隔，默认：3000,</p>
+            <p>（function）animateEndCallBack: 动画结束后的回调函数，默认：null,</p>
+            <p>（string）prev: 向左切换按钮的className，默认'',</p>
+            <p>（string）next: 向右切换按钮的className，默认''</p>
+            </p>
+            <p class="font-weight">注意：</p>
+            <p class="content">
+                <!--注意事项-->     
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+    <!--HTML-->
+    <div id="carousel3D-boxs">
+        <div class="img-item">
+            <img src="http://p0.jmstatic.com/mcms/4-706bb.jpg">
+        </div>
+        <div class="img-item">
+            <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+        </div>
+        <div class="img-item">
+            <img src="http://p0.jmstatic.com/mcms/4-99.jpg">
+        </div>
+        <div class="img-item">
+            <img src="http://p0.jmstatic.com/mcms/mz1-4.jpg">
+        </div>
+    </div>
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+<!--CSS-->
+#carousel3D-boxs{
+    width: 250px;
+    height: 165px;
+    margin: 10px auto;
+}
+.img-item img{
+    width: 100%;
+}
+.carousel-dots-area{
+    text-align: center;
+    margin-top: 10px;
+}
+b.carousel-dot-selected {
+    background: #56ace7;
+}
+b {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #56ace7;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+    <!--Javascript-->
+    var carousel3D = Jumei.getModule('ui.carousel3D');
+    var carousel3DObj = new carousel3D({
+    id: 'carousel3D-boxs',
+    index:3,
+    animateEndCallBack: function(index){
+    console.log(index);
+    }
+    });
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

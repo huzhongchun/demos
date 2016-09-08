@@ -1,0 +1,174 @@
+#wrapper{
+    position: relative;
+    background: url(hongbao/image/openbag_bg3.jpg) #aadb28 no-repeat;
+    background-size: 100% auto;
+    min-height: 100%;
+}
+.footer-img{
+    width: 320px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+body{
+    position: relative;
+}
+html,body{
+    height:100%;
+}
+
+#openbag-btn{
+    margin-top: 56px;
+}
+.xiaomei-wrapper img{
+    width: 76px;
+    margin-top: 0px;
+}
+#openbag-btn img{
+    width: 99px;
+}
+.cube-animate1{
+    -webkit-animation:myhour1 1s; /* Safari and Chrome */
+    -webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+}
+@-webkit-keyframes myhour1 /* Safari 和 Chrome */
+{
+    0% {-webkit-transform: translate(0px,0px);}
+    50% {-webkit-transform: translate(0px,15px);}
+    100% {-webkit-transform: translate(0px,0px);}
+}
+.cube-animate2{
+    -webkit-animation:myhour2 1s; /* Safari and Chrome */
+/*    -webkit-animation-iteration-count: infinite;定义循环资料，infinite为无限次*/
+}
+@-webkit-keyframes myhour2 /* Safari 和 Chrome */
+{
+    0% {-webkit-transform: scale(0);}
+    100% {-webkit-transform: scale(1);}
+}
+.active-time{
+    color: white;
+    font-size: 14px;
+    margin-top: 100px;
+}
+
+
+
+/*底部菜单*/
+.fix-bottom{
+    position: fixed;
+    bottom:0px;
+    background: #f74881;
+    height:48px;
+    width: 320px;
+}
+.fix-bottom ul{
+    height: 48px;
+}
+.fix-bottom ul li{
+    float: left;
+    width: 33.333333%;
+    color: white;
+    -webkit-box-sizing: border-box;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    padding-left: 13px;
+}
+.fix-bottom ul li:nth-child(2){
+    border-left: solid 1px #aadb28;
+    border-right: solid 1px #aadb28;
+}
+.fix-bottom ul li:nth-child(1){
+    background: url(hongbao/image/merge_icon.png) 13px center no-repeat;
+    background-size: 14px 20px;
+}
+.fix-bottom ul li:nth-child(2){
+    background: url(hongbao/image/rule_icon.png) 13px center no-repeat;
+    background-size: 14px 17px;
+}
+.fix-bottom ul li:nth-child(3){
+    background: url(hongbao/image/code_icon.png) 7px center no-repeat;
+    background-size: 17px 17px;
+}
+
+
+/*此页面公用的弹窗*/
+
+
+
+#flagBox{
+    overflow: auto;
+    border-radius: 5px;
+    overflow: visible;
+    background: url(hongbao/image/yun.png) #d4faff center 97px no-repeat;
+    background-size: 309px 152px;
+}
+#titleBox{
+    border-bottom: none;
+}
+
+#titleBox .close{
+    background: url(hongbao/image/openbag_dialog_close.png) center no-repeat;
+    background-size: 17px 17px;
+}
+#contentBox{
+    overflow: visible;
+}
+.common-dialog{
+    text-align: center;
+    position: relative;
+    color: #0076ba;
+    overflow: visible;
+    padding-bottom: 23px;
+
+}
+.common-title-bg{
+    position: absolute;
+    right: 10px;
+    top:-55px;
+    width: 257px;
+    height: 82px;
+    background: url(hongbao/image/common_title_bg.png) no-repeat;
+    background-size: 257px 82px;
+}
+
+.common-content{
+    padding: 0px 8px 4px;
+}
+
+
+/*登录的弹出框*/
+#none-account,#now-login,#iknow,#anzhuang{
+    float: left;
+    margin:10px 10px;
+    border-radius: 5px;
+    width: 100px;
+    height:35px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 35px;
+    color: white;
+}
+
+#none-account,#iknow{
+    background: url(hongbao/image/openbag_left_btn.png) no-repeat;
+    background-size: 100px 35px;
+}
+#now-login,#anzhuang{
+    background: url(hongbao/image/openbag_right_btn.png) no-repeat;
+    background-size: 100px 35px;
+}
+.tip-desc{
+    line-height: 20px;
+    font-size: 16px;
+}
+.bottom-tip{
+    font-size: 12px;
+}
+#no-login-btn{
+    margin-top: 21px;
+}
+#wrapper-content{
+    padding-top: 1px;
+}

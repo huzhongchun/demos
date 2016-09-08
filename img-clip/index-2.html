@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>可缩放jQuery图片裁剪插件</title>
+	<link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="./css/default.css">
+	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./dist/cropper.css?v=1" rel="stylesheet">
+	<link href="./css/main.css" rel="stylesheet">
+<!--[if IE]>
+	<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	
+	<div class="img-container">
+		<img src="assets/img/picture.jpg" alt="Picture">
+		<div class="img-type" style="display:none"></div>
+	</div>
+	<div class="result-img">
+		<img src="" alt="Picture">
+	</div>
+	<div class="modal-footer row">
+		<div class="btn-group col-xs-12 col-sm-9">
+			<button class="btn btn-primary" data-method="zoom" data-option="0.1" type="button" title="Zoom In">	
+				<span class="docs-tooltip" data-toggle="tooltip">
+					<span class="icon icon-zoom-in"></span>
+				</span>
+			</button>
+			<button class="btn btn-primary" data-method="zoom" data-option="-0.1" type="button" title="Zoom Out">	
+				<span class="docs-tooltip" data-toggle="tooltip">
+					<span class="icon icon-zoom-out"></span>
+				</span>
+			</button>
+			<button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate Left">	
+				<span class="docs-tooltip" data-toggle="tooltip">
+					<span class="icon icon-rotate-left"></span>
+				</span>
+			</button>
+			<button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate Right">	
+				<span class="docs-tooltip" data-toggle="tooltip">
+					<span class="icon icon-rotate-right"></span>
+				</span>
+			</button>
+			<button class="btn btn-primary" data-method="reset" type="button" title="Reset">	
+				<span class="docs-tooltip" data-toggle="tooltip">
+					<span class="icon icon-refresh"></span>
+				</span>
+			</button>
+			<label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+				<input class="sr-only" id="inputImage" name="file" type="file" accept="image/*">	
+				<span class="docs-tooltip" data-toggle="tooltip">
+					<span class="icon icon-upload"></span>
+				</span>
+			</label>
+			<button type="button" class="btn btn-primary close " data-dismiss="modal" aria-label="Close">
+				<span class="glyphicon glyphicon-remove"></span>
+			</button>
+		</div>
+		<div class="btn-group btn-group-crop col-xs-12 col-sm-3">
+			<button class="btn btn-primary" data-method="getCroppedCanvas" type="button">
+				<span class="docs-tooltip" data-toggle="tooltip">
+					得到裁剪的画布
+				</span>
+			</button>
+		</div>
+		<div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal" type="button" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="getCroppedCanvasTitle">Cropped</h4>
+					</div>
+					<div class="modal-body"></div>
+				</div>
+			</div>
+		</div><!-- /.modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:0px;">
+						
+					</div>
+				</div>
+				<div class="modal-footer row">
+					<div class="btn-group col-xs-12 col-sm-9">
+						<button class="btn btn-primary" data-method="zoom" data-option="0.1" type="button" title="Zoom In">	
+							<span class="docs-tooltip" data-toggle="tooltip">
+								<span class="icon icon-zoom-in"></span>
+							</span>
+						</button>
+						<button class="btn btn-primary" data-method="zoom" data-option="-0.1" type="button" title="Zoom Out">	
+							<span class="docs-tooltip" data-toggle="tooltip">
+								<span class="icon icon-zoom-out"></span>
+							</span>
+						</button>
+						<button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate Left">	
+							<span class="docs-tooltip" data-toggle="tooltip">
+								<span class="icon icon-rotate-left"></span>
+							</span>
+						</button>
+						<button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate Right">	
+							<span class="docs-tooltip" data-toggle="tooltip">
+								<span class="icon icon-rotate-right"></span>
+							</span>
+						</button>
+						<button class="btn btn-primary" data-method="reset" type="button" title="Reset">	
+							<span class="docs-tooltip" data-toggle="tooltip">
+								<span class="icon icon-refresh"></span>
+							</span>
+						</button>
+						<label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+							<input class="sr-only" id="inputImage" name="file" type="file" accept="image/*">	
+							<span class="docs-tooltip" data-toggle="tooltip">
+								<span class="icon icon-upload"></span>
+							</span>
+						</label>
+						<button type="button" class="btn btn-primary close " data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
+					</div>
+					<div class="btn-group btn-group-crop col-xs-12 col-sm-3">
+						<button class="btn btn-primary" data-method="getCroppedCanvas" type="button">
+							<span class="docs-tooltip" data-toggle="tooltip">
+								得到裁剪的画布
+							</span>
+						</button>
+					</div>
+					<div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button class="close" data-dismiss="modal" type="button" aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="getCroppedCanvasTitle">Cropped</h4>
+								</div>
+								<div class="modal-body"></div>
+							</div>
+						</div>
+					</div><!-- /.modal -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./dist/cropper.js"></script>
+<script src="./js/imgCropperTool.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		window.imgCropper = new imgCropperTool({
+			responsive: false,
+            aspectRatio: 601/291,
+            imgSelector: parent.find('.cilp-img-box>img'),
+            minContainerWidth: 601,
+            minContainerHeight: 600,
+            fixCropBoxSize: true,
+            fixCropBoxSizeWidth: 601,
+            fixCropBoxSizeHeight: 291,
+			imgSelector: $('.img-container > img'),
+			dragMoveCallback: function(){
+				console.log(1);
+			}
+		})
+
+
+
+		$('[data-method]').on('click',function () {
+            var data = $(this).data();
+            if (data.method) {
+                var result = imgCropper.$image.cropper(data.method, data.option);
+                    $('.result-img img').attr('src',result.toDataURL());
+               
+            }
+        })
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

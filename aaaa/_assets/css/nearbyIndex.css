@@ -1,0 +1,118 @@
+body,html{
+    background: #F5F5F5;
+}
+
+.search-area{
+    display: block;
+    width: 345px;
+    padding: 49px 0;
+    margin: 15px auto;
+    background: #fff;
+    box-shadow: #ccc 0 2px 4px 0;
+}
+.search-area .search-btn-title{
+    display: block;
+    color: #292929;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.search-area .search-btn{
+    display: block;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 100px;
+    background: url("../images/2016_07/search_icon.png") #F9F9F9 center no-repeat;
+    background-size: auto 80px;
+    margin: 0 auto;
+}
+
+.book-list-area{
+    width: 345px;
+    margin: 15px auto;
+    box-shadow: #ccc 0 2px 4px 0;
+    background: #fff;
+}
+.book-list-area .list-title{
+    font-size: 16px;
+    color: #292929;
+    text-align: center;
+    padding: 38px 0 0;
+    margin-bottom: 16px;
+}
+.book-list-area .book-list{
+    display: block;
+    font-size: 0;
+}
+.book-list .book-item{
+    display: block;
+    width: 50%;
+    float: left;
+    border-bottom: 1px solid #D8D8D8;
+    padding: 25px 0;
+    margin-bottom: 16px;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.book-list .book-item.last-item{
+    margin-bottom: 0;
+    border: 0;
+}
+.book-item .book-cover-img{
+    width: 90px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    box-shadow: #ccc 0 6px 6px 0;
+}
+.book-cover-img img{
+    display: block;
+    width: 100%;
+}
+.book-item .book-name{
+    display: block;
+    width: 140px;
+    font-size: 15px;
+    line-height: 18px;
+    height: 36px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto 10px;
+    color: #121212;
+}
+.book-item .check-book-record{
+    display: block;
+    width: 105px;
+    text-align: center;
+    background: #FFF100;
+    height: 31px;
+    line-height: 31px;
+    color: #121212;
+    font-size: 14px;
+    margin: 0 auto;
+}
+.book-item .drift-record-count{
+    display: block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 40px;
+    background: #F5F5F5;
+    box-shadow: #ccc 0 2px 4px 0;
+    position: absolute;
+    top: 1px;
+    left: 15px;
+    z-index: 1;
+}
+.drift-record-count>span:first-child{
+    margin: 7px 0 3px;
+}
+.drift-record-count>span{
+    display: block;
+    color: #292929;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px;
+    position: relative;
+}

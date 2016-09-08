@@ -1,0 +1,138 @@
+#energy-game .energy-wrapper{
+    background: #ffc506;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+#energy-game .flash-lightning-img{
+    width: 126px;
+    z-index:400;
+    position:relative;
+}
+#energy-game .flash-lamp{
+    width: 126px;
+    height: 126px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 601;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: url(http://images.jumei.com/mobile/act/image/widget/energy/lamp.png?323) no-repeat;
+    background-size:100% 100%;
+
+}
+#energy-game .energy-bg {
+    background: #ffb400;
+}
+#energy-game .energy-bg,#energy-game .energy-name{
+    width: 101px;
+    height: 113px;
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    z-index: 100;
+}
+#energy-game .energy-bg{
+    background:#ffb400;
+}
+#energy-game .energy-name{
+    z-index: 101;
+    background: #e65100;
+    height: 0px;
+    max-height: 115px;
+}
+#flash-lightning{
+    height: 140px;
+    width: 126px;
+    margin: 0px auto;
+    position: relative;
+}
+#energy-game .energy-bottom{
+    height: 45px;
+    background: #fde676;
+    position:relative;
+    z-index:1000;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+#energy-game .energy-bottom-girl{
+    width: 71px;
+    position: absolute;
+    top: -43px;
+    left: 10px;
+}
+#energy-game .energy-btn-container{
+    height: 64px;
+    width: 64px;
+    margin: 0px auto;
+    position: relative;
+    top: -23px;
+    border-radius: 100px;
+    background: #fde676;
+    z-index: 300;
+}
+#energy-game .energy-btn-start{
+    background: url(http://images.jumei.com/mobile/act/image/widget/energy/energy_btn.png) no-repeat;
+    width: 54px;
+    height: 54px;
+    left: 5px;
+    background-size: 54px 54px;
+    position: relative;
+    top: 5px;
+}
+#energy-game .energy-btn-press{
+    background: url(http://images.jumei.com/mobile/act/image/widget/energy/energy_btn_press.png) no-repeat !important;
+    width: 54px;
+    height: 54px;
+    left: 5px;
+    background-size: 54px 54px !important;
+    position: relative;
+    top: 5px;
+}
+#energy-game .btn-battery{
+    width: 25px;
+    height: 12px;
+    background: url(http://images.jumei.com/mobile/act/image/widget/energy/battery_border.png) no-repeat;
+    background-size: 25px 12px;
+    position: relative;
+    top: 21px;
+    margin: 0px auto;
+    padding-left:1px;
+}
+#energy-game .battery-image{
+    background: url(http://images.jumei.com/mobile/act/image/widget/energy/energy_image.png) no-repeat;
+    background-size: 2px 8px;
+    width: 2px;
+    height: 10px;
+    margin-left: 2px;
+    position: relative;
+    top: 2px;
+    float: left;
+}
+#flash-lightning-container{
+    min-height: 140px;
+    background: #ffc200;
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+#energy-game #start-loading{
+    top: 55px !important;
+}
+#energy-game .energy-txt{
+    background: url(http://images.jumei.com/mobile/act/image/widget/energy/left_arrow.png) left center no-repeat;
+    background-size: 2px 8px;
+    position: absolute;
+    left: 173px;
+    top: 13px;
+    font-size: 12px;
+    padding-left: 14px;
+    background-size: 10px;
+    line-height: 15px;
+    display: block;
+    height: 14px;
+}
+.flash-lamp-on{
+    background: url(http://images.jumei.com/mobile/act/image/widget/energy/lamp_on.png?321) no-repeat !important;
+    background-size:100% 100% !important;
+}

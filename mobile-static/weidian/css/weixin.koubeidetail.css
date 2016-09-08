@@ -1,0 +1,45 @@
+#koubei-content{
+    font-size: 12px;
+}
+#koubei-content li{
+    padding: 15px;
+}
+.li-title,.li-name,.li-content{
+    padding-bottom: 10px;
+    color: #444444;
+}
+.li-title{
+    color:#f4647b;
+}
+.li-content{
+    line-height: 14px;
+}
+.li-img img{
+    width: 100%;
+    display: block;
+}
+
+.start{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(/weidian/image/star6.png) center center no-repeat;
+    background-size: 11px 10px;
+    vertical-align: middle;
+}
+.start-select{
+    background: url(/weidian/image/star7.png) center center no-repeat;
+    background-size: 11px 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.start-ban{
+    background: url(/weidian/image/star8.png) center center no-repeat;
+    background-size: 11px 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}

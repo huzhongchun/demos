@@ -1,0 +1,188 @@
+.header{
+	padding: 15px 25px 10px;
+	background: #ffdf8a;
+}
+.active-des{
+	font-size:14px;
+	color: #4f4d48;
+}
+.color-orange{
+	color:#ff7522;
+}
+.invite-code{
+	width: 100%;
+	text-align: center;
+	font-size: 26px;
+	color: #000;
+	position: absolute;
+	top: 35px;
+	left: 0px;
+}
+.invite-code-rule-area{
+	color: #7c6d50;
+	font-size: 12px;
+}
+.invite-code-area{
+	width: 251px;
+	height: 95px;
+	margin: 10px auto;
+	background: url(/vip/image/invite_code_bg.png) center no-repeat;
+	background-size: 250px 94px;
+	position: relative;
+}
+.invite-code-rule-area li{
+	list-style-type: disc;
+}
+.share-area{
+	background: #fff1cb;
+	padding: 15px 25px 0;
+	text-align: center;
+}
+.share-title{
+	font-size: 18px;
+	color: #7c6d50;
+	text-align: center;
+}
+.share-btns-boxs{
+	display: inline-block;
+	margin: 10px 0;
+}
+.share-btn{
+	width: 48px;
+	height: 70px;
+	float: left;
+	display: inline-block;
+	margin-right: 60px;
+}
+.share-btn:nth-child(2){
+	margin-right: 0px;
+}
+.weixin-quan{
+	background: url(/vip/image/quan_bg.png) center no-repeat;
+	background-size: 48px 69px;
+}
+.weixin-friend{
+	background: url(/vip/image/friend_bg.png) center no-repeat;
+	background-size: 48px 69px;
+}
+.duanxin{
+	background: url(/vip/image/duanxin_bg.png) center no-repeat;
+	background-size: 48px 69px;
+}
+.bottom-line-1{
+	width: 320px;
+	height: 19px;
+	background: url(/vip/image/bottom_1.png) center no-repeat;
+	background-size: 320px 19px;
+	background-color: #fff1cb;
+}
+.bottom-line-2{
+	width: 320px;
+	height: 19px;
+	background: url(/vip/image/bottom_2.png?2) center no-repeat;
+	background-size: 320px 20px;
+	background-color: #fbf7ec;
+}
+.module-title{
+	color: #7c6d50;
+	background: #fbf7ec;
+	font-size: 14px;
+	padding: 10px 15px;
+	border-bottom: 1px dotted #ffc770;
+}
+.module-title-txt{
+	border-left: 2px solid #ffc770;
+	font-size: 14px;
+	padding-left: 5px;
+}
+.module-title-icon{
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(/vip/image/down_icon.png) center no-repeat;
+	background-size: 17px 17px;
+}
+.down{
+	background: url(/vip/image/up_icon.png) center no-repeat !important;
+	background-size: 17px 17px !important;
+}
+.module-content{
+	background: #fff1cb;
+	border-bottom: 1px dotted #ffc770;
+	-webkit-transition: height 0.3s ease 0s;
+	transition: height 0.3s ease 0s;
+	overflow: hidden;
+	height: auto;
+}
+.height0{
+	-webkit-transform: translate3d(0,0,0) !important;
+}
+.step-boxs{
+	margin-left: 28px;
+	border-left: 2px solid #ffc770;
+	padding: 10px 0;
+}
+
+.input-step-des li{
+	color: #ff9743;
+	padding-left: 25px;
+	background: url(/vip/image/circle_icon.png) left 5px no-repeat;
+	background-size: 15px 15px;
+	margin-left: -8px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+.input-step-des li img{
+	width: 230px;
+}
+.jumei-icon{
+	width: 33px !important;
+	height: 33px;
+	padding: 0 5px
+}
+.step-txt{
+	padding-right: 30px;
+	text-align: right;
+}
+.reward-list-area{
+	background: #fff1cb;
+	color: #ffa13c;
+	font-size: 13px;
+}
+.reward-list-area thead{
+	border-bottom: 1px solid #ffc770;
+}
+.reward-table{
+	width: 100%;
+	text-align: center;
+}
+.reward-table td{
+	padding: 5px 0;
+}
+.check-reward-area{
+	padding: 20px 0 30px;
+	background: #fff1cb;
+}
+.check-reward-btn{
+	display: block;
+	width: 141px;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	padding: 8px 0;
+	letter-spacing: 1px;
+	background: #ffa13c;
+	border-bottom: 3px solid #e4841d;
+	border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+

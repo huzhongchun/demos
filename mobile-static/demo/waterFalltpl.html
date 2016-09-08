@@ -1,0 +1,118 @@
+<style>
+    #waterFall .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #56ace7;
+        margin-bottom: 10px;
+    }
+    #waterFall #boxs{
+        position: relative;
+    }
+    #waterFall #boxs img{
+        width: 100%;
+        display: block;
+    }
+</style>
+<div id="waterFall">
+    <p class="font-weight">组件名称：瀑布流</p>
+    <div class="show-area">
+        <div id="boxs">
+            <div class="cell">1<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+            <div class="cell">2<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+            <div class="cell">3<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+            <div class="cell">4<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+            <div class="cell">5<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+            <div class="cell">6<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+            <div class="cell">7<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+            <div class="cell">8<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+            <div class="cell">9<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+            <div class="cell">10<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+            <div class="cell">11<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+            <div class="cell">12<img src="http://ms0.jmstatic.com/beauty/image/back_top@2x.png"></div>
+            <div class="cell">13<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+            <div class="cell">14<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+            <div class="cell">15<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+            <div class="cell">16<img src="http://p0.jmstatic.com/mcms/5-690.jpg"></div>
+            <div class="cell">17<img src="http://p0.jmstatic.com/mcms/5-19.jpg"></div>
+            <div class="cell">18<img src="http://p0.jmstatic.com/mcms/640x3211111111122110-%E6%AD%A3%E5%BC%8F.jpg"></div>
+        </div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="waterFall-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            </p>（string）id: 瀑布容器的id名称，默认：'waterfall-boxs'</p>
+            </p>（string）columnWidth: 每一列的宽度，默认：140</p>
+            </p>（string）columnClassName:  列的类名，默认：'waterfall-column'</p>
+            </p>（string）columnGap: 列之间的间隔，默认：0</p>
+            </p>（string）cellSelector: 用于排列的条目的选择器，默认：'cell'</p>
+            </p>（string）imgSelector: 用于需要用来判断的图片加载速度的图片选择器，默认：'img'</p>
+            </p>（string）hasSetImgHeight: 是否设置了图片的高度，默认：true</p>
+            </p>（string）fadeIn: 是否渐显载入，默认：true</p>
+            </p>（string）fadeInTime: 渐显的速率，默认：600</p>
+            </p>（string）insertType: 每个条目插入列的方式，默认：2（两种方式：1和2）</p>
+            </p>
+            <p class="font-weight">注意：</p>
+            <p class="content">
+                hasSetImgHeight用来判断图片的高度，如果已经设置了图片的高度，则不需要等待图片加载完成之后才进行条目插入处理。
+                插入方式1：由左向右顺序插入每一列，换行如此重复。
+                插入方式2：每次插入高度最短的列，如果相等先插入最左边的列
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+<!--HTML-->
+<div id="boxs">
+    <div class="cell">1<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+    <div class="cell">2<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+    <div class="cell">3<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+    <div class="cell">4<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+    <div class="cell">5<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+    <div class="cell">6<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+    <div class="cell">7<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+    <div class="cell">8<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+    <div class="cell">9<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+    <div class="cell">10<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+    <div class="cell">11<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+    <div class="cell">12<img src="http://ms0.jmstatic.com/beauty/image/back_top@2x.png"></div>
+    <div class="cell">13<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+    <div class="cell">14<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+    <div class="cell">15<img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+    <div class="cell">16<img src="http://p0.jmstatic.com/mcms/5-690.jpg"></div>
+    <div class="cell">17<img src="http://p0.jmstatic.com/mcms/5-19.jpg"></div>
+    <div class="cell">18<img src="http://p0.jmstatic.com/mcms/640x3211111111122110-%E6%AD%A3%E5%BC%8F.jpg"></div>
+</div>
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+#boxs{
+    position: relative;
+}
+#boxs img{
+    width: 100%;
+    display: block;
+}
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var waterFall = Jumei.getModule('ui.waterFall');
+var waterFallObj = new waterFall({
+    'id':'boxs',
+    'columnWidth': 30,
+    'columnGap': 10,
+    'hasSetImgHeight':false,
+    'insertType': 1,
+    'fadeinTime': 600
+});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

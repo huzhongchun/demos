@@ -1,0 +1,487 @@
+#weixin-index .fl{
+    float: left;
+}
+#weixin-index .fr{
+    float: right;
+}
+#weixin-index .nav img{
+    width:100%;
+}
+#weixin-index #header{
+    width: 320px;
+    height: 160px;
+    position: relative;
+    background:url(/weidian/image/head_bg_1.png) no-repeat;
+    background-position:0px 0px;
+    background-size: 320px 160px;
+}
+#weixin-index .head-line{
+    width: 320px;
+    height: 20px;
+    background: url(/weidian/image/head_line.png) center no-repeat;
+    background-size: 320px 20px;
+    position: relative;
+    top: -7px;
+    left: 0px;
+}
+#weixin-index .seller-head-boxs{
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    top: 37px;
+    left: 131px;
+}
+#weixin-index .seller-head-boxs img{
+    display: block;
+    width: 54px;
+    height: 54px;
+    border-radius: 100px;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+#weixin-index .seller-nickname{
+    width: 100%;
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+    position: absolute;
+    top: 103px;
+    left: 0;
+}
+#weixin-index .ad-tag-boxs{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 288px;
+    padding: 8px 16px;
+    height: 15px;
+    background: rgba(0,0,0,0.3);
+    font-size: 12px;
+    text-align: center;
+}
+.ad-tag-boxs img{
+    width: 100%;
+}
+#weixin-index .add-tag{
+    display: inline-block;
+    border-right: 1px solid #fff;
+    height: 15px;
+    line-height: 17px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: #fff;
+    margin: 0px 5px;
+}
+#weixin-index .add-tag:nth-last-child(1){
+    border-right:none;
+    margin-right:0px;
+}
+#weixin-index .share{
+    width: 57px;
+    height:24px;
+    border-radius:24px;
+    line-height: 26px;
+    border: 2px solid rgba(255,255,255,0.5);
+    font-size: 11px;
+    color:#f35a73;
+    text-align: center;
+    position: absolute;
+    right: 13px;
+    top: 35px;
+    background: #b0d3e6;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.2);
+}
+#weixin-index .module-title{
+    width: 262px;
+    height: 14px;
+    line-height: 14px;
+    margin: 15px 15px 10px;
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+}
+#weixin-index .select-goods-area{
+    width: 280px;
+    height: 48px;
+    margin: 15px  auto;
+    background: #f7f7f7;
+    text-align: center;
+    padding-top: 12px;
+}
+#weixin-index .add-icon{
+    width: 37px;
+    height: 36px;
+    background: url(/weidian/image/add_icon.png) center no-repeat;
+    background-size: 36px 36px;
+    margin-right: 16px;
+}
+#weixin-index .middle-area {
+    width: 200px;
+    height: 36px;
+    margin: 0 auto;
+}
+.add-mes-boxs{
+    height: 36px;
+    width: 128px;
+}
+#weixin-index .add-mes-small-area{
+    height: 12px;
+    line-height: 12px;
+    position: relative;
+    margin-top: 6px;
+}
+#weixin-index .add-mes-big{
+    font-size: 16px;
+    height: 17px;
+    line-height: 17px;
+    color: #666666;
+}
+#weixin-index .add-mes-small{
+    font-size: 11px;
+    width: 96px;
+    background: #f7f7f7;
+    height: 12px;
+    line-height: 12px;
+    color: #bdbdbd;
+    position: absolute;
+    top:0;
+    left: 20px;
+    text-align: center;
+    z-index: 2;
+}
+#weixin-index .underline{
+    width: 100%;
+    height:1px;
+    background: #bdbdbd;
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+#weixin-index .selected-recomend-goods-items{
+    width: 320px;
+    background: #fff;
+    font-size: 12px;
+    border-bottom: 1px solid #d8d8d8;
+}
+#weixin-index .goods-pic{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    min-height: 200px;
+}
+#weixin-index .goods-pic img{
+    width: auto;
+    height: 200px;
+}
+#weixin-index .goods-des{
+    width: 284px;
+    line-height: 16px;
+    padding: 0 15px;
+    margin: 15px auto;
+    word-break: break-all;
+    overflow: hidden;
+    text-align: left;
+}
+#weixin-index .goods-des .des{
+    width: 100%;
+    display: block;
+}
+#weixin-index .recommend-txt{
+    background: #f35a73;
+    padding: 0 5px;
+    color: #fff;
+}
+#weixin-index .goods-price{
+    width: 290px;
+    padding: 0 0 15px 15px;
+    margin: 15px 0;
+    position: relative;
+}
+#weixin-index .price-area{
+    height: 22px;
+    padding-top: 8px;
+}
+#weixin-index .price-now{
+    position: relative;
+    font-size: 16px;
+    height: 15px;
+    line-height: 15px;
+    color: #f35a73;
+    font-weight: bold;
+}
+#weixin-index .price-old{
+    position: relative;
+    padding-left: 8px;
+    font-size: 10px;
+    height: 15px;
+    line-height: 15px;
+    text-decoration: line-through;
+    color: #9b9b9b;
+}
+#weixin-index .price-old{
+    
+}
+#weixin-index .share-btn{
+    width: 90px;
+    height: 30px;
+    background: url(/weidian/image/share_long.png) center no-repeat;
+    background-size: 90px 30px;
+}
+#weixin-index .shelf-btn{
+    width: 90px;
+    height: 30px;
+    background: url(/weidian/image/shelf.png) center no-repeat;
+    background-size: 90px 30px;
+}
+#weixin-index .commission_icon{
+    width: 47px;
+    padding-right: 3px;
+    height: 17px;
+    line-height: 17px;
+    background: url(/weidian/image/commission.png) center no-repeat;
+    background-size: 50px 17px;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+}
+#weixin-index #bottom-nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 15px 0px;
+    width: 100%;
+    height: 17px;
+    line-height: 17px;
+    font-size: 13px;
+    background: rgba(0,0,0,0.7);
+    transition: -webkit-transform 0.5s ease 0s;
+    display: none !important;
+}
+#weixin-index .fixedhide{
+    -webkit-transform: translate3d(0,100px,0);
+}
+#weixin-index .nav-item{
+    display: block;
+    width: 107px;
+    height: 17px;
+    background: url(/weidian/image/nav_icon_1.png) 18px center no-repeat;
+    background-size: 13px 12px;
+    border-right: 1px solid #9d9d9d;
+    padding-left: 36px;
+    float: left;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    color: white;
+    text-align: left;
+}
+#weixin-index .nav-item a{
+    color: white;
+}
+#weixin-index .nav-item:nth-child(2){
+    margin-right: 0px;
+    width: 106px;
+    background: url(/weidian/image/nav_icon_2.png) 18px center no-repeat;
+    background-size: 13px 12px;
+    
+}
+#weixin-index .nav-item:nth-child(3){
+    margin-right: 0px;
+    border-right: none;
+    width: 106px;
+    background: url(/weidian/image/nav_icon_3.png) 18px center no-repeat;
+    background-size: 13px 12px;
+    
+}
+#weixin-index #bottom-nav .active{
+    color: #f35a73;
+    z-index: 4;
+}
+#weixin-index .selected-arrow{
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 106px;
+    height: 2px;
+    background: #f35a73;
+    transition: all 0.5s ease 0s;
+    -webkit-transform: translate3d(0,0,0);
+}
+#weixin-index .arrow{
+    width: 12px;
+    height: 12px;
+    -webkit-transform: rotateZ(45deg);
+    position: relative;
+    left: 50px;
+    background: #f35a73;
+}
+/*一行两个*/
+#weixin-index .goods-row-two-area{
+}
+#weixin-index .goods-row-two-items{
+    width: 160px;
+    background: #fff;
+    font-size: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+#weixin-index .goods-row-two-items:nth-child(1){
+    border-top: 1px solid #e0e0e0;
+}
+#weixin-index .goods-row-two-items:nth-child(2){
+    border-top: 1px solid #e0e0e0;
+}
+#weixin-index .goods-row-two-items:nth-child(odd){
+    width: 159px !important;
+    border-right: 1px solid #e0e0e0;
+}
+#weixin-index .goods-row-two-pic{
+    position: relative;
+    height: 160px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+#weixin-index .goods-row-two-pic img{
+    width: auto;
+    height: 160px;
+}
+#weixin-index .goods-row-two-des{
+    height: 32px;
+    line-height: 16px;
+    padding: 0 8px;
+    margin: 10px 0;
+    word-break: break-all;
+    overflow: hidden;
+}
+#weixin-index .goods-row-two-des .des{
+    text-align: left;
+}
+#weixin-index .goods-row-two-price{
+    padding: 0 10px;
+    margin: 15px 0;
+    height: 25px;
+}
+#weixin-index .goods-row-two-price-boxs span{
+    display: block;
+    padding-left: 0px;
+}
+#weixin-index .goods-row-two-price-now{
+    position: relative;
+    font-size: 14px;
+    height: 13px;
+    line-height: 12px;
+    color: black;
+}
+#weixin-index .goods-row-two-price-old{
+    position: relative;
+    font-size: 10px;
+    height: 12px;
+    line-height: 10px;
+    text-decoration: line-through;
+    color: #9b9b9b;
+    top:2px;
+}
+#weixin-index .goods-row-two-add-btn{
+    font-size: 12px;
+    color:#333333;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: bold;
+}
+#weixin-index .goods-row-two-share-btn{
+    width: 80px;
+    height: 25px;
+    background: url(/weidian/image/share_row_2.png) center no-repeat;
+    background-size: 80px 25px;
+}
+#weixin-index .goods-row-two-commission-icon{
+    width: 47px;
+    padding-right: 3px;
+    height: 17px;
+    line-height: 17px;
+    background: url(/weidian/image/commission.png) center no-repeat;
+    background-size: 50px 17px;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+}
+.order-fix{
+    position: fixed;
+    bottom: 71px;
+    left: 30px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.2);
+    border-radius: 100px;
+}
+.order-fix img{
+    width: 42px;
+    display: block;
+}
+#weixin-index .start-buy{
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    color: #333333;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#shouchang {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 2000001;
+    opacity: 0.8;
+    background: black;
+}
+#shouchang .share_arrow {
+    width: 33px;
+    position: absolute;
+    right: 33px;
+    top: 24px;
+}
+#shouchang .share_txt {
+    width: 177px;
+    margin-top: 56px;
+    margin: 56px auto;
+    display: block;
+    color: white;
+    text-align: center;
+}
+.more-page{
+    border-bottom: solid 1px #ccc;
+    padding: 10px  0;
+    font-size: 14px;
+    text-align: center;
+    width: 320px;
+    background: #ddd
+}
+.img-tag{
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.img-tag img{
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+

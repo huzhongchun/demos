@@ -1,0 +1,87 @@
+<style>
+    #toast .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+    }
+    #toast .btn{
+        width: 60px;
+        padding: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+        letter-spacing: 2px;
+        line-height: 16px;
+        background: #ed145b;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+    }
+    #toast-boxs{
+        padding: 5px;
+        border-radius: 20px;
+        background: #000;
+        font-size: 12px;
+        color: #fff;
+    }
+</style>
+<div id="toast">
+    <p class="font-weight">组件名称：toast提示</p>
+    <div class="show-area">
+        <div class="btn">点我点我111</div>
+        <div class="btn">点我点我222</div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="toast-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>(int) animateTime: 动画时间，默认：1,</p>
+            <p>(string) animateCurves: 动画曲线，默认：'ease',</p>
+            <p>(int) stopTime: 停留时间，默认：2,</p>
+            <p>(int) bottom: 提示距离屏幕顶端的距离，默认：上下居中,</p>
+            <p>(int) right: 提示距离屏幕左边的距离，默认：左右居中</p>
+            <p>(int) moveLength: 动画移动的距离，默认：-10（‘-‘ 表示向上移动）</p>
+            <p>(function) animateEndCallback: 完整动画结束，即隐藏之后的回调函数</p>
+            </p>
+            <p class="font-weight">注意：</p>
+            <p class="content">
+                时间单位，都是：s（秒）
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+                <xmp>
+                    <!--HTML-->     无
+                </xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+#toast-boxs{
+    padding: 5px;
+    border-radius: 20px;
+    background: #000;
+    font-size: 12px;
+    color: #fff;
+}
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var toast = Jumei.getModule('ui.toast');
+var toastObj = new toast({
+    animateTime: 1,
+    animateCurves: 'ease',
+    stopTime: 2,
+});
+$('.btn').click(function(e){
+    toastObj.show('每天只能进6件，请明天再来吧');
+})
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

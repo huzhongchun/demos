@@ -1,0 +1,95 @@
+<link rel="stylesheet" type="text/css" href="/lib/css/widget/share.css">
+<style>
+
+    #share #share-btn{
+        width: 200px;
+        height:50px;
+        line-height: 50px;
+        font-size: 14px;
+        text-align: center;
+        color: #000;
+        background: #ed145b;
+        margin: 10px auto;
+        border-radius: 25px;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+    #share .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+    }
+</style>
+<div id="share">
+    <p class="font-weight">组件名称：微博微信分享</p>
+    <div class="show-area">
+        <!--demo的HTML代码-->
+        <div id="share-btn">点我你就知道了</div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="share-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>（string）sinaBtnBg: 新浪分享按钮图片的链接 ，默认：http://images.jumei.com/mobile/act/image/widget/share/weibo-btn.png<p>
+            <p>（string）weichatBtnBg : 微信分享给好友按钮图片的链接 ，默认：http://images.jumei.com/mobile/act/image/widget/share/wechat-btn.png<p>
+            <p>（string）weiFriendBtnBg : 微信分享到朋友圈按钮图片的链接 ，默认：http://images.jumei.com/mobile/act/image/widget/share/weixin_friend.png<p>
+            <p>（string）sinaLinkUrl: 分享的链接，默认本页面的url<p>
+            <p>（string）weiXinChatLinkUrl: 微信分享给好友的链接，默认本页面的url<p>
+            <p>（string）weiXinFriendLinkUrl: 微信分享到朋友圈的链接，默认本页面的url<p>
+            <p>（string）sinaPic: 新浪分享出去的图片的链接，默认：http://p0.jmstatic.com/templates/jumei/images/logo_new_v1.jpg<p>
+            <p>（string）weiXinChatPic: 微信分享给好友的图片的链接，默认：http://p0.jmstatic.com/templates/jumei/images/logo_new_v1.jpg<p>
+            <p>（string）weiXinFriendPic: 微信分享到朋友圈的图片的链接，默认：http://p0.jmstatic.com/templates/jumei/images/logo_new_v1.jpg<p>
+            <p>（string）sinaTitle: 新浪分享的文案，默认：精彩购物，尽在聚美优品<p>
+            <p>（string）weixinChatTitle: 微信分享给好友的标题文案，默认：'精彩购物，尽在聚美优品',<p>
+            <p>（string）weiXinFriendTitle: 微信分享到朋友圈分享的标题文案，默认：'精彩购物，尽在聚美优品',<p>
+            <p>（string）weiXinFriendContent: 微信分享给好友的正文文案，默认：’中国最大正品化妆品团购网站，千万用户推荐，拆封30天无条件退款！‘<p>
+            <p>（string）weiXinChatContent: 微信分享到朋友圈的正文文案，默认：’中国最大正品化妆品团购网站，千万用户推荐，拆封30天无条件退款！‘<p>
+            </p>
+            <p class="font-weight">注意：</p>
+            <p class="content">
+                避免id重名，如果分享框的最外层元素的id名（share-module），在你的页面之前已经定义过，则组件不会生效，提示你修改id名。
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+    <!--HTML-->
+    <div id="share-btn">点我你就知道了</div>
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+    <link rel="stylesheet" type="text/css" href="http://ms0.jmstatic.com/lib/css/widget/share.css">
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var link_url = 'http://www.baidu.com';
+var share_pic = 'http://p0.jmstatic.com/mobile/act/activities/2014_11/11sharepic/share.png';
+var share = Jumei.getModule('ui.share');
+var shareObj = new share({
+    sinaTitle: '#聚美11.11购物狂欢节#  不止5折，大牌减才是真的减，国际知名品牌尽在聚美优品！',
+    weixinChatTitle: '聚美11.11购物狂欢节',
+    weiXinFriendTitle: '聚美11.11购物狂欢节',
+    sinaLinkUrl: link_url,
+    weiXinChatLinkUrl: link_url,
+    weiXinFriendLinkUrl: link_url,
+    sinaPic: share_pic,
+    weiXinChatPic: share_pic,
+    weiXinFriendPic: share_pic,
+    weiXinFriendContent:"不止5折，大牌减才是真的减，国际知名品牌尽在聚美优品！",
+    weiXinChatContent:"不止5折，大牌减才是真的减，国际知名品牌尽在聚美优品！"
+})
+$('#share-btn').on('click', function(){
+    shareObj.show();
+});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

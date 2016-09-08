@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="address=no">
+        <link rel="stylesheet" type="text/css" href="./framework/css/lib/base.css">
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <title>请柬</title>
+    </head>
+    <body>
+       <div id="scale-wrapper">
+            <div class="photo-area">
+                <div class="cover-img"></div>
+                <div class="photo-box">
+                    <img src="./images/photo_1.png">
+                </div>
+            </div>
+           <div class="name-box">
+               <div class="name-img"></div>
+           </div>
+       </div>
+       <script src="./framework/js/lib/zepto.js"></script>
+        <script>
+            $(function () {
+                $('body').on('tap',function () {
+                    location.href = 'page_1.html'
+                })
+            })
+        </script>
+    </body>
+</html>

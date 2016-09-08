@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvas</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+			}
+			canvas{
+				
+				position: relative;
+				border: 1px solid #000;
+				border: 2px solid red;
+			}
+			#img-box{
+				
+
+			}
+			#p-img{
+				display: block;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="scale-wrapper">
+			<img id="p-img" src="./images/1.jpg">
+			<div>
+				<span class="p-l"></span>----------<span class="p-t"></span>
+			</div>
+			<div class="outer-box">
+				<canvas id="img-box" height="200" width="200">
+					您的浏览器不支持canvas～
+				</canvas>
+			</div>
+			<input class="choose-img" type="file">
+			<input class="scale"  type="range" min="1" max="3" value="0" step="0.5"/>
+			<br>
+			<input class="submit" type="button" value="确定">
+		</div>
+		<script type="text/javascript" src="./js/zepto.js"></script>
+		<script type="text/javascript">
+			//读取文件
+			var reader = new FileReader();
+			$('.choose-img').on('change',function(){
+				 reader.onload
+			})
+			var canvas = document.getElementById('img-box');
+			var img = document.getElementById('p-img');
+			var imgW = img.naturalWidth;
+			var imgH = img.naturalHeight;
+			var canMove = true;
+
+			//让canvas按照图片尺寸来
+			//canvas.width = imgW;
+			//canvas.height = imgH;
+			var canvasW =canvas.width;
+			var canvasH = canvas.height;
+
+			//图片缩放的系数
+			var imgScale = 1;
+			var loop = null;
+			
+			if(imgW < canvasW && imgH < canvasH)  canMove = false;
+
+			var ctx = canvas.getContext('2d');
+			//ctx.drawImage(img,0,0,imgW,imgH,(canvas.width - imgW*2)/ 2,(canvas.height - imgH*2) / 2,imgW*2,imgH*2);  //两倍图像
+			initDrawCanvas();
+
+			function initDrawCanvas(){
+				ctx.scale(imgScale,imgScale);
+				ctx.drawImage(img,0,0,imgW,imgH,(canvas.width / imgScale - imgW)/ 2,(canvas.height /imgScale - imgH)/ 2,imgW,imgH);
+				$('#img-box').attr('data-x', -(canvas.width / imgScale- imgW)/ 2).attr('data-y', -(canvas.height / imgScale - imgH)/ 2);
+			}
+
+			//或者直接移动canvas的绝对定位，来做裁剪－－－－－－－－－todo，但是裁剪信息得重新计算
+
+			var cPosition = {};
+			
+
+
+			//双击放大2倍－－－－－todo
+			function reDrawImage(img,imgw,imgh,sx,sy,scale) {
+				//var imgw = imgw * imgScale;
+				//var imgh = imgh * imgScale;
+				ctx.beginPath();
+				ctx.clearRect(0,0,canvas.width,canvas.height);  //清除之前画的
+				//ctx.scale(imgScale,imgScale);
+				ctx.drawImage(img,sx,sy,(imgw - sx),(imgh - sy),0,0,(imgw - sx),(imgh - sy));
+			}
+
+			//touchmove  重绘位置，边缘位置处理－－－－－－－－－－todo
+
+			function adjustPosition(l,t){
+				var l,t;
+				var maxX = imgW  - canvasW / imgScale;
+				var maxY = imgH  - canvasH /imgScale;
+
+				//console.log(l+'---'+t);
+				if(l < 0) l = 0;
+				else if(l > maxX) l = maxX;
+				if(t < 0) t = 0;
+				else if(t > maxY) t = maxY;
+
+				//如果canvas的宽度小于
+				if(maxX < 0) l = cPosition['currentX'];
+				if(maxY < 0) t = cPosition['currentY'];
+				l = parseFloat(l);
+				t =	parseFloat(t);
+				return {l,t}
+			}
+
+			var tPosition= {};
+			$('#img-box').on('touchstart',function(e){
+				tPosition['tStartX'] = e.changedTouches[0].screenX;
+				tPosition['tStartY'] = e.changedTouches[0].screenY;
+				cPosition['currentX'] = parseFloat($('#img-box').attr('data-x'));
+				cPosition['currentY'] = parseFloat($('#img-box').attr('data-Y'));
+
+				//cPosition['currentY'] = (canvas.width - imgH * 2)/ 2;
+
+			})
+			$('#img-box').on('touchmove',function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				tPosition['tMoveX'] = e.changedTouches[0].screenX;
+				tPosition['tMoveY'] = e.changedTouches[0].screenY;
+
+				var moveingX = tPosition['tMoveX'] - tPosition['tStartX'];
+				var moveingY = tPosition['tMoveY'] - tPosition['tStartY'];
+
+				var p = adjustPosition(cPosition['currentX'] - moveingX,cPosition['currentY'] - moveingY);
+				cPosition['endX'] = p.l;
+				cPosition['endY'] = p.t;
+				$('.p-l').html(p.l);
+				$('.p-t').html(p.t);
+
+				if(canMove)
+					loop = setTimeout(function(){
+						clearInterval(loop);
+						reDrawImage(img,imgW,imgH,p.l,p.t);
+					},20)
+			})
+			$('#img-box').on('touchend',function(e){
+				$(this).attr('data-x', cPosition['endX']).attr('data-y', cPosition['endY']);
+				ctx.save();
+			})
+
+
+			//确定后提交图片信息
+			$('.submit').on('click',function(){
+				//var imgData = ctx.getImageData(x,y,w,h);//获取canvas中的图片信息；
+				//imageData.data则是图片的二进制数据
+							
+			})
+
+			//The canvas has been tainted by cross-origin data.  因为本地测试用的图片是文件夹内的， js跨域限制是不能获取非同一域名下的数据的，
+    		//而本地的位置是没有域名的，所以浏览器都认为是跨域，导致报错。
+			var binary = ctx.getImageData(0,0,canvas.width,canvas.height).data;
+			
+			//使用ajax发送
+			console.log(binary);
+
+
+		</script>
+	</body>
+</html>
+
+
+
+
+
+

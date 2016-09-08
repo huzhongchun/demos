@@ -1,0 +1,126 @@
+
+.top-intro-area{
+	width: 100%;
+	background: #fff100;
+	padding-bottom: 30px;
+    padding-top: 20px;
+}
+.library-title-text{
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 19px;
+	color: #292929;
+	padding-top: 22px;
+	margin-bottom: 27px;
+	font-weight: bold;
+}
+.login-reason{
+	display: block;
+	text-align: center;
+	width: 70%;
+	font-size: 16px;
+	margin: 0 auto;
+}
+
+.login-area{
+	padding: 36px 27px;
+	background: #fff;
+	width: 280px;
+	margin: -15px auto 0;
+	position: relative;
+	z-index: 2;
+	border: 1px solid #CCCCCC;
+}
+
+
+.input-item{
+	display: block;
+	font-size: 0;
+	margin-bottom: 20px;
+}
+
+.input-title{
+	display: inline-block;
+	width: 67px;
+	text-align: left;
+	font-size: 16px;
+	vertical-align: middle;
+}
+.input-box{
+	display: inline-block;
+	width: 205px;
+	font-size: 15px;
+	height: 30px;
+	border: 1px solid #292929;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.input-box input{
+	display: block;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font-size: 15px;
+	height: 100%;
+	min-width: 100%;
+	padding-left: 5px; 
+}
+
+.verify-code .input-box{
+	width: 94px;
+}
+
+.check-btn{
+	display: inline-block;
+	font-size: 14px;
+	color: #292929;
+	background: #fff100;
+	padding: 7px 15px;
+	vertical-align: middle;
+	margin-left: 15px;
+}
+.active.check-btn{
+	color: #fff;
+	background: #ccc;
+}
+.count-down-tips{
+	width: 100%;
+	text-align: center;
+	color: #BCBCBC;
+	margin-bottom: 25px;
+	display: none;
+}
+.login-btn-box{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.login-btn-box .login-btn{
+	display: inline-block;
+	font-size: 14px;
+	color: #292929;
+	background: #fff100;
+	padding: 5px 15px;
+}
+.login-btn-box .active.login-btn{
+	color: #fff;
+	background: #ccc;
+}
+
+
+
+.library-logo{
+    display: block;
+    width: 100%;
+    height: 53px;
+    background: url("../images/library_log_2.png") center no-repeat;
+    background-size:  auto 100%;
+    margin-bottom: 20px;
+}
+
+
+
+
+

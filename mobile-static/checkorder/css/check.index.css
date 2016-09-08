@@ -1,0 +1,236 @@
+
+.fl{
+    float: left;
+}
+.active{
+    background: #ed145b !important;
+}
+#content-boxs{
+    padding-bottom: 50px;
+}
+#nps-area{
+    padding: 15px 0 15px 15px;
+    font-size: 12px;
+    color: #000;
+    letter-spacing: 1px;
+}
+.txt-small{
+    font-size: 10px;
+    color: #999;
+}
+.chose-boxs{
+    border-bottom: 1px solid #ccc;
+    margin-top: 16px;
+}
+.score-num{
+    display:block;
+    width: 39px;
+    height: 24px;
+    line-height:24px;
+    border: 1px solid #999;
+    text-align: center;
+    margin-right: 9px;
+    margin-bottom: 16px;
+}
+.score-num:nth-child(6n){
+    margin-right: 0;
+}
+.chose-boxs .selected{
+    color: #ed145b;
+    border: 1px solid #ed145b;
+}
+.product-evaluate-items{
+    padding-left: 15px;
+}
+.product-feel{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.product-feel-des{
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.chose-boxs{
+    width: 100%;
+}
+.stars-boxs span{
+    display: block;
+    float: left;
+    margin-right: 24px;
+    width: 22px;
+    height: 21px;
+    border-radius;25px;
+    background: #ccc;
+    position: relative;
+
+}
+.stars-boxs{
+    margin-left:15px;
+    position: relative;
+    top: -2px;
+    left: 0;
+}
+.stars-boxs span:nth-child(5n){
+    margin-right: 0;
+}
+.star-img{
+    width: 100%;
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.des-input{
+    border:none;
+    font-size: 12px;
+    padding-left: 15px;
+    letter-spacing: 1px;
+    outline:none;
+    resize:none;
+    width:200px;
+    position: relative;
+    top: -2px;
+    left: 0;
+    height: 100px;
+    letter-spacing:  1px;
+}
+.product-info-area{
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0 5px;
+}
+.product-img{
+    display: block;
+    width: 70px;
+    height: 70px;
+}
+.product-des{
+    width: 200px;
+    height: 70px;
+    padding-top: 20px;
+    font-size: 14px;
+    padding-left: 20px;
+    letter-spacing: 1px;
+}
+#btns-area{
+    width: 100%;
+    font-size: 13px;
+    background: #fff;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+.btns-boxs{
+    width: 100%;
+    text-align: center;
+}
+.confirm-receipt{
+    display: inline-block;
+    width: 93px;
+    height: 28px;
+    line-height: 28px;
+    background: #ed145b;
+    text-align:center;
+    border: 1px solid #ed145b;
+    color: #fff;
+    margin-right:15px;
+}
+.draw{
+    display: inline-block;
+    width: 93px;
+    height: 28px;
+    line-height: 28px;
+    background: #fff;
+    text-align:center;
+    border: 1px solid #ed145b;
+    color: #ed145b;
+    display: none;
+}
+#header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 300000;
+    -webkit-transition: all 0.5s ;
+    background: #ed145b;
+    font-size: 16px;
+}
+#back {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 60px;
+    background: url(http://a.m.st.jumei.com/beauty/image/back@2x.png?20141104) center center no-repeat;
+    background-size: 20px 18px;
+    -webkit-tap-highlight-color:none;
+}
+#header-title {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    overflow: hidden;
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.ui-dialog{
+    border-radius: 0px;
+    -webkit-border-radius: 0px; 
+}
+.ui-dialog-content{
+    font-size: 14px;
+}
+.ui-dialog .ui-dialog-title{
+    display: none;
+}
+.ui-dialog-content{
+    font-size: 12px;
+}
+.draw-btn-boxs span,.draw-btn-boxs a{
+    display: block;
+    width: 108px;
+    text-align: center;
+    color: #ed145b;
+    padding: 5px 0;
+    border: 1px solid #ed145b;
+}
+.draw-tips-text{
+    font-size: 12px;
+    padding-top: 22px;
+    text-align: center;
+    line-height: 14px;
+}
+.draw-btn-boxs{
+    padding-bottom: 20px;
+}
+.draw-cancel{
+    margin-right: 10px;
+}
+.draw-sure{
+    color: #fff !important;
+    background: #ed145b;
+}
+.text-small{
+    color: #999;
+    font-size: 10px;
+    padding-bottom: 22px;
+    text-align: center;
+    line-height: 14px;
+    padding-top: 5px;
+}
+#toast-boxs{
+    background: rgba(0,0,0,0.8);
+    border-radius: 4px;
+    padding: 5px;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+}

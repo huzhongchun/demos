@@ -1,0 +1,67 @@
+#weixin-address-add{
+    text-align: left;
+    margin-left: 15px;
+    padding-top: 8px;
+    font-size: 14px;
+}
+.form-list{
+    padding: 10px 0px;
+    border-bottom: solid 1px #d8d8d8;
+}
+.form-label{
+    color:#a5a5a5;
+}
+.form-value{
+    border: 0px;
+    font-size: 14px;
+    margin-left: 10px;
+    background: transparent;
+    color: #a5a5a5;
+}
+.confirm-submit{
+    font-size: 16px;
+    color:white;
+    background: #f35b74;
+    width: 291px;
+    height: 33px;
+    margin:20px 0px;
+    text-align: center;
+    line-height: 33px;
+    margin-left: 0px;
+}
+.black{
+    color: black;
+}
+option{
+    font-size: 14px;
+}
+select{
+    display: inline-block;
+    width: 230px;
+}
+.global-tips{
+    width: 290px;
+    margin-right: 15px;
+    margin-top: 10px;
+    background: #F1EFEF;
+    font-size: 12px;
+    display: none;
+}
+.global-tips-title{
+    width: 270px;
+    text-align: center;
+    margin: 0px auto;
+    padding: 10px 0 5px;
+    color: #B348CA;
+    border-bottom: 1px solid #B0B0B0;
+}
+.global-tips-boxs{
+    padding: 10px;
+    font-size: 10px
+}
+.global-tips-boxs p{
+    line-height: 18px;
+    color: #757575;
+
+}
+

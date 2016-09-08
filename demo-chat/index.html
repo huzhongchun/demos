@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="address=no">
+        <link rel="stylesheet" type="text/css" href="./css/base.css">
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <title>聊天</title>
+    </head>
+
+	<body>
+		<div id="scale-wrapper" >
+            <div class="view-container">
+                <div class="start-area">
+                    <img src="http://resource.bj.taooo.cc/activity/201605/01/images/3.jpg?v=1462369403">
+                </div>
+                <div class="chat-area">
+
+                </div>
+            </div>
+		</div>
+		<div class="prev-load-box"></div>
+        <script type="text/javascript" src="./js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="./js/data.js"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
+        <script type="text/javascript">
+        	var scrollTo = function(height, old) {
+	            for (var i = 500; i >= 0; i -= 5) {
+	                (function() {
+	                    var pos = i;
+	                    setTimeout(function() {
+	                        if (pos <= 0) {
+	                            window.scrollTo(0, height);
+	                        } else {
+	                            window.scrollTo(0, old - (pos / 500 * (old - height)));
+	                        }
+	                    }, (pos / 3));
+	                })();
+	            }
+	        }
+        </script>
+	</body>
+</html>
+

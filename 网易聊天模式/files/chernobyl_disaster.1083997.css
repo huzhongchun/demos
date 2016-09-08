@@ -1,0 +1,99 @@
+.ntes_nav_wrap,.N-nav-bottom{display:none}
+html,body{height:100%;background:#efeff0}
+body{font-family:"\5fae\8f6f\96c5\9ed1";font-size:1rem}
+a,a:link,a:visited,a:hover,a:active{text-decoration:none}
+p{margin: 0;padding: 0;}
+.lf{float:left}
+.rg{float:right}
+.txc{text-align:center}
+.txr{text-align:right}
+.vtm{vertical-align:middle}
+.mrt{margin-top:-2px}
+.mrt2{margin-top:4%}
+.chernobyl_disaster_wrap{height:100%}
+.chernobyl_disaster_content{position:relative;height:98%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+.enter_page{text-align:center}
+.logo{margin:5% auto 0 auto;width:50%;display:block}
+.lead_msg{color:#877f7c;width:75%;margin:0 auto;margin-top:-50%;text-align:justify}
+.lead_btn{position:relative;margin:10px 10px;overflow:hidden}
+.btn{cursor:pointer;background:#e8ab2e;color:#fff;border-radius:10px 10px 0 10px;padding:10px 15px;display:inline-block;-webkit-touch-callout:none}
+.start_btn{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);width:20%;margin:0 auto;text-align:center;-webkit-transition:all .8s;transition:all .8s}
+.run_lf{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);border-radius:10px 10px 10px 0;-webkit-animation:run_lf 1.3s ease-in-out .5s;animation:run_lf 1.3s ease-in-out .5s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.run_startbtn{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-animation:run_rg 1.3s ease-in-out .5s;animation:run_rg 1.3s ease-in-out .5s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.box{padding:10px;overflow:hidden}
+.box p,.box img{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);display:inline-block;vertical-align:middle;background:#fff;padding:10px 15px;position:relative;-webkit-transition:all .5s;transition:all .5s}
+.box video{display:inline-block;vertical-align:middle;background:#fff;padding:10px 15px;position:relative;-webkit-transition:all .5s;transition:all .5s}
+.box .no_bg{background:transparent;padding:0}
+.box .pic{background:transparent;border-radius:10px 10px 10px 0;padding:0;cursor:pointer}
+.box .video{width:100%;height:200px;background:#000;padding:0;border-radius:10px 10px 10px 0}
+.box .run_lf{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);border-radius:10px 10px 10px 0;-webkit-animation:run_lf 1s ease-in-out .2s;animation:run_lf 1s ease-in-out .2s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.box .run_lf img{padding:0}
+.box .run_rg{border-radius:10px 10px 0 10px;opacity:0;box-sizing:border-box;padding:10px 15px;background:#dedede;color:#777778}
+.box .run_rg img{padding:0}
+.qus_item1{opacity:0;right:10px;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transition:right .8s,top .8s,color .8s,position .8s,background .8s,transform .8s,opacity .8s;transition:right .8s,top .8s,color .8s,position .8s,background .8s,transform .8s,opacity .8s}
+.qus_item2{opacity:0;right:10px;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transition:right .8s .2s,top .8s .2s,color .8s .2s,position .8s .2s,background .8s .2s,transform .8s .2s,opacity .8s .2s;transition:right .8s .2s,top .8s .2s,color .8s .2s,position .8s .2s,background .8s .2s,transform .8s .2s,opacity .8s .2s}
+.rise_up{opacity:1}
+.mask{position:absolute;left:0;top:0;right:0;bottom:0;background:#000;opacity:0}
+.mask img{position:absolute;top:0;margin-top:0}
+.mask .close{position:fixed;right:2%;top:2%;color:#000;font-size:30px;display:block;z-index:33;width:30px;height:30px;line-height:30px;text-align:center;background:#e8ab2e;border-radius:50%;color:#fff}
+.loading{position:absolute;top:0;left:0;bottom:0;right:0;background:#000;z-index:99;display:block;color:#fff}
+.loading p{height:50px;width:50px;margin:0 auto;margin-top:-25px;margin-left:-25px;top:50%;left:50%;position:absolute}
+.share_b{position:fixed;left:3%;top:2%;font-size:12px;display:block;z-index:33;width:40px;height:40px;line-height:40px;text-align:center;background:#e8ab2e;border-radius:50%;color:#fff;opacity:0;animation:share_b 1s 1s;-webkit-animation:share_b 1s 1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+@keyframes share_b{0%{opacity:0}
+100%{opacity:1}
+}
+@-webkit-keyframes share_b{0%{opacity:0}
+100%{opacity:1}
+}
+.cercle{height:50px;width:50px;position:absolute;top:50%;left:50%;margin-left:-25px;margin-top:-80px;border-radius:50%;background:linear-gradient(#000,#fff);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);animation:turnCercle 2s infinite;-webkit-animation:turnCercle 5s infinite;animation-timing-function:ease-in-out;-webkit-animation-timing-function:ease-in-out}
+.cercleCache{height:45px;width:45px;position:absolute;border-radius:50%;background-color:#000;z-index:5}
+@-webkit-keyframes turnCercle{0%{-webkit-transform:rotate(0)}
+100%{-webkit-transform:rotate(10080deg)}
+}
+@keyframes turnCercle{0%{transform:rotate(0)}
+100%{transform:rotate(10080deg)}
+}
+@keyframes run_lf{0%{transform:translateX(-100%);opacity:0}
+100%{transform:translateX(0);opacity:1}
+}
+@-webkit-keyframes run_lf{0%{transform:translateX(-100%);opacity:0}
+100%{transform:translateX(0);opacity:1}
+}
+@keyframes run_rg{0%{transform:translateX(100%);opacity:0}
+100%{transform:translateX(0);opacity:1}
+}
+@-webkit-keyframes run_rg{0%{transform:translateX(100%);opacity:0}
+100%{transform:translateX(0);opacity:1}
+}
+@keyframes loading{0%{opacity:0}
+100%{opacity:1}
+}
+@keyframes run_banner{0%{transform:translateX(-100%)}
+100%{transform:translateX(0)}
+}
+@-webkit-keyframes run_banner{0%{transform:translateX(-100%)}
+100%{transform:translateX(0)}
+}
+@media screen and (max-width:376px){.lead_msg{margin-top:-65%}
+}
+@media screen and (min-width:1025px){::-webkit-scrollbar{width:0}
+html,body{background:0}
+body{background:#e5e5e5 url(images/pc_bg.jpg) no-repeat center fixed}
+.ntes_nav_wrap,.N-nav-bottom{display:block}
+.N-nav-bottom{position:fixed;bottom:0;width:100%}
+.chernobyl_disaster_wrap{background:#f0f0f0;width:500px;margin:0 auto;box-shadow:0 0 30px #000}
+.chernobyl_disaster_content{height:90%;width:500px;margin:0 auto}
+.start_btn{width:10%}
+.lead_msg{margin-top:-10%}
+.logo{width:20%}
+.lead_btn{margin-top:-220px}
+.box{padding:10px 30px}
+.box .video{height:247px}
+.qus_item1,.qus_item2{right:30px}
+.mask{width:500px;margin:0 auto;cursor:pointer;background:#f0f0f0}
+.mask .close{position:absolute;top:6%}
+.share_b{top:6%}
+.wapShareDialog{top:45px !important;width:500px !important;left:50% !important;margin-left:-250px !important}
+#wapShareWrap a{font-size:14px !important}
+}
+

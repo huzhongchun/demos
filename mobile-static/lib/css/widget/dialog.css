@@ -1,0 +1,103 @@
+/*弹出框*/
+#bg{
+    position: fixed;
+    top: -400px;
+    left: 0px;
+    width: 100%;
+    height: 100000px;
+    background-color: black;
+    opacity: 0;
+    z-index: 9999;
+    -webkit-transition: all 0.5s;
+} 
+#flagBox {
+    position: absolute;
+    z-index:2000000;
+    overflow: hidden;
+    width: 284px;
+    background:white;
+}
+
+#container-dialog{
+    position: absolute;
+    top:0px;
+}
+#titleBox {
+    height: 49px;
+    overflow: hidden;
+    color: black;
+    line-height: 49px;
+    border-bottom: solid 1px #ccc;
+} 
+.addGifDialog{
+    background: url(http://images.jumei.com/mobile/act/image/flash/light.gif) no-repeat  !important;
+    background-size:284px 49px !important;
+}
+#titleBox div {
+    font-size: 20px;
+    text-align: center;
+}
+#titleBox .close { 
+    float: right;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: url(http://images.jumei.com/mobile/act/image/flash/close.png) center no-repeat;
+    background-size: 14.5px 14.5px;
+} 
+.close-hover{
+    background: url(http://images.jumei.com/mobile/act/image/flash/close_press.png) no-repeat !important;
+    ackground-size: 14.5px 14.5px !important;
+}
+#contentBox {
+    text-align: left;
+    min-height: 70px;
+    color: black;
+    font-size: 16px;
+    overflow: hidden;
+}
+#buttonBox{
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+}
+#buttonBox .determine{
+    width: 50%;
+    height: 45px;
+    float: right;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    color: #232323;;
+    border-left: 1px solid #ccc;
+    margin-right: -1px;
+    line-height: 45px;
+}
+#buttonBox .cancel{
+    float: left;
+    width: 50%;
+    height: 45px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    color: #232323;;
+    line-height: 45px;
+}
+
+#scroll-list{
+    text-align: left;
+    min-height: 50px;
+    color: black;
+    font-size: 14px;
+    max-height: 210px;
+    overflow: hidden;
+    position: relative;
+    /*                height: 210px;*/
+}
+
+#scroll-content .icon{
+    width: 100%;
+    display: block;
+}

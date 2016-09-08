@@ -1,0 +1,70 @@
+.z300{
+    z-index:300;
+}
+.z301{
+    z-index:301;
+}
+.bee-hack{
+    position: relative;
+    background: #ffd200;
+    height: 2px;
+    top: -3px;
+}
+.bee-game-area{
+    background: #ffd200;
+    min-height:120px;
+}
+.honeycomb{
+    position: relative !important;
+    float: left !important;
+    height: 40px !important;
+    width: 60px !important;
+    margin: -1px 5px 0px !important;
+    padding-top: 20px !important;
+    overflow: hidden !important;
+    background: #ffd200;
+}
+.honeycomb-bg{
+    position: relative;
+    float: left;
+    height: 41px;
+    width: 60px;
+    background: url(http://images.jumei.com/mobile/act/image/widget/bee/honeycomb.png) no-repeat;
+    background-size: 60px 41px;
+    z-index: 1;
+}
+.honeycomb-bottom{
+    position: relative;
+    float: left;
+    margin-top: -10px;
+    height: 10px;
+    width: 60px;
+    background: url(http://images.jumei.com/mobile/act/image/widget/bee/honeycomb-bottom.png) no-repeat;
+    background-size: contain;
+    z-index: 100;
+}
+.bee{
+    position: relative;
+    height: 50px;
+    width: 55px;
+    background: url(http://images.jumei.com/mobile/act/image/widget/bee/bee.png) no-repeat;
+    background-size: cover;
+    -webkit-transform: translate3d(0px,60px,0px);
+    -webkit-transition: -webkit-transform 0.5s ease;
+    z-index: 50;
+}
+.bee.die{
+    height: 50px;
+    width: 55px;
+    background: url(http://images.jumei.com/mobile/act/image/widget/bee/bee-die.png?31222) no-repeat;
+    background-size: cover;
+    -webkit-transition: -webkit-transform 0.3s ease;
+}
+.bee.up{
+    -webkit-transform: translate3d(0px,-20px,0px);
+}
+.bee-game-score-box{
+    font-weight: 900;
+    float: left;
+    left: 67px !important;
+}

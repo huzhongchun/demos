@@ -1,0 +1,157 @@
+
+/****** 话题头图 ******/
+.card-talking-banner-area{
+    background: #fff;
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+}
+.card-talking-banner-area .talking-icon{
+    display: block;
+    width: 50px;
+    height: 58px;
+    background: url("../images/talking_icon.png") transparent center 0 no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #D8D8D8;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 51px;
+    margin: auto;
+}
+
+
+.card-talking-title-area{
+    padding: 16px 32px;
+    font-size: 23px;
+    line-height: 1.5;
+    font-family: 'SongTi',Arial,serif;
+    background: #FFE303;
+    text-align: center;
+}
+
+/****** 话题规则 ******/
+.card-talking-rules-area{
+    padding: 20px 20px 36px;
+    background: url("../images/gap_line_1.png") #fff center bottom no-repeat;
+    background-size: 335px auto;
+}
+.card-talking-rules-area .talking-rules-box{
+    padding: 0 12px;
+    text-align: justify;
+    color: #292929;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.check-history-btn{
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 15px;
+    color: #9B9B9B;
+    padding-right: 15px;
+    background: url("../images/arrow_right.png") right center no-repeat;
+    background-size: 10px 10px;
+}
+
+/****** 话题参与人数 ******/
+.card-talking-count-area{
+    padding: 20px;
+    position: relative;
+    margin-bottom: 10px;
+
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+}
+.card-talking-count-area .join-count{
+    max-width: 53px;
+    font-size: 16px;
+    text-align: center;
+}
+.card-talking-count-area .join-user-list{
+    font-size: 0;
+    max-width: 248px;
+    height: 40px;
+    overflow: hidden;
+}
+.card-talking-count-area .join-user-list .user-head{
+    display: inline-block;
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 40px;
+    background-position: center;
+    background-size: cover;
+}
+.card-talking-count-area .join-user-list .user-head:last-child{
+    margin-right: 0;
+}
+.card-talking-count-area .check-more-btn{
+    display: block;
+    width: 14px;
+    height: 40px;
+    background: url("../images/arrow_right_1.png") 0 center no-repeat;
+    background-size: 100% auto;
+}
+
+
+
+/****** 话题feed ******/
+.talk-message-text{
+    padding-bottom: 20px;
+    font-family: 'SongTi',Arial,serif;
+    font-size: 15px;
+    color: #8E8E8E;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+/****** 话题精选 ******/
+.card-choice-message-area{
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.card-choice-message-area .check-more-choice-btn{
+    font-size: 15px;
+    color: rgba(41,41,41,.5);
+    text-align: center;
+    padding-top: 20px;
+}
+/****** 话题最新 ******/
+.card-newest-message-area{
+    padding: 20px;
+    background: #fff;
+}
+.no-more-content{
+    width: 100%;
+    background: #f9f9f9;
+    font-size: 14px;
+    color: #8E8E8E;
+    padding: 26px 0;
+    text-align: center;
+}
+
+
+.publish-btn{
+    display: block;
+    width: 55px;
+    height: 75px;
+    background: url("../images/publish_icon.png") center no-repeat;
+    background-size: 100% auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 3;
+}
+
+

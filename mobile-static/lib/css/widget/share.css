@@ -1,0 +1,47 @@
+/*分享*/
+#share-module{
+    background: white;
+    position: fixed;
+    bottom: 0px;
+    width: 320px;
+    height: 150px;
+    -webkit-transform: translate3d(0px,150px,0px);
+    -webkit-transition: -webkit-transform 0.5s ease;
+    z-index: 1002;
+}
+#share-module.share-show{
+    -webkit-transform: translate3d(0px,0px,0px);
+}
+#share-module.share-hide{
+    -webkit-transform: translate3d(0px,150px,0px);
+}
+#share-module a img{
+    display: block;
+    width: 60px;
+}
+#share-module a{
+    margin:0px 10px;
+    display: inline-block;
+}
+
+#share-module-wrapper {
+    margin: 0px auto 14px;
+    padding-top:15px;
+    text-align: center;
+    height:78px;
+}
+#share-module .close-share{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-top: solid 1px gray;
+}
+#share-module-bg{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background: rgba(0,0,0,0.3);
+}

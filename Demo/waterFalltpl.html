@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            #waterFall .show-area{
+                width: 318px;
+                overflow: scroll;
+                border: 1px solid #56ace7;
+                margin-bottom: 10px;
+            }
+            #waterFall #boxs{
+                position: relative;
+            }
+            #waterFall #boxs img{
+                width: 100%;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="scale-wrapper">
+        <div id="waterFall">
+            <p class="font-weight">组件名称：瀑布流</p>
+            <div class="show-area">
+                <div id="boxs">
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+                    <div class="cell"><img src="http://ms0.jmstatic.com/beauty/image/back_top@2x.png"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/2-2.jpg"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/1-1.jpg?38"></div>
+                    <div class="cell"><img src="http://images.jumei.com/mobile/act/activities/2014_11/laxia/1-4.png?38"></div>
+                    <div class="cell"><img src="http://p0.jmstatic.com/mcms/5-690.jpg"></div>
+                    <div class="cell"><img src="http://p0.jmstatic.com/mcms/5-19.jpg"></div>
+                    <div class="cell"><img src="http://p0.jmstatic.com/mcms/640x3211111111122110-%E6%AD%A3%E5%BC%8F.jpg"></div>
+                </div>
+            </div>
+
+        </div>
+</div>
+    <script type="text/javascript" src="./js/zepto.js"></script>
+    <script type="text/javascript" src="./js/waterFall.js"></script>
+    <script type="text/javascript">
+    var waterFall = new waterFallObject({
+        'id':'boxs',
+        'columnWidth': 30,
+        'columnGap': 10,
+        'hasSetImgHeight':true,
+        'insertType': 2,
+        'fadeinTime': 600
+    });
+    </script> 
+</body>
+</html>

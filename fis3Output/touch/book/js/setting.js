@@ -1,0 +1,1 @@
+require(["book/js/public"],function(i){var o=i;o.setWxShareContent(),window._public=o,o.settingDialog.init({autoShow:!0})});

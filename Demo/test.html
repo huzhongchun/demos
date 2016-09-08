@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <!-- <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> -->
+        <meta name="format-detection" content="telephone=no"/>
+        <link rel="stylesheet" type="text/css" href="./css/base.css">
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <title>排序</title>
+        <style type="text/css">
+            li{
+                font-size: 12px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="scale-wrapper">
+            <ul>
+
+            </ul>
+        <div>
+        <script src="./js/zepto.js"></script>
+        <script src="./list.js"></script>
+        <script type="text/javascript">
+        var list = list;
+        var A = [],B = [];
+            for (var i = 0; i < list.length; i++) {
+                A.push(list[i].split(',')[0]);
+                B.push(list[i].split(',')[1]);
+
+            }
+            for (var i = 0; i < B.length; i++) {
+                $('ul').append('<li>'+B[i]+'</li>')
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+

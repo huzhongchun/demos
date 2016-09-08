@@ -1,0 +1,490 @@
+/*-----css Reset end-----*/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,form{
+    margin:0;
+}
+body,html{
+    background: #cc2a1e;
+}
+body{
+    font-family: "Microsoft YaHei";
+    font-size: 100%;
+    margin: 0px auto;
+}
+img{
+    border: 0px solid;
+    padding: 0px;
+    margin: 0px;
+}
+input,textarea,select{
+    font-size:100%;    
+    font-family:arial;
+    font-family:inherit;
+}
+h4,h5,h6{
+    font-size:1em;
+}
+ul,ol{
+    padding-left:0; 
+    list-style-type:none;
+}
+table{
+    border-left: 1px solid #d4ea1d; 
+    border-bottom: 1px solid #d4ea1d;
+}
+td{
+    border-right:1px solid #d4ea1d;
+    border-top: 1px solid #d4ea1d;
+}
+a img{
+    border:0;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+img{
+    border:0;
+    text-decoration: none;
+}
+/*清楚浮动*/
+.clearfloat:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0
+}
+body{
+    font-family: "helvetica","Arial","微软雅黑","Microsoft Yahei","hiragino kaku gothic pro","meiryo","ms pgothic","sans-serif";
+    font-size: 100%;
+    display: none;
+}
+#wrapper{
+    width:320px;
+    margin: 0px auto;
+}
+/*-----css content start-----*/
+header img{
+    width:100%;
+    margin:0px auto 0px;
+    display:block;
+}
+
+
+
+/*title 区域*/
+.title-section{
+    height: 118px;
+    background: #cc2a1e;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+.title-section .title{
+    text-align: center;
+}
+.fangwei-rule{
+    width: 188px;
+    height: 30px;
+    border: solid 1px white;
+    border-radius: 3px;
+    margin: 14px auto;
+    line-height: 30px;
+    background: url(hongbao/image/arrow_right.png) 174px center no-repeat;
+    background-size: 8px 15px;
+    padding-right: 5px;
+}
+.fangwei-rule a{
+    color: white;
+    font-size: 14px;
+}
+.total-redbag{
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    margin: 0px auto;
+    width: 246px;
+    text-align: center;
+    margin-top: 5px;
+}
+.total-redbag>span{
+    background: #cc2a1e;
+    display: inline-block;
+    z-index: 100;
+    position: relative;
+    padding: 0px 10px;
+}
+.line{
+    position: absolute;
+    top: 10px;
+    border-top: solid 1px #a92016;
+    width: 100%;
+    z-index: 99;
+}
+
+
+
+/*红包*/
+.red-bag{
+    height: 69px;
+}
+.red-bag li{
+    float: left;
+    width: 50%;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    background: url(hongbao/image/redbag_bg.png) no-repeat;
+    background-size: 100% 100%;
+    font-size: 21px;
+    height: 69px;
+    padding-top: 8px;
+    color: white;
+    position: relative;
+}
+.red-bag ul li:first-child{
+    border-right:solid 1px #780800; 
+}
+.fs13{
+    font-size: 13px;
+}
+.right-num{
+    padding-right: 48px;
+    padding-left: 28px;
+    text-align: left;
+    margin-top: 5px;
+}
+.look-redbag{
+    position: absolute;
+    top: 34px;
+    right: 22px;
+    font-size: 12px;
+    height: 18px;
+    padding: 0px 7px;
+    border: solid 1px white;
+    border-radius: 4px;
+    line-height: 16px;
+    -webkit-box-sizing: border-box;
+}
+
+
+/*广告*/
+.advertiser{
+    height: 38px;
+    color: #650d06;
+    padding-left: 20px;
+    background: url(hongbao/image/lama_icon.png) #b7261a 10px center no-repeat;
+    background-size: 20px 19px;
+    position: relative;
+}
+.carouse-text {
+    text-align: left;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 18px;
+    text-align: left;
+    position: relative;
+    top:10px;
+    left:0px;
+    width: 100000px;
+    // margin-left:10px;
+}
+.carouse-text span {
+    font-size: 12px;
+    display: block;
+    float: left;
+}
+.news{
+    height:38px;
+    margin-left: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+/*底部菜单*/
+.fix-bottom{
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+    background: #a92318;
+    height:48px;
+    left:0px;
+}
+.fix-bottom ul{
+    height: 48px;
+}
+.fix-bottom ul li{
+    float: left;
+    width: 33.333333%;
+    color: white;
+    -webkit-box-sizing: border-box;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    padding-left: 13px;
+}
+.fix-bottom ul li:nth-child(2){
+    border-left: solid 1px #c8291d;
+    border-right: solid 1px #c8291d;
+}
+.fix-bottom ul li:nth-child(1){
+    background: url(hongbao/image/merge_icon.png) 13px center no-repeat;
+    background-size: 14px 20px;
+}
+.fix-bottom ul li:nth-child(2){
+    background: url(hongbao/image/rule_icon.png) 13px center no-repeat;
+    background-size: 14px 17px;
+}
+.fix-bottom ul li:nth-child(3){
+    background: url(hongbao/image/code_icon.png) 7px center no-repeat;
+    background-size: 17px 17px;
+}
+
+
+#continue-buy,#share-weixin{
+    width: 278px;
+    height:29px;
+    margin:0px auto;
+    font-size: 14px;
+    color: white;
+    border:solid 1px white;
+    border-radius: 3px;
+    margin-top: 13px;
+    line-height: 29px;
+}
+#share-weixin{
+    background: #ffdb4b;
+    color: #901007;
+    border: solid 1px #ffdb4b;
+}
+#bottom-btn{
+    padding-bottom: 80px;
+}
+
+
+
+
+/*商品*/
+#product-code ul li{
+    height: 111px;
+    border-bottom: solid 1px #8c130a;
+    padding: 15px 17px 5px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+}
+#more-btn{
+    border-bottom: solid 1px #8c130a;
+    text-align: center;
+    height:24px;
+    color:white;
+    font-size: 14px;
+    padding: 5px 0px;
+    line-height: 24px;
+}
+
+.li-img{
+    height: 88px;
+    width: 88px;
+    position: absolute;
+    top:15px;
+    left:17px;
+}
+.li-img .product-img{
+    width: 88px;
+    height:88px;
+}
+.fangwei-icon{
+    position: absolute;
+    top:0px;
+    left:6px;
+    width: 18px;
+}
+.li-content{
+    margin-left: 101px;
+    height:88px;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    position: relative;
+}
+.li-price{
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+}
+.product-price{
+    font-size: 24px;
+}
+.get-bag{
+    float: right;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    border:solid 1px white;
+    border-radius: 3px;
+    text-align:center;
+    font-size: 13px;
+    
+}
+#product-code ul{
+    height:555px;
+    overflow:hidden;
+}
+.overflow-auto{
+    overflow:auto !important;
+}
+
+
+/*没有商品展示*/
+#none-product{
+    color:white;
+    font-size:14px;
+    padding-top:13px;
+}
+.none-product-img img,.start-buy-btn img{
+    width:197px;
+    display: block;
+    margin:0px auto;
+}
+.none-product-img{
+    margin-top:8px;
+}
+.start-buy-btn{
+    margin-top:5px;
+}
+.start-buy-desc{
+    margin-top:13px;
+}
+
+
+
+/*此页面公用的弹窗*/
+
+
+#titleBox{
+    display: none;
+}
+#flagBox{
+    overflow: auto;
+    background: #ef4040;
+    border-radius: 5px;
+    overflow: visible;
+}
+#contentBox{
+    overflow: visible;
+}
+.common-dialog{
+    text-align: center;
+    position: relative;
+    padding-top: 44px;
+    color: white;
+    overflow: visible;
+}
+.common-title-bg{
+    position: absolute;
+    right: 10px;
+    top:-55px;
+    width: 257px;
+    height: 82px;
+    background: url(hongbao/image/common_title_bg.png) no-repeat;
+    background-size: 257px 82px;
+}
+.common-close{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    background: url(hongbao/image/common_close.png) center center no-repeat;
+    background-size: 19px 19px;
+    z-index: 500000;
+}
+.common-content{
+    padding: 10px 8px 15px;
+}
+
+
+/*登录的弹出框*/
+#none-account,#now-login{
+    float: left;
+    margin:10px 10px;
+    border:solid 1px white;
+    border-radius: 5px;
+    width: 100px;
+    height:30px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 30px;
+}
+
+
+/*分享弹出框*/
+#share-friend,#share-pengyouquan{
+    width:76px;
+    height:71px;
+    float: left;
+    font-size: 12px;
+    margin: 0px 23px 15px;
+}
+#share-pengyouquan{
+    
+}
+.kaiqiang-text{
+    color:#404040;
+    font-size:12px;
+    display: none;
+}
+#share-friend-icon,#share-pengyouquan-icon{
+    width:42px;
+    height:42px;
+    margin: 5px auto;
+}
+#share-friend-icon{
+        background: url(hongbao/image/weixin_icon.png) no-repeat;
+    background-size: 42px 42px;
+}
+#share-pengyouquan-icon{
+        background: url(hongbao/image/pengyouquan_icon.png) no-repeat;
+    background-size: 42px 42px;
+}
+
+/*获取红包探矿*/
+
+.getbag-tip{
+    color:#404040;
+    font-size: 12px;
+}
+.getbag-share{
+    color: white;
+    font-size: 14px;
+    width: 215px;
+    height: 30px;
+    padding-left: 20px;
+    background: url(hongbao/image/fenxiang.png) 28px center no-repeat;
+    background-size: 24px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: solid 1px white;
+    margin: 3px auto 10px;
+    line-height: 30px;
+}
+
+
+.animate-num{
+    width: 100px;
+    text-align: center;
+    margin: 0px;
+    position: fixed;
+    left: 110px;
+    color: white;
+    font-size: 20px;
+    z-index: 100000;
+}
+.common-tip{
+    padding-bottom: 10px;
+    font-size: 13px;
+    margin-top: -20px;
+    padding: 0px 20px 10px;
+}

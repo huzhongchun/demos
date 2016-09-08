@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=320,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="address=no">
+        <link rel="stylesheet" type="text/css" href="./css/base.css">
+        <title>标题</title>
+    </head>
+
+	<body>
+		<div id="scale-wrapper">
+			<header class="top-title-area  clearfloat">
+				<span class="left-function-btn fl history-back"></span>
+				<div class="middle-title fl">
+					test
+				</div>
+				<span class="right-function-btn fl"></span>
+			</header>
+			<div>
+				<img class="get-img" src="" style="display:block;width:100%;height:auto;">
+				<input type="file" accept="image/*" class="get-file"  value="点击拍照"> <!--multiple  属性支持添加多个文件-->
+				<div class="files-list"></div>
+			</div>
+			
+		</div>
+        <script type="text/javascript" src="./js/zepto.js"></script>
+        <script type="text/javascript">
+       	$(function(){
+       		//第一步：检测浏览器是否支持
+       		function isSupportFileApi() {
+			    if(window.File && window.FileList && window.FileReader && window.Blob) {
+			        return true;
+			    }
+			    return false;
+			}
+			if(!isSupportFileApi()){
+				console.log('您的浏览器不支持FileAPI');
+				return false;
+			}
+       		// $('.get-file1111').on('change',function(e){
+       		// 	var files = this.files;
+       		// 	for (var i = 0; i < files.length; i++) {
+       		// 		$('.files-list').append('<p>'+files[i].name+'_'+files[i].type+'_'+files[i].size+'</p>')
+       		// 	}
+       		// 	for (var i = 0; i < files.length; i++) {
+       		// 		//DataURL,base64
+       		// 		var reader1 = new FileReader();
+       		// 		reader1.readAsDataURL(files[i]);
+       		// 		reader1.onload = function(){
+       		// 			console.log(this);
+       		// 			$('.get-img').attr('src',this.result);
+       		// 		}
+
+       		// 		//二进制 ,只能设置一种方式的读取格式，一旦设置之后，后面设置无效，所以下面的console仍然是DataURL
+       		// 		//如果需要以二进制上传的话，预览只能等服务器返回图片链接之后才行
+       		// 		var reader2 = new FileReader();
+       		// 		reader2.readAsDataURL(files[i]);
+       		// 		reader2.onload = function(){
+       		// 			console.log(this.result);
+       		// 		}
+       		// 	};
+       		// })
+
+       		F.addWidget('uploadImg',(function(w,$,F){
+       			var uploadImgObject = function(dom,options){
+       				this.settings = $.extend({
+       					postLink: null,
+       					readeFileType: 'bs', //默认二进制readAsBinaryString，其他可选readAsDataURL，readAsText，readAsArrayBuffer
+                        successCallback: function(){}, //图片上传成功后的回调函数
+       				},options);
+       				this.dom = $(dom);
+       				this.init();
+       			}
+       			uploadImgObject.prototype = {
+       				constructor: uploadImgObject,
+       				init: function(){
+       					this.addEvent();
+       				},
+       				addEvent:function(){
+       					var self = this,opt = this.settings;
+       					$(self.dom).on('change',function(e){
+       						var file = this.files[0];
+       						//当前文件的大小
+       						self.fileSize = file.size / 1024;//单位kb
+       						var reader = new FileReader;
+       						switch(opt.readeFileType){
+       							case 'bs':
+       								reader.readAsBinaryString(file);
+       								break;
+   								case 'du':
+   									reader.readAsDataURL(file);
+   									break;
+								case 'tx':
+									reader.readAsText(file);
+									break;
+								case 'ab':
+									reader.readAsArrayBuffer(file);
+								default:
+       								reader.readAsDataURL(file);
+									break;
+       						}
+       						//二进制
+       						reader.onload = function(){
+       							var resultString = this.result;
+                                self['dataURL'] = resultString;
+                                $('.get-img').attr('src',resultString);
+       							//self.postImgData(resultString);
+       						}
+       						reader.onerror = function(){
+       							alert('读取文件失败了，请重试！')
+       						}
+       					})
+       				},
+                    getImgDataUrl: function(){
+                        return this.dataURL;
+                    },
+       				postImgData: function(binaryString){
+       					var self = this,opt = this.settings;
+       					if(opt.postLink){
+       						$.ajax({
+       							url: opt.postLink,
+       							type: 'get',
+                                dataType: 'jsonp',
+       							data: binaryString,
+                                jsonp:'callback',
+       							success: function(data){
+       								//服务器返回图片地址
+                                    console.log(data);
+                                    opt.successCallback.call(this,data);
+       							},
+       							error: function(){
+       								alert('图片上传失败~')
+       							}
+       						})
+       					}
+       				}
+       			}
+
+				return uploadImgObject;
+
+       		})(window,Zepto,F))
+
+    		window.imgFile = new F.widget.uploadImg('input',{
+                postLink:'http://www.biyeyuan.com/jsonp/test/ajax',
+                readeFileType: 'du',  //二进制数据发送有问题 ---todo
+            })
+
+       	})
+
+       </script>
+	</body>
+</html>
+

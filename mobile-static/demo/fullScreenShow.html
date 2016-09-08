@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=320,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <link rel="stylesheet" type="text/css" href="../lib/css/widget/fullScreenShow.css">
+        <title>全屏展示组件</title>
+        <style>
+            /*-----css Reset end-----*/
+            body,h1,h2,h3,h4,h5,h6,p,ul,ol,form{
+                margin:0;
+            }
+            body,html{
+                background: #ebebeb;
+            }
+            body{
+                font-family: "Microsoft YaHei";
+                font-size: 100%;
+                margin: 0px auto;
+                display: none;
+            }
+            img{
+                border: 0px solid;
+                padding: 0px;
+                margin: 0px;
+            }
+            input,textarea,select{
+                font-size:100%;
+                font-family:arial;
+                font-family:inherit;
+            }
+            h4,h5,h6{
+                font-size:1em;
+            }
+            ul,ol{
+                padding-left:0; 
+                list-style-type:none;
+            }
+            table{
+                border-left: 1px solid #d4ea1d;
+                border-bottom: 1px solid #d4ea1d;
+            }
+            td{
+                border-right:1px solid #d4ea1d;
+                border-top: 1px solid #d4ea1d;
+            }
+            a img{
+                border:0;
+                text-decoration: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            /*清楚浮动*/
+            .clearfloat:after{
+                display:block;
+                clear:both;
+                content:"";
+                visibility:hidden;
+                height:0
+            }
+            #wrapper{
+                width:320px;
+                margin: 0px auto;
+            }
+            /*-----css content start-----*/
+            .code-boxs{
+                width: 318px;
+                overflow: scroll;
+                border: 1px solid #56ace7;
+                margin-bottom: 10px;
+            }
+            .show-area{
+                width: 318px;
+                border: 1px solid #56ace7;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            xmp{
+                display: block;
+                font-size: 12px;
+                color: #6d6b6b;
+            }
+            .widget-des-area{
+                width: 100%;
+                font-size: 12px;
+            }
+            .widget-des-area p{
+                padding: 5px;
+                letter-spacing: 1px;
+                word-break: break-all;
+            }
+            .font-weight{
+                font-size: 14px;
+                font-weight:bold;
+
+            }
+            .content{
+                text-indent: 28px;
+                line-height: 15px;
+            }
+            .title{
+                padding: 5px;
+                background: #ccc;
+            }
+            .change-btn{
+                background: #56ace7;
+                font-size: 14px;
+                padding: 5px;
+                height: 15px;
+                line-height: 15px;
+                border-radius: 8px;
+                text-align: center;
+                color: #E3D9D9;
+                letter-spacing: 1px;
+            }
+            .height0{
+                height: 0 !important;
+                overflow: hidden;
+            }
+            .font-weight{
+                padding: 5px;
+            }
+            /**new css*/
+            .hide{
+                display: none;
+            }
+            .close{
+                display: inline-block;
+                position: fixed;
+                top: 5px;
+                right:5px;
+                background: #000;
+                border-radius:10px;
+                color: #fff;
+                font-size: 10px;
+                padding: 5px;
+                line-height: 20px;
+                text-align: center;
+                z-index: 22222222;
+            }
+            .full-bg-1{
+                background: url(http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/banner.jpg?38) top center no-repeat;
+                background-size: 100% auto;
+            }
+            .full-bg-2{
+                background: url(http://r3.sinaimg.cn/2/2014/1120/d0/5/69501711/480x852x100x0.jpg?38) top center no-repeat;
+                background-size: 100% auto;
+            }
+            .full-bg-3{
+                background: url(http://r3.sinaimg.cn/2/2014/1120/32/3/57500968/480x852x100x0.jpg) top center no-repeat;
+                background-size: 100% auto;
+            }
+            .full-bg-4{
+                background: url(http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/banner.jpg?38) top center no-repeat;
+                background-size: 100% auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="close">点击显示隐藏组件效果</div>
+            <div id="full-screen-container">
+                <div class="full-bg-1 "></div>
+                <div class="full-bg-2 "></div>
+                <div class="full-bg-3 "></div>
+                <div class="full-bg-4 "></div>
+                <div class="full-bg-3 "></div>
+                <div class="full-bg-4 "></div>
+            </div>
+            <p class="font-weight">组件名称：全屏展示</p>
+            <div class="show-area">
+
+            </div>
+            <div class="change-btn">点击展开详细使用说明</div>
+            <div id="container" class="height0">
+                <div class="widget-des-area">
+                    <p class="font-weight">说明：</p>
+                    <p class="content">
+                        <!--各个参数说明 <p>（类型） key: key值</p>-->
+                    <P>(string) id: 展示元素的父元素id，默认：'full-screen-container'</p>
+                    <P>(int) index: 展示第几个条目，默认：0 </p>
+                    <P>(boolean) isShowTips: 是否显示提示：默认：true</p>
+                    <P>(string) tipsMessages: 提示的文案，默认：'向上滑动'</p>
+                    <P>(int) backMaxLength: 自动滑动的阈值，默认：100</p>
+                    <P>(num) animateTime: 动画的时间，默认：0.4</p>
+                    <p>(function) animateEndCallback : 动画完成后的回调函数，默认：无</p>
+                    </p>
+                    <p class="font-weight">注意：</p>
+                    <p class="content">
+                        <!--注意事项-->     屏幕大小会影响展示效果。
+                    </p>
+                </div>
+                <div class="code-area">
+                    <div class="title">HTML</div>
+                    <div class="code-boxs code-html">
+                        <xmp>
+                            <!--HTML-->
+                            <div id="full-screen-container">
+                                <div class="full-bg-1 "></div>
+                                <div class="full-bg-2 "></div>
+                                <div class="full-bg-3 "></div>
+                                <div class="full-bg-4 "></div>
+                                <div class="full-bg-3 "></div>
+                                <div class="full-bg-4 "></div>
+                            </div>
+                        </xmp>
+                    </div>
+                    <div class="title">CSS样式</div>
+                    <div class="code-boxs code-css">
+                        <xmp>
+                            <!--CSS-->
+                            <link rel="stylesheet" type="text/css" href="../lib/css/widget/fullScreenShow.css">
+
+                            .full-bg-1{
+                            background: url(http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/banner.jpg?38) top center no-repeat;
+                            background-size: 100% auto;
+                            }
+                            .full-bg-2{
+                            background: url(http://r3.sinaimg.cn/2/2014/1120/d0/5/69501711/480x852x100x0.jpg?38) top center no-repeat;
+                            background-size: 100% auto;
+                            }
+                            .full-bg-3{
+                            background: url(http://r3.sinaimg.cn/2/2014/1120/32/3/57500968/480x852x100x0.jpg) top center no-repeat;
+                            background-size: 100% auto;
+                            }
+                            .full-bg-4{
+                            background: url(http://images.jumei.com/mobile/act/activities/2014_11/laxiazhengshi/banner.jpg?38) top center no-repeat;
+                            background-size: 100% auto;
+                            }
+                        </xmp>
+                    </div>
+                    <div class="title">Javascript调用</div>
+                    <div class="code-boxs code-js">
+                        <xmp>
+                            <!--Javascript-->
+                            var fullScreenShow = Jumei.getModule('ui.fullScreenShow');
+                            var fullScreenShowObj = new fullScreenShow({
+                            id: 'full-screen-container',
+                            index: 0,
+                            isShowTips: true,
+                            tipsMessages: '向上滑动',
+                            backMaxLength: 100,
+                            animateTime: 0.4
+                            });
+                        </xmp>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../lib/js/framework/zepto.js"></script>
+        <script src="../lib/js/framework/base.js"></script>
+        <script src="../lib/js/widget1.0/fullScreenShow.js?"></script>
+        <script>
+            $(function() {
+                $('.change-btn').on('click', function(e) {
+                    $('#container').toggleClass('height0');
+                });
+                $('.close').on('click', function(e) {
+                    $('#full-screen-container').toggleClass('hide');
+                    $('.tips').toggleClass('hide');
+                });
+                // code...
+                var fullScreenShow = Jumei.getModule('ui.fullScreenShow');
+                var fullScreenShowObj = new fullScreenShow({
+                    id: 'full-screen-container',
+                    index: 0,
+                    isShowTips: true,
+                    tipsMessages: '向上滑动',
+                    backMaxLength: 100,
+                    animateTime: 0.4,
+                    animateEndCallback: function(index) {
+                        console.log(index);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+

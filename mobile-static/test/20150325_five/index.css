@@ -1,0 +1,275 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,form{
+    margin:0;
+}
+body,html{
+    background: #ebebeb;
+}
+body{
+    font-family: "Arial";
+    font-size: 100%;
+    margin: 0px auto;
+    display: none;
+    -webkit-font-smoothing: antialiased;
+}
+img{
+    border: 0px solid;
+    padding: 0px;
+    margin: 0px;
+}
+input,textarea,select{
+    font-size:100%;
+    font-family:arial;
+    font-family:inherit;
+}
+h4,h5,h6{
+    font-size:1em;
+}
+ul,ol{
+    padding-left:0; 
+    list-style-type:none;
+}
+table{
+    border-left: 1px solid #d4ea1d;
+    border-bottom: 1px solid #d4ea1d;
+}
+td{
+    border-right:1px solid #d4ea1d;
+    border-top: 1px solid #d4ea1d;
+}
+a img{
+    border:0;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+/*清楚浮动*/
+.clearfloat:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0
+}
+body{
+	background: #fff;
+    min-width: 1366px;
+}
+img{
+	display: block;
+}
+.head{
+	min-width: 1366px;
+}
+.head img{
+	width: 100%;
+}
+.module-box{
+	min-width: 1366px;
+	width: 100%;
+}
+.module-title{
+	width: 100%;
+}
+.module-title img{
+	width: 100%;
+}
+.weight-txt {
+	font-size: 1.8em;
+	padding-top: 10px;
+	font-weight: bold;
+}
+.normal-txt {
+	font-size: 1.2em;
+	padding: 1%;
+}
+.module-content{
+	width: 1210px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+.border-all{
+	border: 1px solid #a2a2a2;
+}
+.border-bottom{
+	border-bottom: 1px solid #a2a2a2;
+}
+.img-2{
+	width: 938px;
+	height: auto;
+	margin:0 auto;
+}
+.img-4{
+	width: 1155px;
+	height: auto;
+	margin:0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.brand-list-box{
+    width: 1152px;
+    height: 775px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 5;
+}
+.brand-list-item{
+    width: 143px;
+    height: 85px;
+    float: left;
+}
+.brand-list-area{
+	width: 1155px;
+	height: 780px;
+	margin:0 auto;
+    position: relative;
+}
+.img-5{
+	width: 1165px;
+	height: auto;
+	margin:0 auto;
+}
+.img-6{
+	width: 1187px;
+	height: auto;
+	margin:0 auto;
+}
+.img-7{
+	width: 1189px;
+	height: auto;
+	margin:0 auto;
+}
+.img-8{
+	width: 1187px;
+	height: auto;
+	margin:0 auto;
+}
+.img-9{
+	width: 1183px;
+	height: auto;
+	margin:0 auto;
+}
+.img-10{
+	width: 1186px;
+	height: auto;
+	margin:0 auto;
+}
+.img-10{
+	width: 1183px;
+	height: auto;
+	margin:0 auto;
+}
+.img-second{
+	width: 1136px;
+	height: auto;
+	margin:0 auto;
+}
+.img-third{
+	width: 1176px;
+	height: auto;
+	margin:0 auto;
+}
+.img-fourth{
+	width: 1170px;
+	height: auto;
+	margin:0 auto;
+}
+.top-nav-box{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	position:relative;
+}
+.fixed{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+}
+.box-middle{
+	display: inline-block;
+}
+.nav-item{
+	float: left;
+	display: block;
+	width: 50px;
+	height: 50px;
+}
+.active .item-txt{
+	background: red;
+}
+.outer-box{
+	width: 100%;
+	height: 50px;
+}
+.brand-allow-area{
+	position: relative;
+}
+.brand-allow-card-box{
+	width: 820px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.brand-item{
+	width: 100%;
+	padding: 20px 0;
+	float: left;
+}
+.brand-item img{
+	width: auto;
+	margin: 0 auto;
+}
+.btn-prev{
+	width: 47px;
+	height: 107px;
+	position: absolute;
+	top: 45%;
+	left: 15%;
+	background: url(./img/btn-left-bg.jpg) center no-repeat;
+	background-size: 47px auto;
+}
+.btn-next{
+	width: 47px;
+	height: 107px;
+	position: absolute;
+	top: 45%;
+	right: 15%;
+	background: url(./img/btn-right-bg.jpg) center no-repeat;
+	background-size: 47px auto;
+}
+.brand-bottom-tab-box{
+	min-width: 1210px;
+	text-align: center;
+	margin: 5% 0;
+}
+.tab-item{
+	display: block;
+	float: left;
+	font-size: 1.2em;
+	padding: 10px 20px;
+	background: #373737;
+	color: #fff;
+	border-right: 1px solid #6f6f6f;
+}
+.tab-item:last-child{
+	border-right: none;
+}
+.set-width-box{
+	/*min-width: 1366px;*/
+	text-align:center;
+}
+
+.bg-icon-1{
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url(./img/menu_bg.png) no-repeat;
+	background-size: 1166px auto;
+	background-position: 20px 100px;
+}
+.ative .bg-icon-1{
+	background-position: 20px 100px;
+}

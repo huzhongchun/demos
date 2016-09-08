@@ -1,0 +1,74 @@
+<style>
+    #loadding .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+        height: auto;
+    }
+    #loadding .dialog-btn{
+        width: 158px;
+        padding: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+        letter-spacing: 2px;
+        line-height: 16px;
+        background: #ed145b;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        float: left;
+        line-height: 30px;
+    }
+    #loadding .change-btn{
+        margin-bottom: 40px;
+    }
+</style>
+<div id="loadding">
+    <p class="font-weight">组件名称：loadding提示</p>
+    <div class="show-area">
+        <div class="dialog-wenben">
+            <div class="loadding-btn open">开启</div>
+             <div class="loadding-btn close">关闭</div>
+        </div>
+
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="loadding-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>(string) src: loadding图片url,</p>
+            <p>(int) width: 默认loadding图片宽度,</p>
+            <p>(int) height: 默认loadding图片宽度,</p>
+            <p>(bool) scrollFlag://是否有scroll滑动，默认有。可以设置为false
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+//初始化    
+var loadding = Jumei.getModule('ui.loadding');
+var loaddingObj = new loadding();
+//开启
+loaddingObj.show();
+//关闭
+loaddingObj.close();
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

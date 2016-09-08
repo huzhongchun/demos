@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="address=no">
+        <link rel="stylesheet" type="text/css" href="./framework/css/lib/base.css">
+        <link rel="stylesheet" type="text/css" href="./css/page_1.css">
+        <title>请柬</title>
+    </head>
+    <body>
+       <div id="scale-wrapper">
+           <div class="bg-box-1"></div>
+           <div class="bg-box-2"></div>
+           <div class="bg-box-3"></div>
+
+           <div class="content-area">
+                <div class="content-box">
+                    <div class="title-img"></div>
+                    <div class="img-box">
+                        <img src="./images/photo_2.png">
+                    </div>
+                </div>
+               <div class="cover-img-box"></div>
+
+               <div class="comment-box">
+                   <div class="comment-list">
+                       <div class="comment-cover-img"></div>
+                       <div class="comment-item">
+                           <span class="user-head" style="background-image: url(./images/head.png)"></span>
+                           <div class="user-info">
+                               <span class="user-nick">hahha</span>
+                               <span class="user-comment">
+                                   不错的哇哇!
+                               </span>
+                           </div>
+                       </div>
+                       <div class="comment-item">
+                           <span class="user-head" style="background-image: url(./images/head.png)"></span>
+                           <div class="user-info">
+                               <span class="user-nick">hahha</span>
+                               <span class="user-comment">
+                                   不错的哇哇!
+                               </span>
+                           </div>
+                       </div>
+                       <div class="comment-item">
+                           <span class="user-head" style="background-image: url(./images/head.png)"></span>
+                           <div class="user-info">
+                               <span class="user-nick">hahha</span>
+                               <span class="user-comment">
+                                   不错的哇哇!
+                               </span>
+                           </div>
+                       </div>
+                       <div class="comment-item">
+                           <span class="user-head" style="background-image: url(./images/head.png)"></span>
+                           <div class="user-info">
+                               <span class="user-nick">hahha</span>
+                               <span class="user-comment">
+                                   不错的哇哇!
+                               </span>
+                           </div>
+                       </div>
+                       <div class="comment-item">
+                           <span class="user-head" style="background-image: url(./images/head.png)"></span>
+                           <div class="user-info">
+                               <span class="user-nick">hahha</span>
+                               <span class="user-comment">
+                                   不错的哇哇!
+                               </span>
+                           </div>
+                       </div>
+                       <div class="comment-item">
+                           <span class="user-head" style="background-image: url(./images/head.png)"></span>
+                           <div class="user-info">
+                               <span class="user-nick">hahha</span>
+                               <span class="user-comment">
+                                   不错的哇哇!
+                               </span>
+                           </div>
+                       </div>
+                       <div class="comment-item">
+                           <span class="user-head" style="background-image: url(./images/head.png)"></span>
+                           <div class="user-info">
+                               <span class="user-nick">hahha</span>
+                               <span class="user-comment">
+                                   不错的哇哇!
+                               </span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="bottom-box">
+                   <div class="bottom-img"></div>
+               </div>
+           </div>
+
+           <span class="join-btn"></span>
+       </div>
+       <script src="./framework/js/lib/zepto.js"></script>
+       <script src="./framework/js/widget/refreshLoad.js"></script>
+        <script>
+            $(function () {
+                $('.join-btn').on('click',function () {
+                    location.href = 'page_2.html';
+                });
+
+                var page = 1 ,totalPage = 2;
+                var load = new F.widget.refreshLoad({
+                    triggerLen: 400,
+                    callback: function () {
+                        if(page < totalPage){
+                            page++;
+                            ajaxLoadFunc();
+                        }else{
+                            load.changeFlag();
+                        }
+                    }
+                });
+                
+                function ajaxLoadFunc() {
+                    $.ajax({
+                        url:'http://www.biyeyuan.com/wedding/index/get_list',
+                        type: 'post',
+                        data: {page: page},
+                        success: function (data) {
+                            if(data.code == 0){
+                                page = data.result.page;
+                                totalPage = data.result.page_count;
+                                var itemList = data.result.item_list;
+                                for(var i = 0;i < itemList.length;i++){
+                                    var item = itemList[i];
+                                    var tpl = '<div class="comment-item">'+
+                                            '<span class="user-head" style="background-image: url('+item.avatar+')"></span>'+
+                                            '<div class="user-info">'+
+                                            '<span class="user-nick">'+item.nick+'</span>'+
+                                            '<span class="user-comment">'+item.message+'</span>'+
+                                            '</div>'+
+                                            '</div>';
+                                    $('.comment-list').append(tpl);
+                                }
+
+                            }else{
+                                alert(data.message.text);
+                            }
+                            load.changeFlag();
+                        },
+                        error:function (e) {
+                            alert(e.responseText);
+                            load.changeFlag();
+                        }
+                    })
+                }
+            });
+        </script>
+    </body>
+</html>

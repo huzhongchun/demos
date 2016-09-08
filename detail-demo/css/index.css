@@ -1,0 +1,282 @@
+.middle-title span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.user-head-img{
+	width: 30px;
+	height: 35px;
+	overflow: hidden;
+}
+.user-head-img img{
+	display: block;
+	width: 100%;
+}
+.user-name{
+	font-size: 1.2rem;
+	padding-left: 7px;
+}
+.content-container .detail-pic-box{
+	position: relative;
+	height: 375px;
+	margin-bottom: 5px;
+	font-size: 0;
+	text-align: center;
+	overflow: hidden;
+}
+.content-container .detail-pic-box>img{
+	display: inline-block;
+	width: auto;
+	height: 100%;
+}
+.detail-des-area{
+	width: 320px;
+	margin: 0 auto;
+	margin-top: 18px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #E9E9E9;
+	margin-bottom: 11px;
+}
+.des-text-box{
+	font-size: 13px;
+	font-size: 1.3rem;
+	color: #1E1E1E;
+	text-align:justify; /*两端对齐*/
+	margin-bottom: 10px;
+	line-height: 18px;
+	line-height: 1.8rem;
+}
+.model-info-box{
+	color: #8B8B8B;
+	font-size: 1.1rem;
+	margin-bottom: 18px;
+}
+.category-tag-list{
+	font-size: 1.1rem;
+	color: #8B8B8B;
+}
+.category-tag-list .category-tag-item{
+	padding: 2px 4px;
+	border: 1px solid #E9E9E9;
+	margin-right: 10px;
+}
+.add-magazine-area{
+	width: 320px;
+	margin: 0 auto 15px;
+}
+.add-magazine-area .add-txt{
+	display: inline-block;	
+	height: 20px;
+	line-height: 20px;
+	font-size: 1.2rem;
+	color: #1E1E1E;
+}
+.add-magazine-area .add-btn{
+	display: inline-block;
+	width: 13px;
+	height: 20px;
+	background: url(../images/add_icon.png) center no-repeat;
+	background-size: 12px 12px;
+	color: #1E1E1E;
+}
+.praise-customers-area{
+	border-top: 5px solid #f1f1f1;
+}
+.praise-customers-box{
+	width: 320px;
+	margin: 0 auto;
+	vertical-align: middle;
+	font-size: 0;
+	padding: 15px 0;
+    border-bottom: 1px solid #E9E9E9;
+}
+.praise-customers-area span{
+	display: inline-block;
+	margin-right: 10px;
+	width: 30px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 1.3rem;
+	vertical-align: middle;
+}
+.praise-customers-area span.praise-total-num{
+	width: auto;
+}
+.praise-customers-area .customer-head-pic img{
+	display: block;
+	width: 100%;
+}
+.praise-customers-area span.praise-more{
+	width: auto;
+	opacity: .5;
+	letter-spacing: 4px;
+	margin-right: 0;
+}
+
+.comment-total-num{
+	width: 320px;
+	margin: 0 auto;
+	padding: 10px 0;
+	font-size: 1.3rem;
+}
+.comment-list{
+	width: 320px;
+	margin: 0 auto;
+}
+.comment-list .comment-item{
+	padding: 15px 0;
+	height: 3.5rem;
+	overflow: hidden;
+	border-bottom: 1px solid #e9e9e9;
+}
+.comment-list .comment-item:last-child{
+	border-bottom: 0px;
+}
+.comment-user-head{
+	width: 30px;
+	height: 3.5rem;
+	overflow: hidden;
+	float: left;
+	margin-right: 8px;
+}
+.comment-user-head img{
+	width: 100%;
+	display: block;
+}
+.comment-detail-box{
+	width: 282px;
+	height: 3.5rem;
+	overflow: hidden;
+}
+.comment-detail-box span{
+	display: block;
+	line-height: 1.7rem;
+}
+.comment-user-name{
+	opacity: .5;
+}
+.comment-gap{
+	padding-top: 12px;
+	text-align: center;
+	opacity: .5;
+	letter-spacing: 4px;
+}	
+.comment-get-more{
+	padding: 12px;
+	text-align: center;
+	opacity: .5;
+	background: #f1f1f1;
+	font-size: 1.1rem;
+}
+
+
+
+/*tag*/
+.detail-pic-box .on-pic-tag{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 0;
+	white-space: nowrap; /*禁止文本换行*/
+	display: none;
+}
+.show-tag .on-pic-tag{
+	display: block;
+}
+
+.on-pic-tag>div{
+	display: inline-block;
+}
+.tag-dot-outer{
+	width: 8px;
+	height: 10px;
+	line-height: 18px;
+	padding: 4px 0px;
+	margin: 0 0px;
+}
+.tag-dot-outer .tag-dot{
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border: 1px solid #bbb;
+	background: #FF0000;
+	border-radius: 10px;
+}
+.tag-icon-outer{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #fff;
+	border-radius: 18px;
+	background: transparent;
+	text-align: center;
+	line-height: 28px;
+	position: relative;
+	vertical-align: top;
+	margin: 0 5px;
+	position: absolute;
+	top: 0;
+}
+
+.tag-icon-outer .tag-icon{
+	display: inline-block;
+	width: 12px; 
+	height: 12px;
+	overflow: hidden;
+}
+.tag-icon img{
+	display: block;
+	width: 100%;
+}
+.tag-info .tag-brand-name{
+	width: auto;
+	padding: 0 8px;
+	display: inline-block;
+	font-size: 11px;
+	height: 16px;
+	line-height: 16px;
+	border: 1px solid #fff;
+	border-radius: 18px;
+	white-space: nowrap; /*禁止文本换行*/
+}
+.tag-info{
+	position: absolute;
+	vertical-align: top;
+}
+
+.dire-left .tag-info{
+	padding-left: 28px;
+}
+.dire-left .tag-info .tag-icon-outer{
+	left: 0;
+}
+.dire-right .tag-info{
+	padding-right: 28px;
+	right: 100%;
+}
+.dire-right .tag-info .tag-icon-outer{
+	right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

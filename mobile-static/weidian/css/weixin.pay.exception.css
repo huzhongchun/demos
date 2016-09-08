@@ -1,0 +1,181 @@
+#weixin-pay-exception{
+    font-size: 12px;
+    color: #4a4a4a;
+    text-align: left;
+}
+#weixin-pay-exception .order-detail-header{
+    background: #f5f5f5;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 14px 15px;
+    color:#9b9b9b;
+}
+
+#weixin-pay-exception .order-status{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#weixin-pay-exception .detail-title{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+#weixin-pay-exception .address-detail,.user-info{
+    margin-top: 6px;
+}
+#weixin-pay-exception .address{
+    border-bottom: solid 1px #f0f0f0;
+}
+#weixin-pay-exception .user-info>span{
+    margin-right: 4px;
+}
+#weixin-pay-exception .total-price{
+    padding: 0px 15px;
+}
+#weixin-pay-exception .total-price>div{
+    margin-top: 6px;
+}
+#weixin-pay-exception .active-pay{
+    color:#f35b74;
+}
+
+
+#weixin-pay-exception .order-content{
+    margin: 15px 0px 0px;
+}
+#weixin-pay-exception .order-content-img{
+    height: 75px;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 1px solid #d8d8d8;
+}
+#weixin-pay-exception .product-img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+#weixin-pay-exception .product-price-list{
+    margin-top: 8px;
+}
+#weixin-pay-exception .product-name{
+    font-weight: bold;
+}
+#weixin-pay-exception .span-label{
+    color: #969696;
+}
+#weixin-pay-exception .order-price{
+    margin-top: 20px;
+    text-align: left;
+    position: relative;
+}
+#weixin-pay-exception .product-price{
+    color:#f35b72;
+}
+#weixin-pay-exception .product-info{
+    height: 60px;
+    text-align: left;
+    margin-left: 70px;
+    color: #4a4a4a;
+}
+#weixin-pay-exception .pay-tip {
+    margin-top: 10px;
+    color: #4a4a4a;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+#weixin-pay-exception .pay-tip-new{
+    margin-top: 25px;
+    color: #4a4a4a;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 34px;
+    font-weight: bold;
+}
+#weixin-pay-exception .pay-success-btn{
+    width: 300px;
+    margin:20px auto;
+}
+#weixin-pay-exception .pay-success-btn>a{
+    width:140px;
+    height:35px;
+    margin:0px 5px;
+    float: left;
+}
+
+#weixin-pay-exception .look-logistics{
+    color: white;
+    text-align: center;
+    line-height: 34px;
+    background: #f35b74;
+    margin:20px auto;
+    font-size: 16px;
+    display: block;
+}
+#weixin-pay-exception .continue-look a{
+    color:#f35b74 !important;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#weixin-pay-exception .continue-look{
+    text-align: center;
+    line-height: 34px;
+    background: white;
+    margin:20px auto;
+    font-size: 16px;
+    border:solid 1px #f35b74;
+    color:#f35b74;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block;
+}
+#weixin-pay-exception .order-info{
+    border-bottom: solid 1px #d8d8d8;
+    height: 28px;
+}
+#weixin-pay-exception .order-icon img{
+    width: 68px;
+    height: 25px;
+    margin:0px auto;
+    display: block;
+}
+#weixin-pay-exception .order-icon{
+    margin-top: 15px;
+}
+
+
+
+.fail{
+    padding: 16px;
+    font-size: 10px;
+    color: #5f5f5f;
+    line-height: 16px;
+}
+.fail-page .order-info{
+    color:#5f5f5f;
+}
+
+.fix-bottom{
+    bottom: 0px;
+    position: fixed;
+    color: #b7b7b7;
+    text-align: center;
+    width: 100%;
+}
+.fix-bottom .tell{
+    color: #4a4a4a;
+    background: url(/weidian/image/tell.png) 0px center no-repeat;
+    background-size: 9px 11px;
+    font-size: 14px;
+    width: 88px;
+    margin: 5px auto 36px;
+    padding-left: 14px;
+    text-align: center;
+    display: block;
+}

@@ -1,0 +1,138 @@
+<style>
+    #imglazyload .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+        height: auto;
+    }
+    #imglazyload .dialog-btn{
+        width: 158px;
+        padding: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+        letter-spacing: 2px;
+        line-height: 16px;
+        background: #ed145b;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        float: left;
+        line-height: 30px;
+    }
+    #imglazyload .change-btn{
+        margin-bottom: 40px;
+    }
+    
+    
+    
+        #imglazyload #boxs{
+        width: 70px;
+        padding: 0 5px;
+        float: left;
+    }
+    #imglazyload #boxs div{
+        font-size: 14px;
+        position: relative;
+        height: 26px;
+        line-height: 26px;
+        text-align: center;
+        padding:  5px 5px;
+        color: white;
+        background: #ed145b;
+        border-right: 1px solid #bbb;
+        border-left: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+
+    }
+    #imglazyload #boxs div:nth-child(1){
+        border-top: 1px solid #bbb;
+    }
+    #imglazyload #boxs-content{
+        float: left;
+        width: 235px;
+    }
+    #imglazyload .img-item{
+        width: 310px;
+        display: block;
+        padding: 5px 0;
+        height: 166px;
+    }
+    #imglazyload #boxs-content img{
+        width: 100%;
+        display: block;
+    }
+    #imglazyload .font-weight{
+        padding: 5px;
+    }
+</style>
+<div id="imglazyload">
+    <p class="font-weight">组件名称：赖加载</p>
+    <div class="show-area">
+        <div id="boxs-content">
+            <div class="img-item">
+                <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/4-388cc1.jpg">
+            </div>
+            <div class="img-item">
+                <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/4-99.jpg">
+            </div>
+            <div class="img-item">
+                <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/mz1-4.jpg">
+            </div>
+            <div class="img-item">
+                <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/4-706bb.jpg">
+            </div>
+            <div class="img-item">
+                <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/11丝塔芙有LOGO正式.jpg">
+            </div>
+            <div class="img-item">
+                <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/12阿芙正式.jpg">
+
+            </div>
+            <div class="img-item">
+                <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/12百雀羚-正式.jpg">
+            </div>
+            <div class="img-item">
+                 <img class="img-lazy" data-url="http://p0.jmstatic.com/mcms/11雪花秀640正式.jpg">
+
+            </div>
+        </div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="imglazyload-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>(String) classSelector: 要作用的图片类</p>
+            <p>(String) placeHolder: (可选, 默认值:\'\')图片显示前的占位符</p>
+            <p>(Array|Selector) container: (可选, 默认值:window)图片延迟加载容器，若innerScroll为true，则传外层wrapper容器即可</p>
+            <p>(Array|Selector) threshold: (可选, 默认值:0)阀值，为正值则提前加载</p>
+            <p>(String) urlName: (可选, 默认值:data-url)图片url名称</p>
+            <p>(String) eventName: (可选, 默认值:scrollStop)绑定事件方式</p>
+            <p>(Boolean) refresh: (可选, 默认值:false)是否是更新操作，若是页面追加图片，可以将该参数设为true--（该参数已经删除，无需使用该参数，可以同样为追加的图片增加延迟加载）</p>
+            <p>(Boolean) innerScroll: (可选, 默认值:false)是否是内滚，若内滚，则不绑定eventName事件，用户需在外部绑定相应的事件，可调$.fn.imglazyload.detect去检测图片是否出现在container中</p>
+            <p>(Boolean) isVertical: (可选, 默认值:true)是否竖滚</p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var imglazeload = Jumei.getModule('ui.imglazyload');
+new imglazeload({classSelector:'.img-lazy'});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

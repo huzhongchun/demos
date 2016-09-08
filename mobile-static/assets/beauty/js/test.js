@@ -1,0 +1,1 @@
+define(["view"],function(e){var t='<div id="test-name">ceshiahaha</div>';return Jumei.create(e,{onCreate:function(){this.a={test:"name",aaa:"test"},this.elem.html("我是测试test"),this.elem.append(t)},onEvent:function(){this.events={"click #test-name":function(){alert("test")},"click .icon_home":function(){window.location="../index.html"}}},onClose:function(){}})});

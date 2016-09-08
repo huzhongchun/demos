@@ -1,0 +1,141 @@
+<style>
+    /**new css*/
+    #slider #slider-boxs{
+        width: 318px;
+        overflow: hidden;
+    }
+    #slider .img-item img{
+        width: 100%;
+    }
+    #slider .slider-dots{
+        text-align: center;
+        margin-top: 10px;
+    }
+    #slider b.slider-dot-select {
+        background: #ed145b;
+    }
+    #slider b {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #ed145b;
+        border-radius: 10px;
+        margin-right: 5px;
+    }
+</style>
+<div id="slider">
+    <p class="font-weight">组件名称：左右滑动轮播</p>
+    <div class="show-area">
+
+        <div id="slider-boxs">
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-99.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/mz1-4.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-706bb.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="slider-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+                <!--各个参数说明 <p>（类型） key: key值</p>-->
+            <p>（string）id: 可滑动元素的id名，默认：slider-boxs</p>
+            <p>（int）index: 初始化时，展示第几个条目，默认：0</p>
+            <p>（int）imgInit: 图片使用懒加载的时候，初始化加载的图片数量，默认：2</p>
+            <p>（boolean）autoPlay: 是否自动播放，默认：false</p>
+            <p>（int）switchTime:  自动播放时，切换的时间间隔，默认：3000</p>
+            <p>（int）animateTime:  切换的动画持续时间，默认：400</p>
+            <p>（sting）dotsClass:  如果开启自动添加“状态点”，“状态点”的className，默认：slider-dots</p>
+            <p>（sting）dotsSelectedClass:  “状态点”显示当前的条目的className，默认：slider-dot-select</p>
+            <p>（boolean）showDot:  是否显示“状态点”，默认：true</p>
+            <p>（function）slideEnd: 滑动动画结束后的回调函数</p>
+            <p>（function）slideStart: 滑动动画开始的时候回调函数</p>
+            <p>（sting）direction: 自动播放的滑动方向，有'left','right'可选，默认：right</p>
+            </p>
+            <p class="font-weight">注意：</p>
+            <p class="content">
+                <!--注意事项-->     时间的单位是毫秒。不支持循环，到达第一个或者最后一个之后，只能往回滑动。
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+<!--HTML-->
+<div id="slider-boxs">
+    <div class="img-item">
+        <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+    </div>
+    <div class="img-item">
+        <img src="http://p0.jmstatic.com/mcms/4-99.jpg">
+    </div>
+    <div class="img-item">
+        <img src="http://p0.jmstatic.com/mcms/mz1-4.jpg">
+    </div>
+    <div class="img-item">
+        <img src="http://p0.jmstatic.com/mcms/4-706bb.jpg">
+    </div>
+</div>
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+    <!--CSS-->
+#slider-boxs{
+    width: 318px;
+    overflow: hidden;
+}
+.img-item img{
+    width: 100%;
+}
+.slider-dots{
+    text-align: center;
+    margin-top: 10px;
+}
+b.slider-dot-select {
+    background: #ed145b;
+}
+b {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ed145b;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+    <!--Javascript-->
+var slider = Jumei.getModule('ui.slider');
+var sliderObj = new slider({
+    id: 'slider-boxs',
+    index: 2,
+    imgInit:  1,
+    autoPlay:  false,
+    switchTime:  1000,
+    animateTime:  400,
+    dotsClass:  'slider-dots',
+    dotsSelectedClass:  'slider-dot-select',
+    showDot:  true,
+    slideEnd: null,
+    slideStart: null,
+    direction: 'left',
+});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

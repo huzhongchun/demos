@@ -1,0 +1,133 @@
+<style>
+    #turntable .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+        height: auto;
+    }
+    #turntable .dialog-btn{
+        width: 158px;
+        padding: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+        letter-spacing: 2px;
+        line-height: 16px;
+        background: #ed145b;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        float: left;
+        line-height: 30px;
+    }
+    #turntable .change-btn{
+        margin-bottom: 40px;
+    }
+    #turntable .dazhuanpan{
+        text-align: center;
+        width: 280px;
+        margin:0px auto;
+    }
+</style>
+<div id="turntable">
+    <p class="font-weight">组件名称：大转盘</p>
+    <div class="show-area">
+        <div class="dazhuanpan">
+            
+        </div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="turntable-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>(string) img: //背景转盘的图片地址,</p>
+            <p>(string) arrowImg: //转盘指针的图片地址</p>
+            <p>(string) arrowWidth: //指针图片的宽度（用来将指针定位到中央）</p>
+            <p>(string) arrowHeight: //指针图片的高度（用来将指针定位到中央）</p>
+            <p>(string) arrowTop: //指针距离上面大抓盘的高度，实现指针居中的位置</p>
+            <p>(string) width: //转盘的宽度</p>
+            <p>(string) len: //扇形数目</p>
+            <p>(string) random: //是否用默认得随机方法</p>
+            <p>(string) prizeArea: //中奖信息的对象结构为    '10': {
+                'area': [1,3],
+                'message': '满100减10元现金券'
+            },
+            '40': {
+                'area': [2,5],
+                'message': '满300减40元现金券'
+            },
+            '70': {
+                'area': [4,7],
+                'message': '满500减70元现金券'
+            },
+            '0': {
+                'area': [6],
+                'message': '很遗憾哦~'
+            }</p>
+            <p>(string) element: //大转盘外层的元素</p>
+            <p>(string) randomChance:   {
+                                            "1": 100
+                                        }: //默认的随机方法对应奖项和概率</p>
+            <p>(function) success:    //成功回调函数，参数为startRotate传得参数</p>
+            <p>(function) $pluginArea.startRotate('0', 'zhong'); //调用开始的方法</p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+//初始化
+var turntableData = {
+    '10': {
+        'area': [1,3],
+        'message': '满100减10元现金券'
+    },
+    '40': {
+        'area': [2,5],
+        'message': '满300减40元现金券'
+    },
+    '70': {
+        'area': [4,7],
+        'message': '满500减70元现金券'
+    },
+    '0': {
+        'area': [6],
+        'message': '很遗憾哦~'
+    }
+}
+var turntableClass = Jumei.getModule('ui.turntable');
+var $pluginArea = new turntableClass({
+    img: 'http://images.jumei.com/mobile/act/activities/2014_12/1219_queren/zhuanpan2.png',
+    arrowImg:  'http://images.jumei.com/mobile/act/activities/2014_12/1219_queren/arrow.png',
+    arrowHeight: 155,
+    arrowWidth: 109,
+    random: false,
+    prizeArea: turntableData,
+    element:'.dazhuanpan',
+    success: function(data, rewardinfo) {
+        console.dir(data);
+        console.dir(rewardinfo);
+        console.dir(turntableData[data].message);
+    }
+});
+//出发大转盘 转动
+$('#turntable .turntable-btn').on('click',function(e){
+    $pluginArea.startRotate('0', 'zhong');
+});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

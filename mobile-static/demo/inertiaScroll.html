@@ -1,0 +1,190 @@
+<style>
+    #scroll #boxs{
+        width: 70px;
+        padding: 0 5px;
+        float: left;
+    }
+    #scroll #boxs div{
+        font-size: 14px;
+        position: relative;
+        height: 26px;
+        line-height: 26px;
+        text-align: center;
+        padding:  5px 5px;
+        color: white;
+        background: #ed145b;
+        border-right: 1px solid #bbb;
+        border-left: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+
+    }
+    #scroll #boxs div:nth-child(1){
+        border-top: 1px solid #bbb;
+    }
+    #scroll #boxs-content{
+        float: left;
+        width: 235px;
+    }
+    #scroll .img-item{
+        width: 233px;
+        display: block;
+        padding: 5px 0;
+    }
+    #scroll #boxs-content img{
+        width: 100%;
+        display: block;
+    }
+    #scroll .font-weight{
+        padding: 5px;
+    }
+</style>
+<div id="scroll">
+    <p class="font-weight">组件名称：惯性滚动</p>
+    <div class="show-area">
+        <div id="boxs">
+            <div>护肤彩妆</div>
+            <div>家纺家具</div>
+            <div>美食茶酒</div>
+            <div>家电办公</div>
+            <div>运动户外</div>
+            <div>珠宝配饰</div>
+            <div>日用百货</div>
+            <div>家装建材</div>
+            <div>汽车旅行</div>
+            <div>文娱生活</div>
+            <div>虚拟游戏</div>
+        </div>
+        <div id="boxs-content">
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-99.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/mz1-4.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-706bb.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="scroll-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+                <!--各个参数说明-->
+            <p>（string） id: 滑动元素的id名</p>
+            <p>（function）pullDownCallback 从0的位置往下滑动，然后动画在回复到0的回调函数</p>
+            <p>（function）pullUpCallback:  从最底部的位置往上滑动，然后动画在回复到最底部的回调函数</p>
+            <p>（function）startPullDownCallback: 在0的位置，开始往下拉的回调函数（可用于下拉刷新）</p>
+            <p>（num）startPullDownMaxLength: 到底或者到顶之后，还能继续滑动的距离，默认：40px</p>
+            </p>
+            <p class="font-weight">注意：</p>
+            <p class="content">
+                <!--注意事项-->     需要给父元素自定义一个高度，以此来确定可视区域的高度。
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+    <div class="show-area">
+        <div id="boxs">
+            <div>护肤彩妆</div>
+            <div>家纺家具</div>
+            <div>美食茶酒</div>
+            <div>家电办公</div>
+            <div>运动户外</div>
+            <div>珠宝配饰</div>
+            <div>日用百货</div>
+            <div>家装建材</div>
+            <div>汽车旅行</div>
+            <div>文娱生活</div>
+            <div>虚拟游戏</div>
+        </div>
+        <div id="boxs-content">
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+            </div>
+            <div class="img-item">
+                <img src="http://p0.jmstatic.com/mcms/4-388cc.jpg">
+            </div>
+        </div>
+    </div>
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+.show-area{
+    width: 318px;
+    border: 1px solid #56ace7;
+    margin-bottom: 10px;
+    height: 300px;
+    margin-top: 10px;
+}
+#boxs{
+    width: 70px;
+    padding: 0 5px;
+    float: left;
+}
+#boxs div{
+    font-size: 14px;
+    position: relative;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    padding:  5px 5px;
+    color: #2d2d2d;
+    background: #dfdfdf;
+    border-right: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
+#boxs div:nth-child(1){
+    border-top: 1px solid #bbb;
+}
+#boxs-content{
+    float: left;
+    width: 235px;
+}
+.img-item{
+    width: 233px;
+    display: block;
+    padding: 5px 0;
+}
+#boxs-content img{
+    width: 100%;
+    display: block;
+}
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var inertiaScroll = Jumei.getModule('ui.inertiaScroll');
+var inertiaScrollObj = new inertiaScroll({
+    id:'boxs',
+    pullDownCallback: function(){
+        console.log('aaaa');
+    },
+    pullUpCallback: function(){
+        console.log('bbb');
+    },
+    startPullDownCallback: function(fn){
+        console.log('cccc');
+    },
+});
+var inertiaScrollObj_2 = new inertiaScroll({
+    id:'boxs-content',
+});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

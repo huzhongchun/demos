@@ -1,0 +1,409 @@
+{
+    "name" : "mobile_touch",
+
+    "cdndomains" : [ 
+        "http://a0.jmstatic.com",
+        "http://a1.jmstatic.com",
+        "http://a2.jmstatic.com",
+        "http://a3.jmstatic.com",
+        "http://a4.jmstatic.com",
+        "http://a5.jmstatic.com"
+    ], 
+    
+    "jshint" : {
+        "src" : ["js/**/*.js","!js/lib/*.js"]
+    },
+
+    "csslint" : {
+        "src" : "css/**/*.css"    
+    },
+
+
+
+    "seajscombo" : [{
+        "src" : "js/ui/ui.js"
+    },{
+        "src" : "js/touch/home/index_main.js",
+        "map" : { 
+            "touch/home/index" : "./index"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/cart/index_main.js",
+        "map" : { 
+            "touch/cart/cart" : "./cart"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/cart/confirm_main.js",
+        "map" : { 
+            "touch/cart/confirm" : "./confirm"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/address/address_main.js",
+        "map" : { 
+            "touch/address/address" : "./address"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/address/edit_main.js",
+        "map" : { 
+            "touch/address/address_edit" : "./address_edit"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/index/index_main.js",
+        "map" : { 
+            "touch/index/index" : "./index"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/search/search_main.js",
+        "map" : { 
+            "touch/search/search" : "./search"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/activity/activity_main.js",
+        "map" : { 
+            "touch/activity/activity" : "./activity"
+        },
+        "ignore" : ["ui"]
+    },{
+        "src" : "js/touch/global/global_main.js",
+        "map" : { 
+            "touch/global/global" : "./global"
+        },
+        "ignore" : ["ui"]
+    },
+
+
+
+
+
+    {
+        "src" : "js/activities/redpacket/assists/assist_main.js",
+        "map" : {
+            "activities/redpacket/assists/assist" : "./assist"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/assistResults/assistResult_main.js",
+        "map" : {
+            "activities/redpacket/assistResults/assistResult" : "./assistResult"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/indexs/index_main.js",
+        "map" : {
+            "activities/redpacket/indexs/index" : "./index"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/mains/main_main.js",
+        "map" : {
+            "activities/redpacket/mains/main" : "./main"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/notRegists/notRegist_main.js",
+        "map" : {
+            "activities/redpacket/notRegists/notRegist" : "./notRegist"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/opens/open_main.js",
+        "map" : {
+            "activities/redpacket/opens/open" : "./open"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/overs/over_main.js",
+        "map" : {
+            "activities/redpacket/overs/over" : "./over"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/firstShares/share_main.js",
+        "map" : {
+            "activities/redpacket/firstShares/firstShare" : "./firstShare"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/successs/success_main.js",
+        "map" : {
+            "activities/redpacket/successs/success" : "./success"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redpacket/assistSecondResults/assistResult_second_main.js",
+        "map" : {
+            "activities/redpacket/assistSecondResults/assistResult_second" : "./assistResult_second"
+        },
+        "ignore" : ["ui"]
+    },
+
+
+
+
+
+     {
+        "src" : "js/activities/redenvelope/assists/assist_main.js",
+        "map" : {
+            "activities/redenvelope/assists/assist" : "./assist"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/assistResults/assistResult_main.js",
+        "map" : {
+            "activities/redenvelope/assistResults/assistResult" : "./assistResult"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/indexs/index_main.js",
+        "map" : {
+            "activities/redenvelope/indexs/index" : "./index"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/mains/main_main.js",
+        "map" : {
+            "activities/redenvelope/mains/main" : "./main"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/notRegists/notRegist_main.js",
+        "map" : {
+            "activities/redenvelope/notRegists/notRegist" : "./notRegist"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/opens/open_main.js",
+        "map" : {
+            "activities/redenvelope/opens/open" : "./open"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/overs/over_main.js",
+        "map" : {
+            "activities/redenvelope/overs/over" : "./over"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/firstShares/share_main.js",
+        "map" : {
+            "activities/redenvelope/firstShares/firstShare" : "./firstShare"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/successs/success_main.js",
+        "map" : {
+            "activities/redenvelope/successs/success" : "./success"
+        },
+        "ignore" : ["ui"]
+    },
+    {
+        "src" : "js/activities/redenvelope/assistSecondResults/assistResult_second_main.js",
+        "map" : {
+            "activities/redenvelope/assistSecondResults/assistResult_second" : "./assistResult_second"
+        },
+        "ignore" : ["ui"]
+    }
+
+
+
+
+    ],
+
+
+
+    "buildjs" : [{
+        "src" : "js/lib/jumei.js"
+    }],
+
+
+
+
+    "buildcss" : [{
+        "src" : "css/lib/common.css",
+        "checkSelector" : false,
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/ui/ui.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/touch/cart/confirm.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/touch/cart/index.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/touch/address/index.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/touch/index/index.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/touch/search/search.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/touch/activity/activity.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/touch/global/global.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },
+
+
+
+    {
+        "src" : "css/activities/redpacket/assist.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/assist_results.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/assist_second_results.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/index.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/main.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/open.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/share.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/success.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/not_regist.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/over.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/hongbao_dialog.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/assist_five.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redpacket/error.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },
+
+
+
+        {
+        "src" : "css/activities/redenvelope/assist.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/assist_results.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/assist_second_results.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/index.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/main.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/open.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/share.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/success.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/not_regist.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/over.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/hongbao_dialog.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/assist_five.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    },{
+        "src" : "css/activities/redenvelope/error.css",
+        "pxTorem" : true,
+        "noAdvanced" : true
+    }
+
+
+
+
+
+
+
+
+
+    ],
+
+    "buildimage" : {
+        "src" : "image/**/*"
+    }
+}

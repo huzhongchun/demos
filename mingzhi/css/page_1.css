@@ -1,0 +1,155 @@
+.bg-box-1{
+    width: 100%;
+    height: 288px;
+    background: url("../images/gap_bg_1.png") #FFBEA2 0 bottom no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bg-box-2{
+    width: 100%;
+    height: 340px;
+    background: #B6DDF4;
+    position: absolute;
+    top: 288px;
+    left: 0;
+}
+.bg-box-3{
+    width: 100%;
+    height: 70px;
+    background: url("../images/gap_bg_2.png") #fff 0 bottom no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    top: 628px;
+    left: 0;
+}
+
+.content-area{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.content-box{
+    width: 357px;
+    height: 595px;
+    margin: 15px auto;
+    background: url("../images/bg.png") #fff 0 0 repeat;
+    background-size: 100% auto;
+}
+
+.title-img{
+    display: block;
+    width: 100%;
+    height: 210px;
+    background: url("../images/title_text_2.png") #fff center 23px no-repeat;
+    background-size: 317px auto;
+}
+.img-box{
+    width: 286px;
+    height: 429px;
+    margin: -70px auto 0;
+    position: relative;
+    z-index: 1;
+}
+.img-box img{
+    display: block;
+    width: 100%;
+}
+
+.cover-img-box{
+    display: block;
+    width: 100%;
+    height: 640px;
+    background: url("../images/cover_img_2.png") 0 0 no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    top: 122px;
+    left: 0;
+    z-index: 2;
+}
+.comment-box{
+    display: block;
+    width: 100%;
+    background: url("../images/bg.png") transparent 0 0 repeat;
+    background-size: 100% auto;
+    position: relative;
+}
+
+.comment-list{
+    padding-top: 175px;
+}
+.comment-list .comment-item{
+    display: block;
+    padding: 0 16px;
+    margin-bottom: 30px;
+    font-size: 0;
+}
+.comment-item:last-child{
+    margin-bottom: 0;
+}
+.user-head{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 16px;
+    background-size: cover;
+    background-position: center;
+}
+.user-info{
+    display: inline-block;
+    vertical-align: middle;
+}
+.user-info .user-nick{
+    font-size: 14px;
+    display: block;
+    color: #203041;
+    margin-bottom: 16px;
+}
+.user-info  .user-comment{
+    display: block;
+    font-size: 13px;
+    color: #7C8A97;
+    max-width: 260px;
+    line-height: 1.5;
+}
+.bottom-box{
+    width: 100%;
+    height: 116px;
+    background: url("../images/bg.png") transparent 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.bottom-img{
+    width: 100%;
+    height: 116px;
+    background: url("../images/bottom_bg.png") transparent center no-repeat;
+    background-size: 100% auto;
+}
+
+.comment-cover-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/cover_img_3.png") 0 0 no-repeat;
+    background-size: 405px auto;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: 2;
+}
+.join-btn{
+    display: block;
+    width: 33px;
+    height: 75px;
+    background: url("../images/join_btn.png") center no-repeat;
+    background-size: 33px auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: auto;
+    z-index: 30;
+}

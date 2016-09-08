@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=320,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <meta name="format-detection" content="telephone=no"/>
+        <title>
+        </title>
+        <link href="../assets/lib/css/base.css" rel="stylesheet" type="text/css"/>
+
+
+        <!--弹出框组件-->
+        <link href="../assets/lib/css/widget1.0/dialog.css" rel="stylesheet" type="text/css">
+
+
+        <link href="../assets/lib/css/widget/share.css" rel="stylesheet" type="text/css">
+        <style>
+            body{
+                font-family: "微软雅黑";
+                font-size: 100%;
+                display: none;
+            }
+            *{
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+            }
+            body,html{
+                height:100%;
+            }
+            #wrapper{
+                height:100%;
+                position:relative;
+                -webkit-box-sizing: border-box;
+            }
+            #container{
+                width: 320px;
+                min-height: 30px;
+                position: relative;
+                z-index: 1;
+                -webkit-box-sizing: border-box;
+            }
+            #old-container{
+                background:blue;
+                position:absolute;
+                width:320px;
+                height:100%;
+            }
+            /*    #container>div{
+                    position: absolute;
+                    width: 320px;
+                    min-height:30px ;
+                    z-index:1000;
+                    display:none;
+                    top:0px;
+                    -webkit-box-sizing: border-box;
+                }*/
+            #container>div{
+                position: absolute;
+                width: 320px;
+                min-height:30px ;
+                z-index:1000;
+                display:none;
+                top:0px;
+                -webkit-box-sizing: border-box;
+            }
+            #beauty_test{
+                background:black;
+            }
+            .current{
+                position:absolute !important;
+                z-index:10000 !important;
+                display:block !important;
+            }
+            .btn_back,.btn_back1{
+                color: black;
+                position: relative;
+            }
+
+            #header{
+                background: #ed145b;
+                height: 0px;
+                position: relative;
+                z-index: 500;
+                -webkit-transition: all 0.5s;
+            }
+            #back{
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                height: 40px;
+                width: 44px;
+                background: url(http://a.m.rd.jumei.com/beauty/image/back@2x.png) center center no-repeat;
+                background-size: 20px 20px;
+            }
+            #home{
+                position: absolute;
+                bottom:0px;
+                right:0px;
+                height:40px;
+                width:60px;
+                background: url(http://a.m.rd.jumei.com/beauty/image/home@2x.png) center center no-repeat;
+                background-size:24px 24px;
+            }
+            #header-title{
+                width: 200px;
+                height: 40px;
+                line-height: 40px;
+                color: white;
+                overflow: hidden;
+                display: block;
+                margin: 0px auto;
+            }
+            body{
+                background: white;
+            }
+
+            .li-list{
+                height: 40px;
+                line-height: 40px;
+                border-bottom: solid 1px #ccc;
+                position: relative;
+                padding: 10px 0px;
+                background: url(http://a.m.rd.jumei.com/demo/public/img/arrow.png) 284px center no-repeat;
+                background-size: 47px;
+            }
+            .li-list>span{
+                display: block;
+                height: 20px;
+                line-height: 20px;
+                margin-left: 63px;
+                text-align: left;
+            }
+            .li-list .title{
+                font-size: 14px;
+                color: #666666;
+                background: transparent;
+                padding: 0px;
+            }
+            .li-list .desc{
+                font-size: 12px;
+                color: #B2B2B2;
+            }
+            .li-list img{
+                position: absolute;
+                left: 10px;
+                top: 9px;
+                width: 40px;
+                height: 40px;
+            }
+            .select .code{
+                height: 400px !important;
+            }
+            .code{
+                background-color: #f5f5f5;
+                font-family: Courier New!important;
+                font-size: 12px!important;
+                border: 0px;
+                padding: 0px 15px;
+                overflow: auto;
+                margin: 5px 0;
+                color: #000;
+                width: 100%;
+                height: 0px;
+                box-sizing: border-box;
+                -webkit-transition: all .5s;
+                transition: all .5s;
+            }
+
+
+
+
+
+
+            .code-btn{
+                color: red;
+                float: left;
+                border: 1px solid #D2D2D2;
+                -webkit-border-radius: 2px;
+                height: 40px;
+                line-height: 40px;
+                margin: 2px;
+                box-sizing:border-box;
+                width: 100px;
+            }
+            .text{
+                text-align: left;
+                line-height: 40px;
+                margin-top: 40px;
+                box-sizing:border-box;
+            }
+            .dialog-btn{
+                display: block;
+                margin: 2px;
+                border: 1px solid #D2D2D2;
+                -webkit-border-radius: 2px;
+                border-radius: 2px;
+                background-color: #fff;
+                color: #333;
+                text-decoration: none;
+                font-size: 14px;
+                position: relative;
+                width: 160px;
+                float: left;
+                height: 40px;
+                line-height: 40px;
+                box-sizing:border-box;
+            }
+
+
+
+            .page {
+                position: absolute; left: 0; top: 0;
+                -webkit-animation: .35s ease-in-out;
+                animation: .35s ease-in-out;
+            }
+            .page.out {
+                display: none;
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
+            .page.in {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            /* Default animation - slide, you can visit '/test/transition/aniamte.css' to get more styles of animation */
+            .slide.in {
+                -webkit-animation-name: slideinfromright;
+                animation-name: slideinfromright;
+
+            }
+            .slide.out {
+                -webkit-animation-name: slideouttoleft;
+                animation-name: slideouttoleft;
+            }
+            .reverse.out {
+                -webkit-animation-name: slideouttoright;
+                animation-name: slideouttoright;
+            }
+            .reverse.in {
+                -webkit-animation-name: slideinfromleft;
+                animation-name: slideinfromleft;
+            }
+
+            @-webkit-keyframes slideinfromright {
+                from { -webkit-transform: translateX(100%);}
+                to { -webkit-transform: translateX(0); }
+            }
+            @keyframes slideinfromright {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
+            @-webkit-keyframes slideinfromleft {
+                from { -webkit-transform: translateX(-100%); }
+                to { -webkit-transform: translateX(0); }
+            }
+            @keyframes slideinfromleft {
+                from { transform: translateX(-100%); }
+                to { transform: translateX(0); }
+            }
+            @-webkit-keyframes slideouttoleft {
+                from { -webkit-transform: translateX(0); }
+                to { -webkit-transform: translateX(-100%); }
+            }
+            @keyframes slideouttoleft {
+                from { transform: translateX(0); }
+                to { transform: translateX(-100%); }
+            }
+            @-webkit-keyframes slideouttoright {
+                from { -webkit-transform: translateX(0); }
+                to { -webkit-transform: translateX(100%); }
+            }
+            @keyframes slideouttoright {
+                from { transform: translateX(0); }
+                to { transform: translateX(100%); }
+            }
+
+
+            /*demo的公用样式*/
+            .code-boxs{
+                width: 318px;
+                overflow: scroll;
+                border: 1px solid #ed145b;
+                margin-bottom: 10px;
+            }
+            .show-area{
+                width: 318px;
+                border: 1px solid #ed145b;
+                margin-bottom: 10px;
+                height: 300px;
+                margin-top: 10px;
+            }
+            xmp{
+                display: block;
+                font-size: 12px;
+                color: #6d6b6b;
+            }
+            .widget-des-area{
+                width: 100%;
+                font-size: 12px;
+            }
+            .widget-des-area p{
+                padding: 5px;
+                letter-spacing: 1px;
+                word-break: break-all;
+            }
+            .font-weight{
+                font-size: 14px;
+                font-weight:bold;
+            }
+            .content{
+                text-indent: 28px;
+                line-height: 15px;
+            }
+            .title{
+                padding: 5px;
+                background: #ed145b;
+                color: white;
+            }
+            .change-btn{
+                background: #ed145b;
+                font-size: 14px;
+                padding: 5px;
+                height: 15px;
+                line-height: 15px;
+                border-radius: 8px;
+                text-align: center;
+                color: white;
+                letter-spacing: 1px;
+            }
+            .height0{
+                height: 0 !important;
+                overflow: hidden;
+            }
+            .font-weight{
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="back"></div>
+                <span id="header-title">丽人生活团</span>
+                <div id="home"></div>
+            </div>
+            <div id="container"></div>
+            <div class="first-tip"></div>
+        </div>
+        <script src="/lib/js/framework/zepto.js"></script>
+        <script src="/lib/js/framework/base.js?323" type="text/javascript"></script>
+        <script src="/demo/public/mvc/require.js"></script>
+        <script src="/demo/public/mvc/controller.js"></script>
+
+        <!--弹出框组件-->
+        <script src="/lib/js/widget1.0/dialog.js"></script>
+
+        <!--回到顶部-->
+        <script src="/lib/js/widget1.0/gotop.js"></script>
+
+
+        <!--carousel3D组件-->
+        <script src="/lib/js/widget1.0/carousel3D.js?"></script>
+
+        <!--圆形导航组件-->
+
+        <script src="/lib/js/widget1.0/circleNav.js"></script>
+
+        <!--滚动条-->
+        <script src="/lib/js/widget1.0/inertiaScroll.js?12"></script>
+
+        <!--分享-->
+        <script src="/lib/js/widget1.0/share.js?12"></script>
+
+        <!--左右滚动-->
+        <script src="/lib/js/widget1.0/slider.js?12"></script>
+
+        <!--瀑布流-->
+        <script src="/lib/js/widget1.0/waterFall.js?12"></script>        
+        
+        
+        <!--toast提示-->
+        <script src="/lib/js/widget1.0/toast.js?12"></script>    
+        
+        <!--loadding提示-->
+        <script src="/lib/js/widget1.0/loadding.js?12"></script>    
+        
+        <!--来加载-->
+        <script src="/lib/js/widget1.0/imglazyload.js?12"></script>   
+        
+        <!--倒计时-->
+        <script src="/lib/js/widget1.0/countdown.js?12"></script>   
+       
+        <!--大转盘-->
+        <script src="/lib/js/widget1.0/turntable.js?12"></script> 
+        
+        <!--呱呱卡-->
+        <script src="/lib/js/widget1.0/scratchcard.js?12"></script> 
+        
+        <!--<script src="http://a.m.rd.jumei.com/lib/js/widget1.0/iscroll.js"></script>
+        <script src="http://a.m.rd.jumei.com/lib/js/widget/slider.js"></script>
+        <script src="http://a.m.rd.jumei.com/lib/js/widget/login.js"></script>-->
+        <script>
+            window.onload = function() {
+                Jumei.static = "http://a.m.rd.jumei.com/";
+                var randomNum = 22;
+                require.config({
+                    baseUrl: "/",
+                    paths: {
+                        'demo/index': './demo/public/js/index.js?'+randomNum,
+                        'view': './demo/public/mvc/view.js?'+randomNum,
+                        'demo/dialog': './demo/public/js/dialog.js?'+randomNum,
+                        'demo/goTop': './demo/public/js/gotop.js?'+randomNum,
+                        'demo/slider3d': './demo/public/js/slider3d.js?'+randomNum,
+                        'demo/circleNav': './demo/public/js/circleNav.js?'+randomNum,
+                        'demo/scroll': './demo/public/js/scroll.js?'+randomNum,
+                        'demo/share': './demo/public/js/share.js?'+randomNum,
+                        'demo/slider': './demo/public/js/slider.js?'+randomNum,
+                        'demo/waterFall': './demo/public/js/waterFall.js?'+randomNum,
+                        'demo/toast': './demo/public/js/toast.js?'+randomNum,
+                        'demo/loadding': './demo/public/js/loadding.js?'+randomNum,
+                        'demo/imglazyload': './demo/public/js/imglazyload.js?'+randomNum,
+                        'demo/countdown': './demo/public/js/countdown.js?'+randomNum,
+                        'demo/turntable': './demo/public/js/turntable.js?'+randomNum,
+                        'demo/card': './demo/public/js/card.js?'+randomNum,
+                        'text': './demo/public/mvc/require.text',
+                    },
+                });
+                var controller = new Controller({name: 'demo'});
+            };
+        </script>
+    </body>
+</html>

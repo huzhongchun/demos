@@ -1,0 +1,1 @@
+define([],function(){var t=6378.137,n=function(t){return t*Math.PI/180},a=function(a,h,r,M){var e=n(a),i=n(r),o=e-i,s=n(h)-n(M),u=2*Math.asin(Math.sqrt(Math.pow(Math.sin(o/2),2)+Math.cos(e)*Math.cos(i)*Math.pow(Math.sin(s/2),2)));return u*=t,u=Math.round(1e4*u)/10};return{getDistance:a}});

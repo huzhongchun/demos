@@ -1,0 +1,107 @@
+.order-list{
+    color:#4a4a4a;
+    font-size: 12px;
+}
+.order-header{
+    height: 40px;
+    padding: 15px;
+    font-size: 12px;
+    text-align: left;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.order-status{
+    color: #f35b74;
+}
+.order-num-list{
+    overflow: hidden;
+    text-align: right;
+}
+.order-num{
+    margin-left: 4px;
+}
+.order-content{
+    padding:15px;
+}
+.order-content-img{
+    height: 75px;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 1px solid #d8d8d8;
+}
+.product-img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+.product-info{
+    height: 60px;
+    text-align: left;
+    margin-left: 70px;
+}
+
+.product-price-list{
+    margin-top: 10px;
+}
+.product-name{
+    font-weight: bold;
+}
+
+
+.span-label{
+    color: #969696;
+}
+
+.order-price{
+    margin-top: 20px;
+    text-align: left;
+    position: relative;
+}
+.look-logistics{
+    display: inline-block;
+    width: 68px;
+    height: 20px;
+    text-align: center;
+    line-height: 21px;
+    position: absolute;
+    right: 0px;
+    top:-3px;
+    color: white;
+    background: #f35b74;
+}
+.look-logistics a{
+    color: white;
+}
+#loadding-content{
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #999999;
+    display: none;
+    border-top: solid 1px #ccc;
+}
+
+.fix-bottom{
+    bottom: 0px;
+    position: relative;
+    color: #b7b7b7;
+    text-align: center;
+    width: 100%;
+    border-top: solid 1px #ccc;
+    padding: 10px 0px;
+}
+.fix-bottom .tell{
+    color: #4a4a4a;
+    background: url(/weidian/image/tell.png) 0px center no-repeat;
+    background-size: 9px 11px;
+    font-size: 14px;
+    width: 106px;
+    margin: 5px auto 36px;
+    padding-left: 14px;
+    text-align: center;
+    display: block;
+}

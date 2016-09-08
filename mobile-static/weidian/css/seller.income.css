@@ -1,0 +1,364 @@
+/*清楚浮动*/
+    .clearfloat:after{
+        display:block;
+        clear:both;
+        content:"";
+        visibility:hidden;
+        height:0
+    }
+    #wrapper{
+        width:320px;
+        margin: 0px auto;
+        font-size: 12px;
+    }
+    /*-----css content start-----*/
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    #content{
+        padding-bottom: 50px;
+    }
+    #bottom-nav{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 15px 0;
+        width: 320px;
+        height: 17px;
+        line-height: 17px;
+        font-size:13px;
+        background: rgba(0,0,0,0.7);
+        transition: -webkit-transform 0.5s ease 0s;
+        overflow: hidden;
+        z-index: 4
+    }
+    .fixedhide{
+        -webkit-transform: translate3d(0,100px,0);
+    }
+    .nav-item{
+        float: left;
+        display: block;
+        width: 71px;
+        height: 17px;
+        background: url(/weidian/image/nav_icon_1.png) 15px center no-repeat;
+        background-size: 13px 12px;
+        border-right:1px solid #9d9d9d;
+        color: #fff;
+        padding-left: 35px;
+    }
+    .home{
+        background: url(/weidian/image/nav_icon_1.png) 15px center no-repeat;
+        background-size: 13px 12px;
+    }
+    .income{
+        background: url(/weidian/image/nav_icon_2.png) 15px center no-repeat;
+        background-size: 13px 12px;
+    }
+    .how{
+        background: url(/weidian/image/nav_icon_3.png) 15px center no-repeat;
+        background-size: 13px 12px;
+    }
+    .nav-item:nth-child(3){
+        width: 70px;
+        margin-right: 0px;
+        border-right: none;
+    }
+    .home.active{
+        background: url(/weidian/image/nav_icon_active_1.png) 15px center no-repeat;
+        background-size: 13px 12px;
+        color: #f35a73;
+        z-index: 4;
+    }
+    .income.active{
+        background: url(/weidian/image/nav_icon_active_2.png) 15px center no-repeat;
+        background-size: 13px 12px;
+        color: #f35a73;
+        z-index: 4;
+    }
+    .how.active{
+        background: url(/weidian/image/nav_icon_active_3.png) 15px center no-repeat;
+        background-size: 13px 12px;
+        color: #f35a73;
+        z-index: 4;
+    }
+    .selected-arrow{
+        position: absolute;
+        bottom: 0;
+        width: 106px;
+        left: 0px;
+        height: 2px;
+        background: #f35a73;
+        transition: all 0.5s ease 0s;
+        -webkit-transform: translate3d(107px,0,0);
+    }
+    .arrow{
+        width: 12px;
+        height: 12px;
+        -webkit-transform: rotateZ(45deg);
+        position: relative;
+        left: 50px;
+        background: #f35a73;
+    }
+    #daily-visitors-area{
+        width: 320px;
+        height: 130px;
+        position: relative;
+        background: #f8f8f8;
+    }
+    .daily-visitors-txt{
+        position: absolute;
+        top:15px;
+        left: 21px;
+        font-size: 13px;
+        color: #333;
+        letter-spacing: 1px;
+    }
+    .yesterday-visitors-amount{
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        left: 236px;
+        border-left: 2px solid #feda62;
+        padding-left: 5px;
+        font-size: 12px;
+        color: #333;
+        height: 11px;
+        line-height: 11px;
+    }
+    .before-yesterday-visitors-amount{
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        left: 160px;
+        border-left: 2px solid #69c3ff;
+        padding-left: 5px;
+        font-size: 12px;
+        color: #333;
+        height: 11px;
+        line-height: 11px;
+    }
+    #income-area{
+        height: 125px;
+    }
+    .recent-income-boxs{
+        width: 144px;
+        padding-left: 15px;
+        border-right:1px solid #d8d8d8;
+        border-bottom:1px solid #d8d8d8;
+        position: relative;
+    }
+    .all-income-boxs{
+        width: 145px;
+        padding-left: 15px;
+        border-bottom:1px solid #d8d8d8;
+        position: relative;
+    }
+    .recent-income-title{
+        margin: 10px 0;
+        background: url(/weidian/image/recent_income.png) left center no-repeat;
+        background-size: 14px 14px;
+        height: 16px;
+        line-height: 16px;
+        padding-left: 20px;
+        font-size: 13px;
+        color: #333;
+    }
+    .all-income-title{
+        margin: 10px 0;
+        background: url(/weidian/image/all_income.png) left center no-repeat;
+        background-size: 14px 14px;
+        height: 16px;
+        line-height: 16px;
+        padding-left: 20px;
+        font-size: 13px;
+        color: #333;
+    }
+    .recent-income-numb{
+        color:  #74aced;
+        font-size: 36px;
+        height: 48px;
+        line-height: 48px;
+    }
+    .unit{
+        font-size: 12px;
+        position: relative;
+        top: -18px;
+        left: 0;
+    }
+    .recent-income-des{
+        margin: 10px 0;
+        padding-right: 15px;
+        height: 15px;
+    }
+    .recent-income-time{
+        color: #333;
+    }
+    .recent-income-status{
+        color: #74aced;
+    }
+    .color-red{
+        color: #f35a73;
+    }
+    .all-income-to-cash{
+        color: #666;
+    }
+    .all-income-help{
+        margin-left: 10px;
+        background: url(/weidian/image/help.png) left center no-repeat;
+        background-size: 12px 13px;
+        height: 15px;
+        line-height: 14px;
+        padding-left: 20px;
+    }
+    .recent-income-help{
+        margin-left: 10px;
+        background: url(/weidian/image/help.png) left center no-repeat;
+        background-size: 12px 13px;
+        height: 15px;
+        line-height: 14px;
+        padding-left: 20px;
+    }
+    .module-title{
+        width: 262px;
+        height: 14px;
+        line-height: 14px;
+        margin: 15px  auto;
+        font-size: 13px;
+        color: #333;
+        padding-left: 13px;
+        border-left: 5px solid #ef6b81;
+    }
+    #tips{
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 11px;
+        color: #aaa;
+        letter-spacing: 0.5px;
+    }
+    table{
+        width: 320px;
+        border-collapse: collapse;
+        border-top: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
+    }
+    thead{
+        text-align: center;
+        font-size: 13px;
+    }
+    thead tr{
+        height: 35px;
+    }
+    tbody{
+        font-size: 12px;
+    }
+    tbody tr:nth-child(odd){
+        background: #fafafa;
+    }
+    tbody tr:nth-child(even){
+        background: #fff;
+    }
+    tbody tr{
+        height: 61px;
+    }
+    tbody{
+        text-align: left;
+    }
+    td span{
+        display: block;
+    }
+    thead .td-name{
+        width: 110px;
+    }
+    tbody .td-name{
+        width: 100px;
+        padding-left: 10px;
+        font-size: 12px;
+    }
+    .td-sale-numb{
+        width: 70px;
+        text-align: center;
+    }
+    .td-income{
+        width: 70px;
+        text-align: center;
+    }
+    .td-income-status{
+        width: 70px;
+    }
+    .td-goods-name{
+
+    }
+    .td-goods-time{
+        font-size: 10px;
+        color: #adadad;
+        padding-top: 2px;
+    }
+    .td-thaw{
+
+    }
+    .td-watch{
+        font-size: 11px;
+        color: #f35a73;
+        padding-top: 5px;
+        display: none;
+    }
+    #income-no{
+        height: 122px;
+        border-bottom:1px solid #d8d8d8;
+    }
+    .income-no-img{
+        display: block;
+        width: 73px;
+        height: 63px;
+        margin: 15px auto 16px;
+    }
+    .income-no-des{
+        text-align: center;
+        font-size: 12px;
+        color: #333;
+    }
+    svg{
+        width:300px;
+        height: 130px;
+        padding: 0 10px;
+    }
+    .ui-dialog-content{
+        padding: 0px 15px 10px;
+    }
+    .use-agreement{
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        text-decoration: underline;
+    }
+    .secrets{
+        display: block;
+        text-align: center;
+        font-size: 11px;
+        text-decoration: underline;
+        padding-top: 5px;
+    }
+    .get-more{
+        text-align: right;
+        padding: 10px;
+    }
+    .cash-tips{
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .cash-tips img{
+        display: block;
+        width: 100%;
+    }
+    .text{
+        margin-bottom: 10px;
+    }
+    .txt-bold{
+        font-weight: bold;
+    }
+    .ui-dialog-close{
+        display: none;
+    }

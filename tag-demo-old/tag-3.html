@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=320,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="address=no">
+        <link rel="stylesheet" type="text/css" href="./css/base.css">
+        <link rel="stylesheet" type="text/css" href="./css/tag-2.css">
+        <title></title>
+        <style type="text/css">
+            .edit-tag-box{
+                height: auto;
+            }
+            .tag-box{
+                border: 1px solid #000;
+            }
+            .hide-box{
+                /*display: none;  也不能计算出宽度*/
+                height: 0;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+        </style>
+    </head>
+
+	<body>
+        <div id="scale-wrapper">
+            <div class="tag-img-box edit-tag-box">  
+                <img class="p-img" src="./images/1.jpg">
+                <div class="tag-box clearfloat right show-tag" data-info='{"t_id":"1","p_top":0.4,"p_left":0.33333,"direction":"right","type":"1","t_txt":"11111"}'>
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">11111</div>
+                </div>
+                <div class="tag-box clearfloat left show-tag" data-info='{"t_id":"1","p_top":".3","p_left":".4","direction":"left","type":"1","t_txt":"22222"}'>
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">22222</div>
+                </div>
+                <div class="tag-box clearfloat left show-tag" data-info='{"t_id":"1","p_top":".5","p_left":"1","direction":"left","type":"1","t_txt":"33333"}'>
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">333333</div>
+                </div>
+
+                <div class="tag-box clearfloat right show-tag" data-info='{"t_id":"1","p_top":".52","p_left":".3","direction":"right","type":"1","t_txt":"444444"}'>
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">444444</div>
+                </div>
+            </div>
+
+            <div class="hide-box"></div>
+        </div>
+        <script type="text/javascript" src="./js/zepto.js"></script>
+        <script type="text/javascript" src="./js/tag-2.js"></script>
+        <script type="text/javascript">
+         var s ;
+            $('.tag-img-box').on('touchstart',function(e){
+                s = e.changedTouches[0].clientX;
+                console.log(s);
+            })
+            $('.tag-img-box').on('touchmove',function(e){
+                console.log(e.changedTouches[0].clientX);
+
+            })
+        </script>
+	</body>
+</html>
+

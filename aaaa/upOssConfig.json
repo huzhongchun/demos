@@ -1,0 +1,14 @@
+{
+  "configFileName": "upOssConfig.json",
+  "basePath": "/Users/huzhongchun/thefair/www/test/aaaa/",
+  "watchPath": "",
+  "recordFileName": ".record",
+  "oss": {
+    "region": "oss-cn-beijing",
+    "accessKeyId": "NEohZ1gfrCUxa0sX",
+    "accessKeySecret": "AwVJd8qiz0f1dMvcZyNByWsMwrnLGg",
+    "bucket": "static-funkfox"
+  },
+  "ignores": [".record","upOssConfig.json","node_modules","_assets"],
+  "autoSave": 10
+}

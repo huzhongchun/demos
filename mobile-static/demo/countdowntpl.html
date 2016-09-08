@@ -1,0 +1,234 @@
+<style>
+    #countdown .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+        height: auto;
+        height: 42px;
+        position: relative;
+        background: black;
+    }
+    #countdown .dialog-btn{
+        width: 158px;
+        padding: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+        letter-spacing: 2px;
+        line-height: 16px;
+        background: #ed145b;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        float: left;
+        line-height: 30px;
+    }
+    #countdown .change-btn{
+        margin-bottom: 40px;
+    }
+    
+    
+    /*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-10-16, 11:48:57
+    Author     : yuhaitao
+*/
+i{
+    text-decoration: none;
+    font-style: normal;
+}
+.countdown{
+    font-size: 14px;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 3px;
+    left: 159px;
+    width: 102px;
+    height: 20px;
+    line-height: 20px;
+    color: white;
+}
+.countdown>span{
+    width:20px;
+}
+.countdown .count-day{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-hour{
+    position: absolute;
+    top: 0px;
+    left: 34px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-minute{
+    position: absolute;
+    top: 0px;
+    left: 76px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-second{
+    position: absolute;
+    top: 0px;
+    left: 110px;
+    letter-spacing: 3.8px;
+}
+.countdown i{
+    /*    -webkit-transition:all 200ms ease;*/
+    /*    -webkit-transform:translate3d(0px,0px,0px);*/
+}
+.countdown i.digit-wrap{
+    /*    -webkit-transform:translate3d(0px,-20px,0px);*/
+    position:relative;
+    top:-20px;
+}
+.countdown .digit{
+    height: 20px;
+    width: 8px;
+}
+.countdown>span{
+    height:20px;
+    overflow: hidden;
+}
+.countdown .digit-wrap i{
+    display:block;
+}
+.countdown .animate{
+    /*    -webkit-transform:translate3d(0px,0px,0px) !important;*/
+    position:absolute;
+    top:0px;
+}
+.countdown .count-second>i,.countdown .count-minute>i,.countdown .count-hour>i,.countdown .count-day>i{
+    float:left;
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+<div id="countdown">
+    <p class="font-weight">组件名称：倒计时</p>
+    <div class="show-area">
+        <div class="countdown-text">
+        </div>
+
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="countdown-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>(string) endTime: 结束时间 例如:2015/05/01 12:00:00</p>
+            <p>(int) isShow: 是否显示倒计时</p>
+            <p>(int) callback: 回调函数</p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+<div class="countdown-text">
+</div>
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+i{
+    text-decoration: none;
+    font-style: normal;
+}
+.countdown{
+    font-size: 14px;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 3px;
+    left: 159px;
+    width: 102px;
+    height: 20px;
+    line-height: 20px;
+    color: white;
+}
+.countdown>span{
+    width:20px;
+}
+.countdown .count-day{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-hour{
+    position: absolute;
+    top: 0px;
+    left: 34px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-minute{
+    position: absolute;
+    top: 0px;
+    left: 76px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-second{
+    position: absolute;
+    top: 0px;
+    left: 110px;
+    letter-spacing: 3.8px;
+}
+.countdown i{
+    /*    -webkit-transition:all 200ms ease;*/
+    /*    -webkit-transform:translate3d(0px,0px,0px);*/
+}
+.countdown i.digit-wrap{
+    /*    -webkit-transform:translate3d(0px,-20px,0px);*/
+    position:relative;
+    top:-20px;
+}
+.countdown .digit{
+    height: 20px;
+    width: 8px;
+}
+.countdown>span{
+    height:20px;
+    overflow: hidden;
+}
+.countdown .digit-wrap i{
+    display:block;
+}
+.countdown .animate{
+    /*    -webkit-transform:translate3d(0px,0px,0px) !important;*/
+    position:absolute;
+    top:0px;
+}
+.countdown .count-second>i,.countdown .count-minute>i,.countdown .count-hour>i,.countdown .count-day>i{
+    float:left;
+}
+
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+  
+var countdown = Jumei.getModule('ui.countdown');
+new countdown({element:'#countdown .countdown-text','endTime':'2015/1/10 13:00:00','isShow':true}
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

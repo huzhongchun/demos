@@ -1,0 +1,183 @@
+<style>
+    #dialog .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+    }
+    #dialog .dialog-btn{
+        width: 158px;
+        padding: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+        letter-spacing: 2px;
+        line-height: 16px;
+        background: #ed145b;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        float: left;
+        line-height: 30px;
+    }
+</style>
+<div id="dialog">
+    <p class="font-weight">组件名称：弹出框</p>
+    <div class="show-area">
+        <div class="dialog-btn" animate="default">点我点我default</div>
+        <div class="dialog-btn" animate="slidedown">点我点我slidedown</div>
+        <div class="dialog-btn" animate="scale">点我点我scale</div>
+        <div class="dialog-btn" animate="fadein">点我点我fadein</div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="dialog-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>(string) element: 绑定元素,</p>
+            <p>(int) width: 默认宽度,</p>
+            <p>(int) height: 默认最小高度,</p>
+            <p>(string) content: 弹出框内容</p>
+            <p>(string) title: 提示</p>
+            <p>(string) type: 弹出框显示的动画（default,slidedown,fadein,scale,rotate五种）</p>
+            <p>(int) btn: 显示的默认按钮（0：不显示，1：显示一个，2：显示两个）</p>
+            <p>(string) ok:确认按钮文案</p>
+            <p>(string) cancel:取消按钮文案</p>
+            <p>(function) int:初始化函数</p>
+            <p>(function) okCallback:成功回调函数</p>
+            <p>(function) cancelCallback:取消回调函数</p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+                <xmp>
+                    <!--HTML-->     无
+                </xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+/*弹出框*/
+.ui-dialog-wrap{
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 2600px;
+    z-index: 1000000;
+    top: 0px;
+}
+.ui-bg{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #888;
+    opacity: 0;
+    z-index: 9999;
+    -webkit-transition: all 0.5s;
+    -webkit-transform: translateZ(0);
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    display: none;
+}
+.ui-dialog{
+    position: absolute;
+    z-index:2000000;
+    overflow: hidden;
+    width: 284px;
+    display: none;
+    border-radius: 7px;
+    -webkit-border-radius:7px;
+    background: #f5f5f5;
+    -webkit-transition: all 0.3s ease;
+}
+.ui-dialog .ui-dialog-title {
+    height: 49px;
+    overflow: hidden;
+    color: black;
+    line-height: 49px;
+}
+.ui-dialog .ui-dialog-title div {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+.ui-dialog .ui-dialog-title .ui-dialog-close {
+    float: right;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: url(http://images.jumei.com/mobile/act/image/flash/close.png) center no-repeat;
+    background-size: 14.5px 14.5px;
+}
+
+.ui-dialog-content {
+    text-align: left;
+    min-height: 60px;
+    color: black;
+    font-size: 16px;
+    overflow: hidden;
+    padding: 0px 15px;
+}
+.ui-dialog-btn{
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+    color: #0079FF;
+    font-size: 16px;
+}
+.ui-dialog-btn .ui-dialog-ok{
+    width: 50%;
+    height: 45px;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+    border-left: 1px solid #ccc;
+    margin-right: -1px;
+    line-height: 45px;
+}
+.ui-dialog-btn .ui-dialog-cancel{
+    float: left;
+    width: 50%;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 45px;
+}
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var dialog = Jumei.getModule('ui.dialog');
+var dialogObj = new dialog({
+    element: 'body',
+    //默认弹出框宽度
+    width: 260,
+    height: 200,
+    //传进来显示的html
+    content: '聚美提示您！',
+    //弹出框title
+    title: '提示', //弹出框的title
+    type:'default',
+    //显示一个按钮还是两个
+    btn: 2,
+    //按钮文字
+    ok: '确定',
+    cancel: '取消',
+    //初始化函数
+    init: function() {
+    },
+    //成功回调函数
+    okCallback: null,
+    //取消回调函数
+    cancelCallback: function() {
+    }
+});
+dialogObj.show();
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

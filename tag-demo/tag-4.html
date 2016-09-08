@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=320,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="address=no">
+        <link rel="stylesheet" type="text/css" href="./css/base.css">
+        <link rel="stylesheet" type="text/css" href="./css/tag-4.css">
+        <title>tag-iframe</title>
+    </head>
+
+	<body>
+		<div id="scale-wrapper">
+			<div class="img-box">
+				<img src="./images/1.jpg">
+				<div class="tag-box left clearfloat">
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+					<div class="tag-txt triangle">海淘达人</div>
+				</div>
+                <div class="tag-box right cleafloat" style="top:100px;left:100px;">
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">海淘达人</div>
+                </div>
+
+
+                <div class="tag-box right cleafloat" style="top:150px;left:150px;">
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">海淘达人</div>
+                </div>
+			</div>
+		</div>
+        
+        <script type="text/javascript" src="./js/jquery-1.7.1.min-with-zoom.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                
+                $('.img-box').on('click',function(){
+
+                    var isShowed = $(this).find('.tag-box').hasClass('show-tag');
+                    if(isShowed){
+                        $(this).find('.tag-box').removeClass('show-tag');
+                        $(this).find('.tag-box').addClass('hide-tag');
+                        // $(this).find('.tag-box').addClass('hide-tag').animate({opacity:0},600,'ease',function(){});
+                    }
+                    else{
+                        // $(this).find('.tag-box').addClass('show-tag').animate({opacity:1},300,'ease',function(){});
+                        $(this).find('.tag-box').addClass('show-tag');
+                        $(this).find('.tag-box').removeClass('hide-tag');
+                    }
+                })
+            })
+        </script>
+	</body>
+</html>
+

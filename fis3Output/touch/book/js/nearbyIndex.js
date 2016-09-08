@@ -1,0 +1,1 @@
+require(["book/js/public"],function(a){var t=a;t.setWxShareContent();var s=$(".book-list-area .book-item"),e=s.length;e%2==0?($(s[e-1]).addClass("last-item"),$(s[e-2]).addClass("last-item")):$(s[e-1]).addClass("last-item")});

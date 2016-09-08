@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=320,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="address=no">
+        <link rel="stylesheet" type="text/css" href="./css/base.css">
+        <link rel="stylesheet" type="text/css" href="./css/tag-2.css">
+        <title>tag-iframe</title>
+    </head>
+
+	<body>
+        <div id="scale-wrapper">
+            <h2>1.点击图片可显示隐藏tag标签</h2>
+			<div class="tag-img-box display-tag-box">
+				<img class="p-img" src="./images/1.jpg?v=102">
+				<div class="tag-box clearfloat" data-info='{"t_id":"1","p_top":0.6062399195873831,"p_left":0.3757929801940918,"direction":"right","type":"1","t_txt":"海淘达人"}'>
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">海淘达人</div>
+				</div>
+                <div class="tag-box clearfloat" data-info='{"t_id":"1","p_top":".01","p_left":"1","direction":"right","type":"1","t_txt":"海淘达人"}'>
+                    <div class="shining-box">
+                        <b class="tag-icon">
+                            <span class="icon-img"></span>
+                            <span class="tag-shining "></span>
+                        </b>
+                    </div>
+                    <div class="tag-txt triangle">海淘达人</div>
+                </div>
+			</div>
+            <!-- <div id="comment_bubble"></div>
+            
+            <div id="line"></div> -->
+
+            <h2>2.添加tag</h2>
+            <div class="tag-img-box edit-tag-box">  
+                <img class="p-img" src="./images/1.jpg?v=102">
+            </div>
+            <div class="input-box">
+                <input class="input-tag-txt" type="text" maxlength="15" placeholder="请输入文字">
+                <input class="tag-submit" type="button" value="确定文字">
+                <input class="tag-check" type="button" value="提交编辑后的标签">
+            </div>
+        </div>
+        <script type="text/javascript" src="./js/zepto.js"></script>
+        <script type="text/javascript" src="./js/tag-1.js"></script>
+        
+	</body>
+</html>
+

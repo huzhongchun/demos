@@ -1,0 +1,55 @@
+body,html{
+    background: url("../images/bg.png") #B6DDF4 0 0 repeat;
+    background-size: 100% auto;
+}
+.photo-area{
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+.photo-area .cover-img{
+    display: block;
+    width: 100%;
+    min-height: 525px;
+    background: url("../images/cover_img.png") transparent center no-repeat;
+    background-size: 367px auto;
+    position: absolute;
+    top: 13px;
+    left: 0;
+    z-index: 1;
+}
+.photo-box{
+    display: block;
+    width: 318px;
+    height: 507px;
+    border: 6px solid #fff;
+    background: url("../images/time_bg.png") center no-repeat;
+    background-size: 298px auto;
+    margin: 23px auto 0;
+    position: relative;
+}
+.photo-box img{
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.name-box{
+    display: block;
+    width: 100%;
+    min-height: 80px;
+    background: url("../images/name_bg.png") 0 30px no-repeat;
+    background-size: 386px auto;
+    position: relative;
+    padding-bottom: 54px;
+}
+.name-box .name-img{
+    display: block;
+    width: 250px;
+    height: 53px;
+    background: url("../images/name.png") center no-repeat;
+    background-size: 100% auto;
+    margin: 0 auto;
+}

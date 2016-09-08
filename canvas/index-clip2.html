@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvas</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+			}
+			canvas{
+				position: relative;
+			}
+			#img-box{
+				
+
+			}
+			#p-img{
+				display: block;
+				width: 100%;
+			}
+            a{
+                background: url("./images/5.png");
+            }
+
+            .result-img-box{
+                display: inline-block;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="outer-box">
+				<!--<canvas id="img-box" height="430" width="600">
+					您的浏览器不支持canvas～
+				</canvas>-->
+			</div>
+			<input class="submit" type="button" value="确定">
+            <div class="result-img-box">
+                <img src="" class="result-img">
+            </div>
+            <div class="result-img-box" style="background: #428ac9">
+                <img src="" class="result-img-2">
+            </div>
+		</div>
+		<script type="text/javascript" src="./js/zepto.js"></script>
+		<script type="text/javascript">
+			$(function(){
+                var canvas = document.getElementById('img-box');
+
+
+                var options = {
+                    url: 'http://local.test.com/canvas/images/6.jpg',
+                    pointX: 375,
+                    pointY: 88,
+                    borderWidth: 8,
+                    borderColor: '#fff',
+                    innerCircleRadius: 70,
+                    text: '胡仲春'
+                }
+
+                /**
+                 * 画出用户头像和名字
+                 * @param options
+                 */
+                function drawHead(options) {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = 750;
+                    canvas.height = 250;
+
+                    var ctx = canvas.getContext('2d');
+
+                    //清除画板
+                    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+                    // 创建图片纹理
+                    var image = new Image();
+                    //圆点坐标
+                    var pointX = options.pointX,pointY = options.pointY;
+                    //边框
+                    var borderWidth = options.borderWidth;
+                    var borderColor = options.borderColor;
+                    //内圆和外圆半径
+                    var innerCircleRadius = options.innerCircleRadius;
+                    var outerCircleRadius = options.innerCircleRadius + options.borderWidth ;
+
+                    image.src = options.url;
+                    image.onload = function(){
+                        var pattern = ctx.createPattern(image, "no-repeat");
+                        // 绘制一个圆
+
+                        var naturalWidth = image.naturalWidth;
+                        var naturalHeight = image.naturalHeight;
+
+                        var threshold = naturalWidth;
+                        if(naturalWidth >= naturalHeight){
+                            threshold = naturalHeight;
+                        }
+                        var clipImgStartX = (naturalWidth - threshold) /2;
+                        var clipImgStartY = (naturalHeight - threshold) /2;
+
+
+                        //阴影
+                        ctx.save();
+                        ctx.shadowColor = 'rgba(0,56,108,.5)';
+                        ctx.shadowOffsetX = 1;
+                        ctx.shadowOffsetY = 7;
+                        ctx.shadowBlur = 15;
+
+                        ctx.beginPath();
+                        ctx.fillStyle = 'rgba(0,54,104,1)';
+                        ctx.font = 'normal 36px palatino';
+                        ctx.textAlign = 'center';
+                        //ctx.strokeText('hu',150,150);
+                        ctx.fillText(options.text,canvas.width / 2,220);
+                        ctx.closePath();
+                        ctx.restore();
+
+                        ctx.save();
+                        ctx.shadowColor = 'rgba(0,56,108,.5)';
+                        ctx.shadowOffsetX = 5;
+                        ctx.shadowOffsetY = 7;
+                        ctx.shadowBlur = 10;
+
+                        ctx.beginPath();
+                        ctx.globalCompositeOperation = 'source-over';
+                        ctx.arc(pointX, pointY, outerCircleRadius, 0, 2 * Math.PI);
+                        ctx.fillStyle = borderColor;
+                        ctx.fill();
+                        ctx.closePath();
+                        ctx.restore();
+
+                        ctx.beginPath();
+                        ctx.arc(pointX, pointY, innerCircleRadius, 0, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.clip();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.globalCompositeOperation = 'source-over';
+                        ctx.drawImage(image,clipImgStartX,clipImgStartY,threshold,threshold,canvas.width / 2 - outerCircleRadius,0,outerCircleRadius*2,outerCircleRadius*2);
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.globalCompositeOperation = 'destination-in';
+                        ctx.arc(pointX, pointY, innerCircleRadius, 0, 2 * Math.PI);
+                        ctx.fillStyle = '#fff000';
+                        ctx.fill();
+                        ctx.closePath();
+
+
+                        var img = canvas.toDataURL("image/png");
+                        $('.result-img').attr('src',img);
+
+                    };
+                }
+
+
+                drawHead(options);
+
+                $('.submit').click(function(){
+                    var options = {
+                        url: 'http://local.test.com/canvas/images/1.jpg',
+                        pointX: 300,
+                        pointY: 160,
+                        borderWidth:10,
+                        borderColor: '#fff',
+                        innerCircleRadius: 140,
+                        text: '哈哈哈哈哈2222'
+                    }
+                    drawHead(options);
+
+                })
+
+                /**
+                 * 画出关键词
+                 */
+
+                function drawKeyword(options) {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = 750;
+                    canvas.height = 300;
+                    var ctx = canvas.getContext('2d');
+
+                    var text1Length = 0,text2Length = 0,text3Length = 0,text4Length = 0,text5Length = 0,
+                        text6Length = 0,text7Length = 0,text8Length = 0;
+                    var text1Fontsize = 0,text2Fontsize = 0,text3Fontsize = 0,text4Fontsize = 0,text5Fontsize = 0,
+                            text6Fontsize = 0,text7Fontsize = 0,text8Fontsize = 0;
+
+                    var textArray = options.textArray,i = 0,fontSizeArray = options.fontSize;
+                    for(var key in textArray){
+
+                        //阴影
+                        ctx.save();
+                        ctx.shadowColor = 'rgba(0,56,108,.5)';
+                        ctx.shadowOffsetX = 1;
+                        ctx.shadowOffsetY = 7;
+                        ctx.shadowBlur = 15;
+
+                        ctx.beginPath();
+                        ctx.fillStyle = 'rgba(255,255,255,1)';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.lineHeight = 1;
+
+                        var textStartX = 0;
+                        var textStartY = 0;
+
+
+                        var fontSize = fontSizeArray[i];
+                        ctx.font = 'normal '+fontSize+'px palatino';
+                        var text = key;
+                        var textLength = ctx.measureText(text).width;
+                        console.log(text+'--width--'+textLength);
+                        switch(i){
+                            case 0:
+                                text1Length = textLength;
+                                text1Fontsize = fontSize;
+                                textStartX = canvas.width / 2;
+                                textStartY = canvas.height / 2;
+                                break;
+                            case 1:
+                                text2Length = textLength;
+                                text2Fontsize = fontSize;
+                                textStartX = canvas.width / 2 - (text1Length / 2 + text2Length /2);
+                                textStartY = canvas.height / 2 - text1Fontsize;
+                                break;
+                            case 2:
+                                text3Length = textLength;
+                                text3Fontsize = fontSize;
+                                textStartX = canvas.width / 2 + (text1Length / 2 + text3Length /2);
+                                textStartY = canvas.height / 2 - text1Fontsize;
+                                break;
+                            case 3:
+                                text4Length = textLength;
+                                text4Fontsize = fontSize;
+                                textStartX = canvas.width / 2 + (text1Length / 2 + text4Length /2 + fontSize /2);
+                                textStartY = canvas.height / 2 + text1Fontsize / 2;
+                                break;
+                            case 4:
+                                text5Length = textLength;
+                                text5Fontsize = fontSize;
+                                textStartX = canvas.width / 2 - (text1Length / 2 + text5Length /2+ + fontSize /2);
+                                textStartY = canvas.height / 2 + text1Fontsize / 2;
+                                break;
+                            case 5:
+                                text6Length = textLength;
+                                text6Fontsize = fontSize;
+                                textStartX = canvas.width / 2;
+                                textStartY = canvas.height / 2 - (text1Fontsize + text3Fontsize + 10) ;
+                                break;
+                            case 6:
+                                text7Length = textLength;
+                                text7Fontsize = fontSize;
+                                textStartX = canvas.width / 2 + text1Fontsize;
+                                textStartY = canvas.height / 2 + (text1Fontsize  + text7Fontsize / 2) ;
+                                break;
+                            case 7:
+                                text8Length = textLength;
+                                text8Fontsize = fontSize;
+                                textStartX = canvas.width / 2 - text1Fontsize;
+                                textStartY = canvas.height / 2 + (text1Fontsize  + text8Fontsize *3 / 2) ;
+                                break;
+
+                        }
+
+                        ctx.fillText(text,textStartX,textStartY);
+                        ctx.closePath();
+                        ctx.restore();
+
+                        i++;
+                    }
+
+
+                    var img = canvas.toDataURL("image/png");
+                    $('.result-img-2').attr('src',img);
+
+                }
+
+                drawKeyword({
+                    fontSize: [50,40,40,40,30,30,20,15],
+                    textArray: {
+                        "外国文学": 18979,
+                        "小说": 18803,
+                        "经典": 17087,
+                        "飘": 16198,
+                        "历史": 12304,
+                        "福尔摩斯": 10458,
+                        "爱情": 9936,
+                        "乔治·奥威尔": 8147
+                    }
+                })
+
+            })
+		</script>
+	</body>
+</html>
+
+
+
+
+
+

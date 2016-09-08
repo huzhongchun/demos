@@ -1,0 +1,1 @@
+$(function(){var i=1;$(window).scroll(function(){var n=$(window).scrollTop();n>300?1===i&&setTimeout(function(){$(".fix-btn").removeClass("fixedhide"),i=0},100):0===i&&setTimeout(function(){$(".fix-btn").addClass("fixedhide"),i=1},100)})});

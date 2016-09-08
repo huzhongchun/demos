@@ -1,0 +1,564 @@
+#header{
+    height: 72px;
+    position: relative;
+}
+
+#header-image{
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+#header-content{
+    margin-left: 72px;
+    height: 74px;
+    text-align: left;
+    padding: 14px 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    position: relative;
+    background: url(/weidian/image/baoyou.png) 208px 0px no-repeat;
+    background-size: 25px 32px;
+}
+#weixin-detail .header-nickname{
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 18px;
+    background: url(/weidian/image/xiangqing.png) 0px center no-repeat;
+    background-size: 14px 11px;
+}
+#weixin-detail .header-btn{
+    margin-top: 10px;
+    color: #4a4a4a;
+}
+#weixin-detail .header-btn a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #4a4a4a;
+}
+#weixin-detail .header-btn span{
+    display: block;
+    float: left;
+    margin-right: 14px;
+    width: 60px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 21px;
+    text-align: center;
+    color: #646464;
+    border: solid 1px #666666;
+}
+#weixin-detail .header-btn .collect-select{
+    border: solid 1px #f35b74;
+}
+#product-image ul li img{
+    display: block;
+    height: 200px;
+    margin:0px auto;
+}
+#weixin-detail .product-content{
+    background: #f5f5f5;
+    padding: 0px 15px;
+}
+#weixin-detail .current-price{
+    font-size: 18px;
+    font-weight: bold;
+    color:#f35b74;
+}
+#weixin-detail .product-title{
+    text-align: left;
+    padding: 20px 0px 14px;
+    position: relative;
+    height: 26px;
+}
+#weixin-detail .market-price{
+    font-size: 12px;
+    text-decoration: line-through;
+    margin-left: 8px;
+    color: #666666;
+}
+#weixin-detail .jumei_price_foreign{
+    font-size: 12px;
+    text-decoration: line-through;
+    margin-left: 8px;
+    color: #666666;
+}
+#weixin-detail .price-tag{
+    font-size: 12px;
+    position: relative;
+    top:-3px;
+    color:#f35b74;
+}
+#weixin-detail .start-buy{
+    width: 77px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    float: right;
+    background: #f35a73;
+    color: white;
+    margin-right: 10px;
+    margin-top: -3px;
+    color: white;
+}
+.start-buy-gray{
+    background: gray;
+}
+.start-buy a{
+    color: white;
+}
+#weixin-detail .start-buy a{
+    color: #fff;
+}
+#weixin-detail .product-tag img{
+    width: 100%;
+    display: block;
+}
+#weixin-detail .product-tag span{
+    display: block;
+    font-size: 12px;
+    padding-left: 25px;
+    padding-right: 8px;
+    font-weight: bold;
+    float: left;
+    height: 18px;
+    line-height: 20px;
+}
+#weixin-detail .product-tag span:nth-child(1){
+    background: url(/weidian/image/baoyou_icon.png) 0px center no-repeat;
+    background-size: 16px 16px;
+}
+#weixin-detail .product-tag span:nth-child(3){
+    background: url(/weidian/image/7tian.png) 5px center no-repeat;
+    background-size: 18px 16px;
+    padding-left: 29px;
+}
+
+#weixin-detail .product-tag span:nth-child(5){
+    background: url(/weidian/image/zhenpin.png) 5px center no-repeat;
+    background-size: 16px 16px;
+    padding-left: 25px;
+}
+
+#weixin-detail .shu{
+    border-right: solid 1px #d8d8d8;
+    width: 1px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    height: 14px !important;
+    margin-top: 2px;
+}
+
+#weixin-detail .product-desc{
+    font-size: 12px;
+    padding-top: 14px;
+    text-align: left;
+    padding-bottom: 14px;
+    border-top: solid 1px #d8d8d8;
+}
+#weixin-detail .product-tag{
+    padding: 10px 15px;
+    background: black;
+    opacity: 0.8;
+}
+#weixin-detail .module-title{
+    width: 262px;
+    height: 14px;
+    line-height: 14px;
+    margin: 15px 15px 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+#weixin-detail .fix-btn{
+    border-top: solid 1px #d8d8d8;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    background: #f7f7f7;
+    padding-left: 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#weixin-detail .fix-btn .product-title{
+    padding: 10px 0px 7px !important;
+}
+
+#weixin-detail{
+    padding-bottom: 100px;
+}
+
+
+
+
+
+.product-attr{
+    font-size: 12px;
+    text-align: left;
+    color: #656565;
+    margin:0px 15px;
+    border-bottom: solid 1px #d8d8d8;
+}
+.product-attr-title{
+    height: 43px;
+    line-height: 43px;
+    text-align: left;
+    font-size: 14px;
+    display: block;
+    background: url(/weidian/image/arrow_right.png) 275px center no-repeat;
+    background-size: 6px 11px;
+}
+.product-attr ul{
+    padding: 14px 0px 14px;
+    overflow: hidden;
+    border-top: solid 1px #d8d8d8;
+    display: none;
+}
+.product-attr-sku{
+    padding: 10px 0px;
+}
+.product-attr-show ul{
+    display: block;
+}
+.product-attr-title{
+    color: #333333;
+}
+.product-attr-show .product-attr-title{
+    background: url(/weidian/image/arrow_down.png) 275px center no-repeat;
+    background-size: 11px 6px;
+}
+.product-attr li{
+    line-height: 17px;
+}
+
+.daren-pingjia{
+    height: 43px;
+    line-height: 43px;
+    margin: 0px 15px;
+    text-align: left;
+    font-size: 14px;
+    display: block;
+    background: url(/weidian/image/arrow_right.png) 275px center no-repeat;
+    background-size: 6px 11px;
+    border-bottom: solid 1px #d8d8d8;
+    color: #333333;
+}
+.daren-pingjia a{
+    color:#f46078;
+}
+.product-weidian{
+    margin:0px 15px;
+}
+.product-weidian *{
+    width: 100% !important;
+}
+.product-weidian img{
+    width: 100%;
+    display: block;
+    height: auto;
+}
+.comein-weidian{
+    border:solid 1px #f35b74;
+    margin:0px 15px;
+    height: 31px;
+    line-height: 31px;
+    margin-top: 11px;
+    color: #3a3a3a;
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+}
+.comein-weidian a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.comein-arrow{
+    width: 15px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: #f35b74;
+    background: url(/weidian/image/jinruweidian_arrow.png) 0px 0px no-repeat;
+    background-size: 15px 31px;
+}
+#weixin-detail{
+    padding-bottom: 80px;
+}
+
+
+#weixin-detail #content{
+    padding-bottom: 15px;
+}
+
+#weixin-detail .fix-btn{
+    transition: -webkit-transform 0.5s ease 0s;
+}
+
+#weixin-detail .fixedhide{
+    -webkit-transform: translate3d(0,100px,0);
+}
+
+/*一行两个*/
+#weixin-detail .goods-row-two-items{
+    width: 160px;
+    background: #fff;
+    font-size: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+#weixin-detail .goods-row-two-items:nth-child(1){
+    border-top: 1px solid #e0e0e0;
+}
+#weixin-detail .goods-row-two-items:nth-child(2){
+    border-top: 1px solid #e0e0e0;
+}
+#weixin-detail .goods-row-two-items:nth-child(odd){
+    width: 159px !important;
+    border-right: 1px solid #e0e0e0;
+}
+#weixin-detail .goods-row-two-pic{
+    position: relative;
+    height: 160px;
+    text-align: center;
+    overflow: hidden;
+}
+#weixin-detail .goods-row-two-pic img{
+    width: auto;
+    height: 160px;
+}
+#weixin-detail .goods-row-two-des{
+    height: 32px;
+    line-height: 16px;
+    padding: 0 8px;
+    margin: 10px 0;
+    word-break: break-all;
+    overflow: hidden;
+}
+#weixin-detail .goods-row-two-price{
+    padding: 0 10px;
+    margin: 15px 0;
+    height: 25px;
+}
+#weixin-detail .goods-row-two-price-boxs span{
+    display: block;
+}
+#weixin-detail .goods-row-two-price-now{
+    position: relative;
+    font-size: 14px;
+    height: 13px;
+    line-height: 12px;
+    font-weight: bold;
+    color: #f35b74;
+}
+.price-now{
+    position: relative;
+    font-size: 14px;
+    height: 13px;
+    line-height: 12px;
+    font-weight: bold;
+    color: #f35b74;
+}
+#weixin-detail .goods-row-two-price-old{
+    position: relative;
+    font-size: 10px;
+    height: 12px;
+    line-height: 10px;
+    text-decoration: line-through;
+    color: #9b9b9b;
+    top:2px;
+}
+.price-old{
+    position: relative;
+    font-size: 10px;
+    height: 12px;
+    line-height: 10px;
+    text-decoration: line-through;
+    color: #9b9b9b;
+    top:2px; 
+}
+#weixin-detail .goods-row-two-add-btn{
+    font-size: 12px;
+    color:#333333;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+#weixin-detail .goods-row-two-add-btn span{
+    color:#333333;
+    font-weight: bold;
+}
+#weixin-detail .goods-row-two-share-btn{
+    width: 80px;
+    height: 25px;
+    background: url(/weidian/image/share_row_2.png) center no-repeat;
+    background-size: 80px 25px;
+}
+#weixin-detail .goods-row-two-commission-icon{
+    width: 47px;
+    padding-right: 3px;
+    height: 17px;
+    line-height: 17px;
+    background: url(/weidian/image/commission.png) center no-repeat;
+    background-size: 50px 17px;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+}
+
+
+/*sku*/
+.pay-list-attr>div{
+     margin-top: 17px;
+     color: #4c4c4c;
+}
+.attr-list>span{
+    padding: 4px 13px;
+    border: solid 1px #d8d8d8;
+    background: white;
+    font-size: 14px;
+    margin-right: 10px;
+    display: block;
+    float: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    color:#4c4c4c;
+}
+
+.attr-list-select{
+    border: solid 1px #f35b74 !important;
+    color: #f35b74 !important;
+}
+
+.attr-list-disable{
+    color: #d8d8d8 !important;
+}
+
+
+.num-list{
+    display: block;
+}
+.num-label{
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    display: block;
+}
+.attr-list{
+    float:left;
+    float: left;
+    display: block;
+    width: 240px;
+}
+#product-image{
+    position: relative;
+}
+
+#product-image-ul{
+    height: 200px;
+    width: 320px;
+    overflow: hidden;
+}
+.order-fix{
+    position: fixed;
+    bottom: 86px;
+    left: 30px;
+}
+.order-fix img{
+    width: 42px;
+    display: block;
+}
+.product-attr-container{
+    border: solid 1px transparent;
+}
+.attr-container-select{
+    border: solid 1px #f35a73 !important;
+}
+#shouchang {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 2000001;
+    opacity: 0.8;
+    background: black;
+}
+#shouchang .share_arrow {
+    width: 33px;
+    position: absolute;
+    right: 40px;
+    top: 24px;
+}
+#shouchang .share_txt {
+    width: 177px;
+    margin-top: 56px;
+    margin: 56px auto;
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+.slider-dots{
+    position: relative;
+    z-index: 992;
+    right: 0;
+    padding: 0 6px;
+    text-align: center;
+    margin: 0px auto;
+    top: -22px;
+}
+.slider-dots b {
+    display: inline-block;
+    margin: 0 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 13px;
+    border: solid 1px #666666;
+    background-size: 12px 12px;
+}
+.slider-dot-select {
+    background: #666666;
+    background-size: 14px 14px;
+}
+.price-boxs-china{
+    display: inline-block;
+}
+.price-boxs-forign{
+    display: inline-block;
+    font-size: 12px;
+    color: #ccc;
+    margin-top: -7px;
+}
+.china-price{
+    text-decoration: line-through;
+}
+ .image-tag{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 40px !important;
+}
+.image-tag img{
+    width: 100% !important;
+    display: block;
+    height: auto !important;
+}
+
+
+
+

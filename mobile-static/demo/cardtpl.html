@@ -1,0 +1,77 @@
+<style>
+    #card .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+        height: auto;
+    }
+    #card .dialog-btn{
+        width: 158px;
+        padding: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+        letter-spacing: 2px;
+        line-height: 16px;
+        background: #ed145b;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        float: left;
+        line-height: 30px;
+    }
+    #card .change-btn{
+        margin-bottom: 40px;
+    }
+    #card .card-area{
+        width: 262px;
+        height: 53px;
+    }
+</style>
+<div id="card">
+    <p class="font-weight">组件名称：刮刮卡组件</p>
+    <div class="show-area">
+        <div class="card-area">
+            
+        </div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="card-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>(string) element: 需要添加刮刮卡的div类名或者id</p>
+            <p>(string) width: 图片的宽度</p>
+            <p>(string) height: 图片的高度</p>
+            <p>(string) img:需要显示的图片即中奖的图片</p>
+            <p>(string) backgroundImg: 背景图片例如灰色的图片</p>
+        </div>
+        <div class="code-area">
+            <div class="title">HTML</div>
+            <div class="code-boxs code-html">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+<xmp>
+无
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var scratchcard = Jumei.getModule('ui.scratchcard');
+new scratchcard({
+    element:'.card-area',
+    width: 100,
+    height: 20,
+    img: 'http://p0.jmstatic.com/mobile/act/active301/702luodi/prize-area-un.jpg',
+    backgroundImg: 'http://p0.jmstatic.com/mobile/act/active301/702luodi/prize-area.png'
+});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>

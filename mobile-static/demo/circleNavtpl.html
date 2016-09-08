@@ -1,0 +1,110 @@
+
+<style>
+
+    #circleNav .show-area{
+        width: 318px;
+        overflow: scroll;
+        border: 1px solid #ed145b;
+        margin-bottom: 10px;
+        height: 200px;
+        position: relative;
+    }
+
+    #circleNav #nav-btn{
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+        background: #ed145b;
+    }
+    #circleNav .item{
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: #ed145b;
+    }
+    #circleNav .item a{
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+    }
+</style>
+<div id="circleNav">
+    <p class="font-weight">组件名称：圆形导航菜单</p>
+    <div class="show-area">
+        <div id="nav-btn">分类</div>
+    </div>
+    <div class="change-btn">点击展开详细使用说明</div>
+    <div id="circleNav-text" class="height0">
+        <div class="widget-des-area">
+            <p class="font-weight">说明：</p>
+            <p class="content">
+            <p>（string） id: 主按钮的id名</p>
+            <p>（num）    radius: 弹出的按钮形成的圆的半径</p>
+            <p>（num）    animateTime: 弹出按钮到达对应的位置的动画时间,</p>
+            <p>（num）    baseDeg: 相邻两个弹出按钮的角度，由此来确定最多能展示的弹出按钮数,</p>
+            <p>（array）  hrefs: 对应弹出按钮的链接，数组的,</p>
+            <p>（boolean）touchSupport: 链接是否支持触屏版,</p>
+            <p>（int）    startDeg: 第一个弹出按钮的的位置，即baseDeg的倍数,</p>
+            <p>（num）    offsetX: 弹出按钮形成的圆的X轴方向的偏移量,</p>
+            <p>（num）    offsetY: 弹出按钮形成的圆的Y轴方向的偏移量,</p>
+            <p>（num）    intervalTime: 相邻弹出按钮的间隔弹出时间</p>
+            </p>
+            <p class="font-weight">注意：</p>
+            <p class="content">
+                intervalTime必须大于0
+            </p>
+        </div>
+        <div class="code-area">
+            <div class="title">CSS样式</div>
+            <div class="code-boxs code-css">
+
+<xmp>
+#nav-btn{
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background: #56ace7;
+}
+.item{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #fb5094;
+}
+.item a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+</xmp>
+            </div>
+            <div class="title">Javascript调用</div>
+            <div class="code-boxs code-js">
+<xmp>
+var circleNav = Jumei.getModule('ui.circleNav');
+var circleNavobj = new circleNav({
+    animateTime: 0.3,
+    baseDeg: 30,
+    hrefs: ['http://www.baidu.com','','http://www.jumei.com','','http://m.jumei.com','',''],
+    touchSupport: false,
+    startDeg: 2,
+    offsetX: 0,
+    offsetY: 0,
+    intervalTime: 100
+});
+</xmp>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

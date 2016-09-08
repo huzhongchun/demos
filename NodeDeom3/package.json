@@ -1,0 +1,20 @@
+{
+  "name": "node_demo_1",
+  "version": "1.0.0",
+  "description": "demo grab cNode article ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "eventproxy": "^0.3.4",
+    "express": "^4.14.0",
+    "superagent": "^2.1.0"
+  },
+  "devDependencies": {
+    "log4js": "^0.6.38"
+  }
+}

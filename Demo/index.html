@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no"/>
+        <link rel="canonical" href="http://www.funkfox.com"  />
+        <meta property="og:url"                content="http://www.funkfox.com" />
+        <meta property="og:type"               content="article" />
+        <meta property="og:title"              content="这是你发现美的地方～" />
+        <meta property="og:description"        content="桃花岛的世界，你懂的～就是有很多桃花的的岛屿！" />
+        <meta property="og:image:url" content="http://static.bj.taooo.cc/note/20151204/4684b6d5b7dafb0e205c10dd83c3412a.png" />
+        <meta property="og:image" content="http://static.bj.taooo.cc/note/20151204/4684b6d5b7dafb0e205c10dd83c3412a.png" />
+        <meta property="fb:app_id" content="9869919170" />
+        <style type="text/css">
+            .test-item{
+                padding: 15px;
+                text-align: center;
+                font-size: 15px;
+                width: 80%;
+                border-radius: 4px;
+                color: #fff;
+                background: #428bca;
+                margin: 10px auto;
+                font-family: 'YourWebFontName'
+            }
+            @font-face {        
+                font-family: 'YourWebFontName';        
+                src: url('ShadowsIntoLight.ttf')  format('truetype'), /* Safari, Android, iOS */             
+              }
+        </style>
+    </head>
+    <body>
+        <div id="scale-wrapper">
+            <div class="test-item" onclick="closeBounce()">关闭回弹bounce</div>
+            <div class="test-item" onclick="openBounce()">打开回弹bounce</div>
+            <div class="test-item" onclick="setTitle()">设置标题为“桃花岛”</div>
+            <div class="test-item" onclick="setTitleColor()">设置标题为红色</div>
+            <div class="test-item" onclick="closeShareBtn()">关闭分享按钮</div>
+            <div class="test-item" onclick="openShareBtn()">打开分享按钮</div>
+            <div class="test-item" onclick="setShareContent()">设置分享文案</div>
+            <div class="test-item" onclick="closeNavBar()">隐藏标题栏</div>
+            <div class="test-item" onclick="openNavBar()">显示标题栏</div>
+            <div class="test-item" onclick="openSpinner()">打开spinner</div>
+            <div class="test-item" onclick="closeSpinner()">关闭spinner</div>
+            <div class="test-item" onclick="openLogin()" id="login">登录</div>
+            <div class="test-item" onclick="closeWebview()">关闭Webview</div>
+        </div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1508837919444489',
+              xfbml      : true,
+              version    : 'v2.5'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script type="text/javascript">
+             
+/**
+ * @name Jumei
+ * @单例
+ */
+
+
+/*
+ * TaooWebView 为webview方法的封装
+ */
+
+var TaooWebView = {
+    _Bounce: 'false',
+    //设置回弹效果
+    setBounce(bounce) {
+        calldevice('setWebViewBounce', 'bounce', bounce);
+        this._Bounce = bounce;
+    },
+    getBounce() {
+        return this._Bounce;
+    }
+};
+TaooWebView.toolbar = {
+    _Status: 'show',
+    _Color: 'ffffff',
+    _Share: 'hidden',
+    _Content: 'shareContent',
+    //设置标题栏分享按钮
+    setShare(status) {
+        calldevice('setToolbarShare', 'toolbarshare', status);
+        this._Status = status;
+    },
+    getShare() {
+        return this._Status;
+    },
+    //设置标题栏分享文案
+    setShareContent(content) {
+        calldevice('setShareContent', '', content);
+        this._Content = content;
+    },
+    getShareContent() {
+        return this._Content;
+    }
+};
+TaooWebView.title = {
+    _Status: 'hidden',
+    _Text: 'title',
+    _Color: 'ffffff',
+    //设置标题栏状态
+    setStatus(status) {
+        calldevice('setTitlebarStatus', 'titlebarstatus', status);
+        this._Status = status;
+    },
+    getStatus() {
+        return this._Status;
+    },
+    //设置标题栏文本
+    setText(text) {
+        this._Text = text;
+        calldevice('setTitleText', 'titletext', text);
+    },
+    getText() {
+        return this._Text;
+    },
+    //设置标题栏颜色
+    setColor(color) {
+        this._Color = color;
+        calldevice('setTitleColor', 'titlecolor', color);
+    },
+    getColor() {
+        return this._Color;
+    }
+};
+TaooWebView.spinner = {
+    _Status: 'hidden',
+    //设置spinner状态
+    setStatus(status) {
+        calldevice('setSpinnerStatus', 'spinnerstatus', status);
+        this._Status = status;
+    },
+    getStatus() {
+        return this._Status;
+    }
+};
+
+TaooWebView.login = {
+    _Callback: function(){
+        location.reload();
+    },
+    //设置spinner状态
+    setLogin(_callback) {
+        calldevice('login', 'callback', _callback);
+        this._Callback = _callback;
+    }
+};
+TaooWebView.close = function() {
+    window.location.href = 'taooweb://closeWebView';
+}
+TaooWebView.refresh = function() {
+    window.location.href = 'taooweb://refreshWebView';
+}
+function calldevice(fuc, parm, val) {
+    console.log('taooweb://' + fuc + '?' + parm + '=' + val);
+    window.location.href = 'taooweb://' + fuc + '?' + parm + '=' + val;
+
+}
+
+
+
+/*
+
+    引用
+    设置属性： TaooWebView.toolbar.color = '#FF000',
+    调用方法： TaooWebView.close();关闭webview；
+*/
+
+
+    function closeBounce(){
+        TaooWebView.setBounce('false');
+    }
+    function openBounce(){
+        TaooWebView.setBounce('true');
+    }
+
+    function setTitle(){
+        TaooWebView.title.setText('桃花岛')
+    }
+    function setTitleColor(){
+        var color = encodeURIComponent('#FF0000')
+        TaooWebView.title.setColor(color);
+    }
+
+    function closeShareBtn(){
+        TaooWebView.toolbar.setShare('hidden');
+    }
+    function openShareBtn(){
+        TaooWebView.toolbar.setShare('show');
+    }
+    function setShareContent(){
+        var url = location.href;
+        var shareCallback = function(flag){
+            if(flag == 'success'){
+                alert('分享成功～');
+            }
+            else{
+                alert('分享失败～');
+            }
+        }
+        var content = 'title=这个是分享的标题&description=这个是分享的内容&webpageUrl='+url+'&image=http://www.taooo.cc/images/index_7.png&callback='+shareCallback;
+        TaooWebView.toolbar.setShareContent(content);
+    }
+
+    function closeNavBar(){
+        TaooWebView.title.setStatus('hidden');
+    }
+    function openNavBar(){
+        TaooWebView.title.setStatus('show');
+    }
+
+    function closeSpinner(){
+        TaooWebView.spinner.setStatus('hidden');
+    }
+    function openSpinner(){
+        TaooWebView.spinner.setStatus('show&exclusiveTouch=false');
+    }
+
+    function openLogin(){
+        TaooWebView.login.setLogin(function(){
+            if(flag == 'success'){
+                document.getElementById('login').innerText = '登录成功～';
+                alert('分享成功～');
+                TaooWebView.refresh();
+            }
+            else{
+                alert('分享失败～');
+            }
+        })
+    }
+
+    function closeWebview(){
+        TaooWebView.close();
+    }
+
+        </script>
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-10-16, 11:48:57
+    Author     : yuhaitao
+*/
+i{
+    text-decoration: none;
+    font-style: normal;
+}
+.countdown{
+    font-size: 14px;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 3px;
+    left: 159px;
+    width: 102px;
+    height: 20px;
+    line-height: 20px;
+    color: white;
+}
+.countdown>span{
+    width:20px;
+}
+.countdown .count-day{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-hour{
+    position: absolute;
+    top: 0px;
+    left: 34px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-minute{
+    position: absolute;
+    top: 0px;
+    left: 76px;
+    letter-spacing: 3.8px;
+}
+.countdown .count-second{
+    position: absolute;
+    top: 0px;
+    left: 110px;
+    letter-spacing: 3.8px;
+}
+.countdown i{
+    /*    -webkit-transition:all 200ms ease;*/
+    /*    -webkit-transform:translate3d(0px,0px,0px);*/
+}
+.countdown i.digit-wrap{
+    /*    -webkit-transform:translate3d(0px,-20px,0px);*/
+    position:relative;
+    top:-20px;
+}
+.countdown .digit{
+    height: 20px;
+    width: 8px;
+}
+.countdown>span{
+    height:20px;
+    overflow: hidden;
+}
+.countdown .digit-wrap i{
+    display:block;
+}
+.countdown .animate{
+    /*    -webkit-transform:translate3d(0px,0px,0px) !important;*/
+    position:absolute;
+    top:0px;
+}
+.countdown .count-second>i,.countdown .count-minute>i,.countdown .count-hour>i,.countdown .count-day>i{
+    float:left;
+}

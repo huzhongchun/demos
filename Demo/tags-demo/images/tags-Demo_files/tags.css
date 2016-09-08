@@ -1,0 +1,415 @@
+.img-box {
+    position: relative;
+}
+.img-box img{
+    display: block;
+    width: 100%;
+}
+.on-img-tag-box{
+    background: transparent;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: #fff;
+    font-size: 13px;
+
+}
+.point-and-line{
+    font-size: 0;
+    position: relative;
+}
+.point-center{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 2px #000 ;
+    position: relative;
+    z-index: 10;
+    vertical-align: middle;
+}
+.white-line{
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    box-shadow: 0 1px 2px #000 ;
+    z-index: 9;
+    position: relative;
+    vertical-align: middle;
+
+}
+.line-style-1{
+}
+
+.tag-info{
+    font-size: 0;
+}
+.tag-icon{
+    display: inline-block;
+    width: 18px; 
+    height: 18px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 1px 2px #555 ;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+.tag-icon img{
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+}
+.category-style-name{
+    text-shadow: 0 1px 2px #111;
+    vertical-align: middle;
+    font-size: 13px;
+    margin-right: 9px;
+}
+.category-brand-name{
+    text-shadow: 0 1px 2px #111;
+    vertical-align: middle;
+    font-size: 13px;
+
+}
+.tag-money{
+    font-size: 13px;
+    text-shadow: 0 1px 2px #111;
+    height: 16px;
+    line-height: 16px;
+    display: inline-block;
+}
+.tag-money .money-numb{
+    margin-right: 3px;
+}
+
+.buy-mothod{
+    font-size: 13px;
+    text-shadow: 0 1px 2px #111;
+    height: 16px;
+    line-height: 16px;
+    display: inline-block;
+}
+.buy-mothod .buy-country{
+    margin-right: 8px;
+}
+.buy-mothod .buy-link{
+    padding-right: 16px;
+    background: url(../images/link_icon.png) right center no-repeat;
+    background-size: 16px auto;
+}
+
+.dire-right .point-and-line{
+    float: right;
+}
+.dire-left .point-and-line{
+    float: left;
+}
+.dire-right .tag-info{
+    float: right;
+}
+.dire-left .tag-info{
+    float: left;
+}
+.point-and-line .line-style-2{
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    -moz-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg);
+}
+.point-and-line .line-style-3{
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+}
+.tag-style-brand{
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tag-type-1{
+    height: 18px;
+}
+.tag-type-1.dire-right .point-and-line {
+    margin-left: 2px;
+}
+.tag-type-1.dire-right .point-and-line .point-center{
+    float: right;
+}
+.tag-type-1.dire-right .point-and-line .white-line{
+    float: right;
+}
+.tag-type-1 .point-and-line.dire-left {
+    margin-right: 2px;
+}
+.tag-type-1.dire-left .point-and-line .point-center{
+    float: left;
+}
+.tag-type-1.dire-left .point-and-line .white-line{
+    float: left;
+}
+.tag-type-1 .point-and-line .point-center{
+    top: 6px;
+}
+.tag-type-1 .point-and-line .white-line{
+    top: 8px;
+}
+
+
+
+
+
+.tag-type-2{
+    top: 130px;
+}
+.tag-type-2 .point-and-line{
+    width: 20px;
+}
+/* sin45° * 20 = 17 */
+.tag-type-2.dire-left .point-and-line .line-style-2{
+    position: absolute;
+    top: -6px;
+    left: 0px;
+}
+.tag-type-2.dire-left .point-and-line .line-style-3{
+    
+    position: absolute;
+    top: 9px;
+    left: 0px;
+}
+.tag-type-2.dire-right .point-and-line{
+    text-align: right;
+}
+.tag-type-2.dire-right .tag-info{
+    text-align: right;
+}
+/* sin45° * 20 = 17 */
+.tag-type-2.dire-right .point-and-line .line-style-3{
+    
+    position: absolute;
+    top: -6px;
+    right: 0px;
+}
+.tag-type-2.dire-right .point-and-line .line-style-2{
+    position: absolute;
+    top: 9px;
+    right: 0px;
+}
+
+.tag-type-2 .tag-money{
+    display: block;
+    margin-bottom: 14px;
+}
+.tag-type-2 .buy-mothod{
+    display: block;
+}
+.tag-type-2 .tag-info{
+    position: relative;
+    top: -22px;
+}
+
+
+
+.tag-type-3{
+    top: 230px;
+}
+.tag-type-3.dire-left  .point-and-line{
+    width: 20px;
+    padding-left: 20px;
+    margin-left: 2px
+}
+.tag-type-3.dire-left .line-style-1{
+    position: absolute;
+    top: 2px;
+    left: 1px;
+}
+/* sin45° * 20 = 17 */
+.tag-type-3.dire-left .point-and-line .line-style-2{
+    
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    margin-left: 2px;
+}
+.tag-type-3.dire-left .point-and-line .line-style-3{
+    
+    position: absolute;
+    top: 9px;
+    left: 20px;
+}
+
+.tag-type-3.dire-right .tag-info{
+    text-align: right;
+}
+.tag-type-3.dire-right  .point-and-line{
+    text-align: left;
+    width: 25px;
+    padding-left: 15px;
+    margin-right: 2px;
+}
+.tag-type-3.dire-right .line-style-1{
+    position: absolute;
+    top: 2px;
+    left: 20px;
+}
+/* sin45° * 20 = 17 */
+.tag-type-3.dire-right .point-and-line .line-style-3{
+    position: absolute;
+    top: -6px;
+    left: 0px;
+}
+.tag-type-3.dire-right .point-and-line .line-style-2{
+    
+    position: absolute;
+    top: 9px;
+    left: 0px;
+}
+
+.tag-type-3 .tag-money{
+    display: block;
+    margin-bottom: 14px;
+}
+.tag-type-3 .buy-mothod{
+    display: block;
+}
+.tag-type-3 .tag-info{
+    position: relative;
+    top: -22px;
+}
+.tag-type-3 .info-style-1{
+    top: -6px;
+}
+
+
+
+
+
+.tag-type-4{
+    top: 350px;
+}
+.tag-type-4 .line-style-4{
+    height: 60px;
+    width: 1px;
+    position: absolute;
+    top: -27px;
+    z-index: 11;
+}
+.tag-type-4 .line-style-5{
+    position: absolute;
+    width: 5px;
+    border-radius: 5px;
+}
+.tag-type-4 .line-style-6{
+    position: absolute;
+    width: 5px;
+    border-radius: 5px;
+    z-index: 12;
+}
+.tag-type-4.dire-left  .point-and-line{
+     width: 22px;
+     margin-right: 5px;
+}
+.tag-type-4.dire-left .tag-style-brand{
+    margin-bottom: 14px;
+}
+.tag-type-4.dire-left .line-style-1{
+    position: absolute;
+    top: 2px;
+    left: 1px;
+}
+.tag-type-4.dire-left .point-and-line .line-style-4{
+    left: 15px;
+}
+.tag-type-4.dire-left .point-and-line .line-style-5{
+    top: -27px;
+    left: 15px;
+}
+.tag-type-4.dire-left .point-and-line .line-style-6{
+    top: 33px;
+    left: 15px;
+}
+
+.tag-type-4.dire-right .tag-style-brand{
+    margin-bottom: 10px;
+}
+.tag-type-4.dire-right .tag-info{
+    text-align: right;
+}
+.tag-type-4.dire-right .point-and-line{
+    text-align: left;
+    padding-left: 20px;
+    margin-right: 2px;
+}
+.tag-type-4.dire-right .line-style-1{
+    position: absolute;
+    top: 2px;
+    left: 1px;
+}
+.tag-type-4.dire-right .point-and-line .line-style-4{
+    left: 7px;
+}
+.tag-type-4.dire-right .point-and-line .line-style-5{
+    top: -27px;
+    left: 2px;
+}
+.tag-type-4.dire-right .point-and-line .line-style-6{
+    top: 32px;
+    left: 2px;
+}
+
+.tag-type-4 .tag-money{
+    display: block;
+    margin-bottom: 14px;
+}
+.tag-type-4 .buy-mothod{
+    display: block;
+}
+.tag-type-4.dire-right .tag-info{
+    position: relative;
+    top: -34px;
+}
+.tag-type-4.dire-left .tag-info{
+    position: relative;
+    top: -38px;
+}
+.tag-type-4 .info-style-1{
+    top: -6px;
+}
+
+
+
+
+
+
+
+
+
+
+

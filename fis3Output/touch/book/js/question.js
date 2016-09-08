@@ -1,0 +1,1 @@
+require(["book/js/public"],function(e){var n=e;n.setWxShareContent()});
