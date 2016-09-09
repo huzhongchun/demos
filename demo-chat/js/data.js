@@ -10,32 +10,45 @@ var data = {
     "start":{
         "answer1": {
             "btn": "开始",
-            "result": ["http://resource.bj.taooo.cc/activity/201605/01/images/3.jpg","访客即将进入核辐射禁区","<span style='color:red'>……正在联络……</span>","<span style='color:red'>……第163个访客已经到来……</span>","<span style='color:red'>……访客已就位……</span>", "选择你喜欢的阅读模式","是你吗？请点击确认"],
+            "result": [
+                //"http://resource.bj.taooo.cc/activity/201605/01/images/3.jpg",
+                "访客即将进入核辐射禁区",
+                // "<span style='color:red'>……正在联络……</span>",
+                // "<span style='color:red'>……第163个访客已经到来……</span>",
+                // "<span style='color:red'>……访客已就位……</span>",
+                // "选择你喜欢的阅读模式",
+                // "是你吗？请点击确认"
+            ],
             "nextid": "0"
         },
     },
     "0": {
         "answer1": {
-            "btn": ">>是点这里吗？",
-            "result": ["是的", "选择你喜欢的阅读模式"],
+            "btn": ">>阅读完整特稿",
+            "result": [
+                "http://resource.bj.taooo.cc/activity/201605/01/images/3.jpg",
+                "点击图片阅读文章"
+            ],
             "nextid": "1"
         },
         "answer2": {
-            "btn": "",
-            "result": "",
-            "nextid": ""
+            "btn": ">>用聊天的方式看",
+            "result": [
+                "2011年，乌克兰决定开放切尔诺贝利核辐射禁区作为旅游点。末世景色和世界顶级核辐射灾难相结合的卖点吸引着每年大约1万游客前来参观。",
+                ],
+            "nextid": "1"
         }
     },
     "1": {
         "answer1": {
             "btn": ">>阅读完整特稿",
             "result": ["http://resource.bj.taooo.cc/activity/201605/01/images/3.jpg", "点击图片阅读文章"],
-            "nextid": "2"
+            "nextid": "1"
         },
         "answer2": {
             "btn": ">>用聊天的方式看",
-            "result": ["2011年，乌克兰决定开放切尔诺贝利核辐射禁区作为旅游点。末世景色和世界顶级核辐射灾难相结合的卖点吸引着每年大约1万游客前来参观。", "pic1.jpg", "pic2.jpg"],
-            "nextid": "10"
+            "result": ["2011年，乌克兰决定开放切尔诺贝利核辐射禁区作为旅游点。末世景色和世界顶级核辐射灾难相结合的卖点吸引着每年大约1万游客前来参观。", "http://resource.bj.taooo.cc/activity/201605/01/images/3.jpg", "http://resource.bj.taooo.cc/activity/201605/01/images/3.jpg"],
+            "nextid": "1"
         }
     },
     "2": {
