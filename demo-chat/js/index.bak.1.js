@@ -26,13 +26,13 @@ $(function(){
 		if(answerData.result && answerData.result.length > 0){
 			var result = answerData.result;
 			for (var i = 0; i < result.length; i++) {
-				var resultItem = result[i];
+				var resultItem = result[i],txtTpl = '';
 				if(resultItem.match(/\.(jpg|png|jpeg|gif)$/)){
-					var txtTpl = '<div class="chat-box text-left"><div class="run-left"><img src="'+resultItem+'"></div></div>';
+					txtTpl = '<div class="chat-box text-left"><div class="run-left"><img src="'+resultItem+'"></div></div>';
 				}else if(resultItem.match(/\.(mp4)$/)){
-					var txtTpl = '<div class="chat-box text-left"><div class="run-left"><video poster="http://img2.cache.netease.com/cnews/2016/4/25/2016042517200229dda.jpg" src="'+resultItem+'" controls="controls">您的浏览器不支持 video 标签。</video></div></div>';
+					txtTpl = '<div class="chat-box text-left"><div class="run-left"><video poster="http://img2.cache.netease.com/cnews/2016/4/25/2016042517200229dda.jpg" src="'+resultItem+'" controls="controls">您的浏览器不支持 video 标签。</video></div></div>';
 				}else{
-					var txtTpl = '<div class="chat-box text-left"><div class="run-left"><span class="txt">'+resultItem+'</span></div></div>';
+					txtTpl = '<div class="chat-box text-left"><div class="run-left"><span class="txt">'+resultItem+'</span></div></div>';
 				}
 				_tplList.push({
 					tpl: txtTpl,

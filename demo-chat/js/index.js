@@ -42,15 +42,13 @@ $(function(){
                 if(index < originIndex){
                     $(_this).removeClass('run-right').animate({
                         opacity: 0,
-                    }, 800, function () {
-                        //$(_this).remove();
-                    });
+                    }, 600);
                     setTimeout(function () {
                         $(_this).removeClass('run-right').animate({
                             height: 0,
                             'margin-bottom': 0
-                        }, 800, function () {
-                            //$(_this).remove();
+                        }, 500, function () {
+                            $(_this).remove();
                         });
                     },200)
                 }else if(index > originIndex){
@@ -66,23 +64,18 @@ $(function(){
                 }
 
             });
-            // $abChatBox.animate({
-            //     height: '36px'
-            // }, 1600, function () {
-            //
-            // });
         }
 		if(answerData.result && answerData.result.length > 0){
             $(this).addClass('clicked');
             var result = answerData.result;
 			for (var i = 0; i < result.length; i++) {
-				var resultItem = result[i];
+				var resultItem = result[i] ,txtTpl = '';
 				if(resultItem.match(/\.(jpg|png|jpeg|gif)$/)){
-					var txtTpl = '<div class="run-left"><img src="'+resultItem+'"></div>';
+					txtTpl = '<div class="run-left"><img src="'+resultItem+'"></div>';
 				}else if(resultItem.match(/\.(mp4)$/)){
-					var txtTpl = '<div class="run-left"><video poster="http://img2.cache.netease.com/cnews/2016/4/25/2016042517200229dda.jpg" src="'+resultItem+'" controls="controls">您的浏览器不支持 video 标签。</video></div>';
+					txtTpl = '<div class="run-left"><video poster="http://img2.cache.netease.com/cnews/2016/4/25/2016042517200229dda.jpg" src="'+resultItem+'" controls="controls">您的浏览器不支持 video 标签。</video></div>';
 				}else{
-					var txtTpl = '<div class="run-left"><span class="txt">'+resultItem+'</span></div></div>';
+					txtTpl = '<div class="run-left"><span class="txt">'+resultItem+'</span></div></div>';
 				}
 				_tplList.push([{
 					tpl: txtTpl,

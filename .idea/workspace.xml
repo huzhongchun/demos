@@ -29,31 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="chernobyl_disaster.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/网易聊天模式/files/chernobyl_disaster.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1914">
-              <caret line="87" column="32" selection-start-line="84" selection-start-column="12" selection-end-line="87" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo-chat/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.bak.1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-chat/js/index.bak.1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -62,26 +42,16 @@
       <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo-chat/js/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+            <state relative-caret-position="176">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1473388986000" expanded="true" signature="464:473" placeholder="..." />
-                <marker date="1473388986000" expanded="true" signature="526:535" placeholder="..." />
-                <marker date="1473388986000" expanded="true" signature="595:604" placeholder="..." />
-                <marker date="1473388986000" expanded="true" signature="3461:3470" placeholder="..." />
-                <marker date="1473388986000" expanded="true" signature="3715:3724" placeholder="..." />
+                <marker date="1473408229000" expanded="true" signature="459:468" placeholder="..." />
+                <marker date="1473408229000" expanded="true" signature="518:527" placeholder="..." />
+                <marker date="1473408229000" expanded="true" signature="584:593" placeholder="..." />
+                <marker date="1473408229000" expanded="true" signature="3204:3213" placeholder="..." />
+                <marker date="1473408229000" expanded="true" signature="3458:3467" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo-chat/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -89,18 +59,18 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo-chat/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+            <state relative-caret-position="55">
+              <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chernobyl_disaster.1083997.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/网易聊天模式/files/chernobyl_disaster.1083997.css">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="84" column="27" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="27" />
+            <state relative-caret-position="66">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -121,8 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/fis3Test/touch/book/js/address.js" />
-        <option value="$PROJECT_DIR$/fis3Test/touch/thefair/js/musicBox.js" />
         <option value="$PROJECT_DIR$/fis3Test/touch/book/css/bookList.css" />
         <option value="$PROJECT_DIR$/fis3Test/test.js" />
         <option value="$PROJECT_DIR$/fis3Test/touch/thefair/js/articledetail.js" />
@@ -169,9 +137,11 @@
         <option value="$PROJECT_DIR$/canvas/index-clip2.html" />
         <option value="$PROJECT_DIR$/deviceorientation/index.html" />
         <option value="$PROJECT_DIR$/demo-chat/index.html" />
-        <option value="$PROJECT_DIR$/demo-chat/css/index.css" />
-        <option value="$PROJECT_DIR$/demo-chat/js/data.js" />
+        <option value="$PROJECT_DIR$/demo-chat/js/index.bak.1.js" />
         <option value="$PROJECT_DIR$/demo-chat/js/index.js" />
+        <option value="$PROJECT_DIR$/demo-chat/js/data.js" />
+        <option value="$PROJECT_DIR$/demo-chat/css/index.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -243,38 +213,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="网易聊天模式" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_demo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="网易聊天模式" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_demo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="demo-chat" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -330,15 +268,15 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fis3Test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/demo-chat/js" />
       <recent name="$PROJECT_DIR$/aaaa/node_modules/upload-to-oss" />
       <recent name="$PROJECT_DIR$/aaaa/_assets" />
       <recent name="$PROJECT_DIR$/aaaa" />
-      <recent name="$PROJECT_DIR$/static_resource_test" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/fis3Test" />
     </key>
   </component>
   <component name="RunManager">
@@ -402,12 +340,12 @@
       <workItem from="1472785106808" duration="8157000" />
       <workItem from="1473129369859" duration="10184000" />
       <workItem from="1473318631338" duration="7292000" />
-      <workItem from="1473326271472" duration="12766000" />
+      <workItem from="1473326271472" duration="18228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203869000" />
+    <option name="totallyTimeSpent" value="209331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -419,7 +357,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -450,20 +388,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static_resource_test/touch/book/js/order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static_resource_test/touch/thefair/css/dailycollectionHistory.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fis3Test/files-changed.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -738,14 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-chat/js/index.bak.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/网易聊天模式/files/chernobyl_disaster.1083997.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -762,10 +678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-chat/css/index.css">
+    <entry file="file://$PROJECT_DIR$/demo-chat/js/index.bak.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+        <state relative-caret-position="198">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -778,25 +694,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo-chat/js/data.js">
+    <entry file="file://$PROJECT_DIR$/网易聊天模式/files/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+        <state relative-caret-position="6226">
+          <caret line="8" column="17936" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="17936" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1473388986000" expanded="true" signature="464:473" placeholder="..." />
-            <marker date="1473388986000" expanded="true" signature="526:535" placeholder="..." />
-            <marker date="1473388986000" expanded="true" signature="595:604" placeholder="..." />
-            <marker date="1473388986000" expanded="true" signature="3461:3470" placeholder="..." />
-            <marker date="1473388986000" expanded="true" signature="3715:3724" placeholder="..." />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-chat/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        <state relative-caret-position="220">
+          <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-chat/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1473408229000" expanded="true" signature="459:468" placeholder="..." />
+            <marker date="1473408229000" expanded="true" signature="518:527" placeholder="..." />
+            <marker date="1473408229000" expanded="true" signature="584:593" placeholder="..." />
+            <marker date="1473408229000" expanded="true" signature="3204:3213" placeholder="..." />
+            <marker date="1473408229000" expanded="true" signature="3458:3467" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo-chat/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding />
         </state>
       </provider>
