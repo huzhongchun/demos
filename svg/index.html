@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+    <style>
+        svg{
+            border: 1px solid #ccc;
+            background: #F1F1F1;
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <svg width="500" height="500" >
+        <g id="cycle-1">
+            <path d="M20 20 30 20 40 40 50 100Z" style="fill:none;stroke: red;stroke-width: 4;"></path>
+        </g>
+        <g id="cycle-2">
+            <path d="M180 170 A60 60 0 0 1 240 230" style="fill:none;stroke: #009ee3;stroke-width: 1;"></path>
+            <path d="M180 180 A50 50 0 0 1 230 230 L180 230Z" style="fill:#009ee3;stroke: #009ee3;stroke-width: 1;"></path>
+        </g>
+        <g id="cycle-3">
+            <path d="M95 230 A80 80 0 0 1 175 150" style="fill:none;stroke: #004d91;stroke-width: 4;"></path>
+            <path d="M105 230 A70 70 0 0 1 175 160 L175 230Z" style="fill:#004d91;stroke: #004d91;stroke-width: 1;"></path>
+        </g>
+
+        <g id="bezier-1">
+            <path d="M200 250 Q 210 210 50 50 280300" style="fill:none;stroke-width: 1;stroke:black;"></path>
+        </g>
+    </svg>
+<script>
+    document.getElementById('cycle-2').onmouseover=function(){
+        console.log(1);
+    }
+</script>
+</body>
+</html>
