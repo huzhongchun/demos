@@ -5,35 +5,221 @@
     <title>SVG</title>
     <style>
         svg{
-            border: 1px solid #ccc;
             background: #F1F1F1;
             width: 500px;
             margin: 0 auto;
         }
+        circle{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+
     <svg width="500" height="500" >
-        <g id="cycle-1">
-            <path d="M20 20 30 20 40 40 50 100Z" style="fill:none;stroke: red;stroke-width: 4;"></path>
-        </g>
         <g id="cycle-2">
             <path d="M180 170 A60 60 0 0 1 240 230" style="fill:none;stroke: #009ee3;stroke-width: 1;"></path>
             <path d="M180 180 A50 50 0 0 1 230 230 L180 230Z" style="fill:#009ee3;stroke: #009ee3;stroke-width: 1;"></path>
         </g>
         <g id="cycle-3">
-            <path d="M95 230 A80 80 0 0 1 175 150" style="fill:none;stroke: #004d91;stroke-width: 4;"></path>
+            <path d="M95 230 A80 80 0 0 1 175 150" style="fill:none;stroke: #004d91;stroke-width: 2;"></path>
             <path d="M105 230 A70 70 0 0 1 175 160 L175 230Z" style="fill:#004d91;stroke: #004d91;stroke-width: 1;"></path>
         </g>
+    </svg>
 
-        <g id="bezier-1">
-            <path d="M200 250 Q 210 210 50 50 280300" style="fill:none;stroke-width: 1;stroke:black;"></path>
+    <svg width="500" height="500">
+        <g id="bezier-2">
+            <path d="M50 250 Q 180 10 450 250 " style="fill:none;stroke-width: 1;stroke:black;"></path>
+        </g>
+        <circle r="10" cx="50" cy="250" style="stroke:none;fill:#009ee3;"></circle>
+        <circle class="controller" r="10" cx="180" cy="10" style="stroke:none;fill:#009ee3;"></circle>
+        <circle r="10" cx="450" cy="250" style="stroke:none;fill:#009ee3;"></circle>
+        <g id="xy-sys">
+            <path d="M0 0 L0 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M10 0 L10 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M20 0 L20 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M30 0 L30 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M40 0 L40 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M50 0 L50 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M60 0 L60 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M70 0 L70 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M80 0 L80 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M90 0 L90 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M100 0 L100 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M110 0 L110 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M120 0 L120 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M130 0 L130 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M140 0 L140 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M150 0 L150 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M160 0 L160 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M170 0 L170 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M180 0 L180 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M190 0 L190 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M200 0 L200 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M210 0 L210 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M220 0 L220 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M230 0 L230 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M240 0 L240 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M250 0 L250 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M260 0 L260 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M270 0 L270 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M280 0 L280 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M290 0 L290 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M300 0 L300 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M310 0 L310 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M320 0 L320 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M330 0 L330 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M340 0 L340 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M350 0 L350 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M360 0 L360 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M370 0 L370 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M380 0 L380 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M390 0 L390 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M400 0 L400 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M410 0 L410 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M420 0 L420 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M430 0 L430 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M440 0 L440 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M450 0 L450 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M460 0 L460 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M470 0 L470 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M480 0 L480 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M490 0 L490 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M500 0 L500 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 0 L500 0" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 10 L500 10" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 20 L500 20" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 30 L500 30" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 40 L500 40" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 50 L500 50" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 60 L500 60" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 70 L500 70" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 80 L500 80" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 90 L500 90" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 100 L500 100" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 110 L500 110" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 120 L500 120" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 130 L500 130" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 140 L500 140" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 150 L500 150" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 160 L500 160" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 170 L500 170" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 180 L500 180" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 190 L500 190" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 200 L500 200" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 210 L500 210" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 220 L500 220" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 230 L500 230" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 240 L500 240" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 250 L500 250" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 260 L500 260" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 270 L500 270" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 280 L500 280" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 290 L500 290" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 300 L500 300" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 310 L500 310" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 320 L500 320" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 330 L500 330" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 340 L500 340" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 350 L500 350" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 360 L500 360" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 370 L500 370" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 380 L500 380" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 390 L500 390" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 400 L500 400" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 410 L500 410" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 420 L500 420" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 430 L500 430" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 440 L500 440" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 450 L500 450" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 460 L500 460" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 470 L500 470" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 480 L500 480" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 490 L500 490" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+            <path d="M0 500 L500 500" style="stroke-width: 1px; stroke: rgb(197, 197, 197);"></path>
+        </g>
+    </svg>
+    <svg width="500" height="500">
+        <g class="box"></g>
+        <g>
+            <path d="M20 100 Q50 100 100 20 Q140 100 180 100L170 100 Q180 160 170 220 Q 100 230 30 220
+                    Q 20 160 30 100 L20 100"
+                  style="fill:none;stroke:red;stroke-width:1px"></path>
         </g>
     </svg>
 <script>
     document.getElementById('cycle-2').onmouseover=function(){
         console.log(1);
     }
+    initCoordinateSystem();
+    //X轴
+    function initCoordinateSystem(option) {
+        var opt = {
+            container: document.getElementById('xy-sys'),
+            numbX: 50,
+            numbY: 50,
+            gap: 10,
+            stroke: '#c5c5c5',
+            strokeWidth: '1px'
+        };
+        var box = document.createElement('svg');
+        box.setAttribute('width',opt.numbX * opt.gap);
+        box.setAttribute('height',opt.numbY * opt.gap);
+
+
+        var pointX = 0;
+        for (var i = 0; i <= 50; i++) {
+            var child = document.createElement('path');
+            child.setAttribute('d', 'M' + pointX + ' 0 L' + pointX + ' 500');
+            child.style.strokeWidth = "1px";
+            child.style.stroke = "#c5c5c5";
+            box.appendChild(child);
+            pointX += 10;
+        }
+        //Y轴
+        var pointY = 0;
+        for (var i = 0; i <= 50; i++) {
+            var child = document.createElement('path');
+            child.setAttribute('d', 'M0 ' + pointY + ' L500 ' + pointY);
+            child.style.strokeWidth = "1px";
+            child.style.stroke = "#c5c5c5";
+            box.appendChild(child);
+            pointY += 10;
+        }
+        document.getElementsByClassName('box')[0].innerHTML = box.innerHTML;
+    }
+
+    var isHold = false,_cx = 0, _cy = 0,_moveX = 0,_moveY = 0;
+    var controllerPoint = document.getElementsByClassName('controller')[0];
+    document.addEventListener('mousedown',function (e) {
+        if( e.target.getAttribute('class') && e.target.getAttribute('class') == 'controller') {
+            isHold = true;
+            _cx = parseFloat(controllerPoint.getAttribute('cx'));
+            _cy = parseFloat(controllerPoint.getAttribute('cy'));
+            _moveX = e.clientX;
+            _moveY = e.clientY;
+        }
+    });
+    document.addEventListener('mousemove',function (e) {
+        if(isHold){
+            console.log(e.clientX);
+            var targetX = _cx + parseFloat(e.clientX - _moveX);
+            var targetY = _cy + parseFloat(e.clientY - _moveY);
+            targetX = Math.round(targetX / 10) * 10;
+            targetY = Math.round(targetY / 10) * 10;
+            controllerPoint.setAttribute('cx',targetX);
+            controllerPoint.setAttribute('cy',targetY);
+
+            setTimeout(function(){
+                var d='';
+                var path = '<path d="M50 250 Q '+targetX+' '+targetY+' 450 250" style="fill:none;stroke-width: 1;stroke:black;"></path>';
+                document.getElementById('bezier-2').innerHTML = path;
+            },500);
+        }
+    })
+    document.addEventListener('mouseup',function (e) {
+        isHold = false;
+    });
 </script>
 </body>
 </html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+    <style>
+        body,html{
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        svg{
+            background: #F1F1F1;
+            margin: 0;
+            padding: 0;
+        }
+        circle{
+            cursor: pointer;
+        }
+        .add-item-btn{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            position: fixed;
+            z-index: 2;
+            bottom: 40px;
+            right: 40px;
+            background: transparent;
+            cursor: pointer;
+        }
+        .hide-control{
+            width: 100px;
+            bottom: 10px;
+        }
+        .bezier-Q{
+            bottom: 40px;
+        }
+        .bezier-C{
+            bottom: 80px;
+        }
+        .circle{
+            bottom: 120px;
+        }
+        .hide-control-point .control-point{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <svg class="container" width="100%" height="100%">
+        <g id="coordinate-group"></g>
+        <g id="draw-group"></g>
+    </svg>
+    <div class="add-item-btn  bezier-Q" data-type="bezier_Q">
+        <svg width="100%" height="100%" style="background: transparent">
+            <path d="M0 0 Q 15 30 30 0" style="fill:none;stroke-width: 2px;stroke:#009ee3"></path>
+        </svg>
+    </div>
+    <div class="add-item-btn  bezier-C" data-type="bezier_C">
+        <svg width="100%" height="100%" style="background: transparent">
+            <path d="M0 0 C10 30 20 0 30 30" style="fill:none;stroke-width: 2px;stroke:#009ee3"></path>
+        </svg>
+    </div>
+    <div class="add-item-btn  circle" data-type="circle">
+        <svg width="100%" height="100%" style="background: transparent">
+            <circle r="12" cx="15" cy="15" style="fill:none;stroke-width: 2px;stroke:#009ee3"></circle>
+        </svg>
+    </div>
+    <div class="add-item-btn hide-control" data-type="hide_control">
+        隐藏控制点
+    </div>
+    <script src="./js/zepto.js"></script>
+    <script>
+        $(function(){
+            window.addEventListener('resize',function () {
+                initCoordinateSystem();
+            });
+            initCoordinateSystem();
+
+            /**
+             * 绘出坐标系
+             * @param option
+             */
+            function initCoordinateSystem(option) {
+                var opt = {
+                    container: document.getElementById('coordinate-group'),
+                    numbX: parseInt(window.innerWidth / 10),
+                    numbY: parseInt(window.innerHeight / 10),
+                    maxX: parseInt(window.innerWidth / 10) * 10,
+                    maxY: parseInt(window.innerHeight / 10) * 10,
+                    gap: 10,
+                    stroke: '#c5c5c5',
+                    strokeWidth: '1px'
+                };
+                var box = document.createElement('svg');
+                box.setAttribute('width',opt.numbX * opt.gap);
+                box.setAttribute('height',opt.numbY * opt.gap);
+
+                var pointX = 0;
+                for (var i = 0; i <= opt.numbX; i++) {
+                    var child = document.createElement('path');
+                    child.setAttribute('d', 'M' + pointX + ' 0 L' + pointX + ' '+opt.maxY);
+                    child.style.strokeWidth = opt.strokeWidth;
+                    child.style.stroke = opt.stroke;
+                    box.appendChild(child);
+                    pointX += opt.gap;
+                }
+                //Y轴
+                var pointY = 0;
+                for (var i = 0; i <= opt.numbY; i++) {
+                    var child = document.createElement('path');
+                    child.setAttribute('d', 'M0 ' + pointY + ' L'+opt.maxX+' ' + pointY);
+                    child.style.strokeWidth = opt.strokeWidth;
+                    child.style.stroke = opt.stroke;
+                    box.appendChild(child);
+                    pointY += opt.gap;
+                }
+                document.getElementById('coordinate-group').innerHTML = box.innerHTML;
+            }
+
+            var isHold = false,_cx = 0, _cy = 0,_startX = 0,_startY = 0;
+            var controlPoint = null,p1 = null, p2 = null, p3 = null, p4 = null, originPath = null, _type = null;
+            document.addEventListener('mousedown',function (e) {
+                if($(e.target).hasClass('control-point')) {
+                    isHold = true;
+                    controlPoint = e.target;
+                    _type = $(controlPoint).parents('.component-item').attr('data-type');
+                    _startX = e.clientX;
+                    _startY = e.clientY;
+                    p1 = $(controlPoint).parents('.component-item').find('.p-1');
+                    p2 = $(controlPoint).parents('.component-item').find('.p-2');
+                    p3 = $(controlPoint).parents('.component-item').find('.p-3');
+                    p4 = $(controlPoint).parents('.component-item').find('.p-4');
+                    _cx = parseFloat(controlPoint.getAttribute('cx'));
+                    _cy = parseFloat(controlPoint.getAttribute('cy'));
+                    switch (_type){
+                        case 'bezier_Q':
+                            originPath = $(controlPoint).parents('.component-item').find('.bezier-line-path path');
+                            break;
+                        case 'bezier_C':
+                            originPath = $(controlPoint).parents('.component-item').find('.bezier-line-path path');
+                            break;
+                        case 'circle':
+                            originPath = $(controlPoint).parents('.component-item').find('.circle-line-path circle');
+                            break;
+                    }
+
+
+                }
+
+            });
+            document.addEventListener('mousemove',function (e) {
+                if(isHold){
+                    var path = '';
+                    var targetX = _cx + parseFloat(e.clientX - _startX);
+                    var targetY = _cy + parseFloat(e.clientY - _startY);
+                    targetX = Math.round(targetX / 10) * 10;
+                    targetY = Math.round(targetY / 10) * 10;
+                    controlPoint.setAttribute('cx',targetX);
+                    controlPoint.setAttribute('cy',targetY);
+                    var p1_x = p1.attr('cx'),p1_y = p1.attr('cy');
+                    var p2_x = p2.attr('cx'),p2_y = p2.attr('cy');
+                    var p3_x = p3.attr('cx'),p3_y = p3.attr('cy');
+                    var p4_x = p4.attr('cx'),p4_y = p4.attr('cy');
+                    switch(_type){
+                        case 'bezier_Q':
+                            path = '<path d="M '+p1_x+' '+p1_y+' Q '+p2_x+' '+p2_y+' '+p3_x+' '+p3_y+'" style="'+originPath.attr('style')+'"></path>';
+                            setTimeout(function(){
+                                $(controlPoint).parents('.component-item').find('.bezier-line-path')[0].innerHTML = path;
+                            },500);
+                            break;
+                        case 'bezier_C':
+                            path = '<path d="M '+p1_x+' '+p1_y+' C '+p2_x+' '+p2_y+' '+p3_x+' '+p3_y+' '+p4_x+' '+p4_y+'" style="'+originPath.attr('style')+'"></path>';
+                            setTimeout(function(){
+                                $(controlPoint).parents('.component-item').find('.bezier-line-path')[0].innerHTML = path;
+                            },500);
+                            break;
+                        case 'circle':
+                            var r =  Math.sqrt(Math.abs(p2_x - p1_x) * Math.abs(p2_x - p1_x) + Math.abs(p2_y - p1_y) * Math.abs(p2_y - p1_y));
+                            //拖拽圆心只改变圆的位置 @TODO
+                            path = '<circle r="'+r+'" cx="'+p2_x+'" cy="'+p2_y+'" style="'+originPath.attr('style')+'"></circle>';
+                            setTimeout(function(){
+                                $(controlPoint).parents('.component-item').find('.circle-line-path')[0].innerHTML = path;
+                            },500);
+
+
+                    }
+
+                }
+            })
+            document.addEventListener('mouseup',function (e) {
+                isHold = false;
+            });
+
+
+            /**
+             * 添加
+             */
+            var _itemCount = 0;
+            $('.add-item-btn').on('click',function(){
+                var type = $(this).attr('data-type'),tpl = '';
+                switch(type){
+                    case 'bezier_Q':
+                         tpl = '<g class="bezier-line-path">'+
+                                '<path d="M50 50 Q 100 50 250 50 " style="fill:none;stroke-width: 1;stroke:black;"></path>'+
+                                '</g>'+
+                                '<circle class="p-1 bezier-control-point control-point" r="5" cx="50" cy="50" style="stroke:none;fill:black;"></circle>'+
+                                '<circle class="p-2 bezier-control-point control-point" r="5" cx="100" cy="50" style="stroke:none;fill:black;"></circle>'+
+                                '<circle class="p-3 bezier-control-point control-point" r="5" cx="250" cy="50" style="stroke:none;fill:black;"></circle>';
+                        break;
+                    case 'bezier_C':
+                        tpl = '<g class="bezier-line-path">'+
+                                '<path d="M50 50 C 100 50 150 50 250 50 " style="fill:none;stroke-width: 1;stroke:black;"></path>'+
+                                '</g>'+
+                                '<circle class="p-1 bezier-control-point control-point" r="5" cx="50" cy="50" style="stroke:none;fill:black;"></circle>'+
+                                '<circle class="p-2 bezier-control-point control-point" r="5" cx="100" cy="50" style="stroke:none;fill:black;"></circle>'+
+                                '<circle class="p-3 bezier-control-point control-point" r="5" cx="150" cy="50" style="stroke:none;fill:black;"></circle>'+
+                                '<circle class="p-4 bezier-control-point control-point" r="5" cx="250" cy="50" style="stroke:none;fill:black;"></circle>';
+                        break;
+                    case 'circle':
+                        tpl = '<g class="circle-line-path">'+
+                                '<circle r="40" cx="50" cy="50" style="fill:none;stroke-width: 1;stroke:black;"></circle>'+
+                                '</g>'+
+                                '<circle class="p-1 circle-control-point control-point" r="5" cx="10" cy="50" style="stroke:none;fill:black;"></circle>'+
+                                '<circle class="p-2 circle-control-point control-point" r="5" cx="50" cy="50" style="stroke:none;fill:black;"></circle>';
+                        break;
+                    case 'hide_control':
+                        $('.container').toggleClass('hide-control-point');
+                        break;
+                }
+
+                if(type != 'hide_control') {
+                    $('.container #draw-group').append('<g class="component-item" id="component-item-'+_itemCount+'" data-numb="'+_itemCount+'" data-type="'+type+'"></g>');
+                    $('#component-item-' + _itemCount)[0].innerHTML = tpl;
+                    _itemCount++;
+
+                    /*** 从新innerHTML加载svg才会重新渲染 ***/
+                    $('.container')[0].innerHTML = $('.container').html();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

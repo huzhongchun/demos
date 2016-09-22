@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: none;
+        }
+        .parent{
+            width: 300px;
+            height: 40px;
+            padding: 20px;
+            border: 1px solid red;
+            overflow: hidden;
+            position: relative;
+        }
+        .parent .child{
+            position: absolute;
+            top:-20px;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 15px;
+            background: #0b97c4;
+            color: #fff;
+            margin: auto;
+            text-align: center;
+
+        }
+        .parent:hover .child{
+            top:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <input v-model="message">
+
+        <div v-bind:class="[parentClass]" >
+            <span v-bind:class="[childClass]" v-bind:style="styleObject">菜单</span>
+            <span>内容</span>
+        </div>
+
+    </div>
+
+
+
+    <script src="./js/zepto.js"></script>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                parentClass: 'parent',
+                childClass: 'child',
+                message: 'Hello Vue.js!',
+                styleObject: {
+                    "transform": 'translate3d(0,0,0)',
+                    "transition": "all 1s ease 0s"
+                }
+            },
+            created: function () {
+                getTime();
+            },
+            beforeCompile: function () {
+                getTime();
+            },
+            compile: function () {
+                getTime();
+            },
+            ready: function () {
+                getTime();
+                $('body').show();
+            },
+            beforeDestroy: function () {
+                if(!confirm('确认?')){
+
+                }
+                getTime();
+            },
+            destroyed: function () {
+                getTime();
+            },
+        });
+
+        function getTime() {
+            console.log ((new Date()).getTime());
+        }
+
+    </script>
+</body>
+</html>
