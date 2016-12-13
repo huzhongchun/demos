@@ -1,0 +1,37 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/pick/image",
+    "pages/view/scrollview",
+    "pages/icons/icons",
+    "pages/progress/progress",
+    "pages/form/form",
+    "pages/jload/jload"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#fff100",
+    "list": [{
+      "pagePath": "page/component/index",
+      "iconPath": "image/wechat.png",
+      "selectedIconPath": "image/wechatHL.png",
+      "text": "组件"
+    }, {
+      "pagePath": "page/API/index/index",
+      "iconPath": "image/wechat.png",
+      "selectedIconPath": "image/wechatHL.png",
+      "text": "接口"
+    }]
+  }
+}

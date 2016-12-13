@@ -1,0 +1,90 @@
+/*-----css Reset end-----*/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,form{
+    margin:0;
+}
+body,html{
+    background: #fff;
+}
+body{
+    font-family: "Microsoft YaHei","微软雅黑","Arial";
+    font-size: 100%;
+    margin: 0px auto;
+    display: none;
+    -webkit-font-smoothing: antialiased;
+}
+img{
+    border: 0px solid;
+    padding: 0px;
+    margin: 0px;
+}
+input,textarea,select{
+    font-size:100%;
+    font-family:arial;
+    font-family:inherit;
+}
+/*去除chrome 默认选中样式*/
+input,textarea{
+    border:none;
+    outline: none;
+    resize:none;
+}
+h3,h4,h5,h6{
+    font-size:1em;
+}
+ul,ol{
+    padding-left:0; 
+    list-style-type:none;
+}
+table{
+    border-left: 1px solid #d4ea1d;
+    border-bottom: 1px solid #d4ea1d;
+}
+td{
+    border-right:1px solid #d4ea1d;
+    border-top: 1px solid #d4ea1d;
+}
+a img{
+    border:0;
+    text-decoration: none;
+}
+p{
+	margin: 0;
+	padding: 0; 
+}
+a{
+    text-decoration: none;
+    color:#000;
+    /*去除a标签的 手机浏览器的默认点击样式*/
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+a:visited{
+	text-decoration: none;
+}
+/*清楚浮动*/
+.clearfloat:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0
+}
+#scale-wrapper{
+	width:320px;
+	margin:0 auto;
+	overflow: hidden;
+	font-size: 12px;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.img-block-full img{
+	display: block;
+	width: 100%;
+}
+
+

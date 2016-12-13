@@ -1,0 +1,32 @@
+<view class="view-container">
+    <view class="scroll-view-item">
+        <scroll-view class="scroll-xx" upper-threshold="50" scroll-left="50" scroll-x="true" style="width:100%;height:50px;" >
+            <view class="scroll-content-item item-1"></view>
+            <view class="scroll-content-item item-2"></view>
+            <view class="scroll-content-item item-3"></view>
+            <view class="scroll-content-item item-3"></view>
+            <view class="scroll-content-item item-3"></view>
+            <view class="scroll-content-item item-3"></view>
+        </scroll-view>
+    </view>
+    <view class="scroll-view-item">
+        <scroll-view class="scroll-yy" upper-threshold="50" scroll-y="true" style="width:100%;height:100px;" >
+            <view class="scroll-content-item item-1"></view>
+            <view class="scroll-content-item item-2"></view>
+            <view class="scroll-content-item item-3"></view>
+            <view class="scroll-content-item item-3"></view>
+            <view class="scroll-content-item item-3"></view>
+            <view class="scroll-content-item item-3"></view>
+        </scroll-view>
+    </view>
+
+    <view class="swiper-view-item">
+        <swiper class="swiper-content-item" indicator-dots="true" autoplay="true" interval="3000">
+            <block wx:for="{{imgUrls}}">
+                <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>

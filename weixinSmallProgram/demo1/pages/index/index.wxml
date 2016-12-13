@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="box-list">
+    <view class="box-item-1"></view>
+    <view class="box-item-2"></view>
+    <view class="box-item-3"></view>
+  </view>
+
+  <view class="nav-list">
+    <navigator class="nav-item" url="/pages/pick/image" redirect="{{navRedirect}}" hover-class="nav-hover-class">图片上传</navigator>
+    <navigator class="nav-item" url="/pages/view/scrollview" redirect="{{navRedirect}}" hover-class="nav-hover-class">视图容器</navigator>
+    <navigator class="nav-item" url="/pages/icons/icons" redirect="{{navRedirect}}" hover-class="nav-hover-class">自带icons</navigator>
+    <navigator class="nav-item" url="/pages/progress/progress" redirect="{{navRedirect}}" hover-class="nav-hover-class">进度条</navigator>
+    <navigator class="nav-item" url="/pages/form/form" redirect="{{navRedirect}}" hover-class="nav-hover-class">表单</navigator>
+    <navigator class="nav-item" url="/pages/jload/jload" redirect="{{navRedirect}}" hover-class="nav-hover-class">js加载器</navigator>
+  </view>
+  <view class="intro-box">
+    <text class="paraph">
+      {{intraText}}
+    </text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+<view class="container">
+    <button type="primary" size="mini" loading="false" bindtap="pickImage">点击上传图片</button>
+</view>

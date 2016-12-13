@@ -1,0 +1,7 @@
+<view class="view-container">
+    <progress percent="{{percent}}" show-info />
+    <progress percent="40" stroke-width="12" />
+    <progress percent="{{percent}}" active color="pink" />
+    <progress percent="{{percent}}" color="pink" />
+    <progress percent="80" active />
+</view>

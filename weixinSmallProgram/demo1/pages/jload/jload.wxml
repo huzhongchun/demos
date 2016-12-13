@@ -1,0 +1,4 @@
+<view class="view-container">
+    小程序底层支持AMD（或者CMD）规范的js模块加载器，但是模块的定义不用使用define，直接module.exports暴露出去接口（实际上在编译之后会包上define），模块名就是js得文件夹名。
+    调用模块也很直接，直接使用对应模块的相对路劲作为require的入参。
+</view>

@@ -10,10 +10,8 @@
 				padding: 0;
 			}
 			canvas{
-				
-				position: relative;
-				border: 1px solid #000;
-				border: 2px solid red;
+                display: block;
+                margin: 0 auto;
 			}
 			#img-box{
 				
@@ -32,7 +30,7 @@
 				<span class="p-l"></span>----------<span class="p-t"></span>
 			</div>
 			<div class="outer-box">
-				<canvas id="img-box" height="200" width="200">
+				<canvas id="img-box" height="300px" width="300px">
 					您的浏览器不支持canvas～
 				</canvas>
 			</div>
@@ -61,20 +59,29 @@
 			var canvasH = canvas.height;
 
 			//图片缩放的系数
-			var imgScale = 1;
+			var imgScale =1;
 			var loop = null;
-			
-			if(imgW < canvasW && imgH < canvasH)  canMove = false;
+
+            var _p = {};
+
+
+            if(imgW < canvasW && imgH < canvasH)  canMove = false;
 
 			var ctx = canvas.getContext('2d');
 			//ctx.drawImage(img,0,0,imgW,imgH,(canvas.width - imgW*2)/ 2,(canvas.height - imgH*2) / 2,imgW*2,imgH*2);  //两倍图像
 			initDrawCanvas();
 
 			function initDrawCanvas(){
+                ctx.beginPath();
+                ctx.clearRect(0,0,canvas.width,canvas.height);  //清除之前画的
 				ctx.scale(imgScale,imgScale);
 				ctx.drawImage(img,0,0,imgW,imgH,(canvas.width / imgScale - imgW)/ 2,(canvas.height /imgScale - imgH)/ 2,imgW,imgH);
 				$('#img-box').attr('data-x', -(canvas.width / imgScale- imgW)/ 2).attr('data-y', -(canvas.height / imgScale - imgH)/ 2);
-			}
+                _p = {
+                    l: -(canvas.width / imgScale- imgW)/ 2,
+                    t: -(canvas.height / imgScale - imgH)/ 2
+                }
+            }
 
 			//或者直接移动canvas的绝对定位，来做裁剪－－－－－－－－－todo，但是裁剪信息得重新计算
 
@@ -84,17 +91,17 @@
 
 			//双击放大2倍－－－－－todo
 			function reDrawImage(img,imgw,imgh,sx,sy,scale) {
-				//var imgw = imgw * imgScale;
-				//var imgh = imgh * imgScale;
 				ctx.beginPath();
 				ctx.clearRect(0,0,canvas.width,canvas.height);  //清除之前画的
-				//ctx.scale(imgScale,imgScale);
+                if(scale)
+                    ctx.scale(scale,scale);
 				ctx.drawImage(img,sx,sy,(imgw - sx),(imgh - sy),0,0,(imgw - sx),(imgh - sy));
-			}
+
+            }
 
 			//touchmove  重绘位置，边缘位置处理－－－－－－－－－－todo
 
-			function adjustPosition(l,t){
+            function adjustPosition(l,t){
 				var l,t;
 				var maxX = imgW  - canvasW / imgScale;
 				var maxY = imgH  - canvasH /imgScale;
@@ -133,7 +140,8 @@
 				var moveingY = tPosition['tMoveY'] - tPosition['tStartY'];
 
 				var p = adjustPosition(cPosition['currentX'] - moveingX,cPosition['currentY'] - moveingY);
-				cPosition['endX'] = p.l;
+                _p = p;
+                cPosition['endX'] = p.l;
 				cPosition['endY'] = p.t;
 				$('.p-l').html(p.l);
 				$('.p-t').html(p.t);
@@ -144,7 +152,7 @@
 						reDrawImage(img,imgW,imgH,p.l,p.t);
 					},20)
 			})
-			$('#img-box').on('touchend',function(e){
+			$('#img-box').on('touchend touchcancel',function(e){
 				$(this).attr('data-x', cPosition['endX']).attr('data-y', cPosition['endY']);
 				ctx.save();
 			})
@@ -154,8 +162,9 @@
 			$('.submit').on('click',function(){
 				//var imgData = ctx.getImageData(x,y,w,h);//获取canvas中的图片信息；
 				//imageData.data则是图片的二进制数据
-							
-			})
+                imgScale += 0.1;
+                reDrawImage(img,imgW,imgH,_p.l,_p.t,imgScale);
+            });
 
 			//The canvas has been tainted by cross-origin data.  因为本地测试用的图片是文件夹内的， js跨域限制是不能获取非同一域名下的数据的，
     		//而本地的位置是没有域名的，所以浏览器都认为是跨域，导致报错。
@@ -164,6 +173,153 @@
 			//使用ajax发送
 			console.log(binary);
 
+
+
+
+
+            /*********/
+            /**
+             * canvas
+             * @type {Element}
+             */
+            var _canvas = document.getElementById('garden-canvas');
+            var _img = new Image;
+
+            var _imgW =0, _imgH = 0, _canMove = true;
+            _img.src = 'http://resource.thefair.net.cn/touch/collection/redm/images/garden_map.jpg';
+            var _canvasW = _canvas.width, _canvasH = _canvas.height;
+
+            /** 图片缩放的系数 **/
+            var _imgScale = .1,_touchmoveLoop = null;
+
+            /** 在画布上放置图像的坐标位置 **/
+            var _p = {};
+
+            var _ctx = _canvas.getContext('2d');
+
+            _img.onload  = function(){
+                _imgW = _img.naturalWidth;
+                _imgH = _img.naturalHeight;
+                if(_imgW < _canvasW && _imgH < _canvasH)
+                    _canMove = false;
+
+                initDrawCanvas();
+
+            };
+
+
+
+
+            /**
+             * 初始化画布, 显示图片中点位置
+             */
+            function initDrawCanvas(){
+                _ctx.beginPath();
+                _ctx.clearRect(0,0,_canvas.width,_canvas.height);  //清除之前画的
+                _ctx.scale(_imgScale,_imgScale);
+                _ctx.drawImage(_img,0,0,_imgW,_imgH,(_canvas.width / _imgScale - _imgW)/ 2,(_canvas.height /_imgScale - _imgH)/ 2,_imgW,_imgH);
+                _p = {
+                    l: -(_canvas.width / _imgScale- _imgW)/ 2,
+                    t: -(_canvas.height / _imgScale - _imgH)/ 2
+                }
+            }
+
+
+            /**
+             * 重汇canvas
+             * @param img
+             * @param imgw
+             * @param imgh
+             * @param sx
+             * @param sy
+             * @param scale
+             */
+            function reDrawImage(img,imgw,imgh,sx,sy,scale) {
+                _ctx.beginPath();
+                _ctx.clearRect(0,0,_canvas.width,_canvas.height);  //清除之前画的
+                _p = adjustPosition(sx,sy);
+                if(scale)
+                    _ctx.scale(scale,scale);
+                _ctx.drawImage(img,sx,sy,(imgw - sx),(imgh - sy),0,0,(imgw - sx),(imgh - sy));
+            }
+
+            /**
+             * 边缘范围计算处理
+             * @param l
+             * @param t
+             * @returns {{l: (Number|*), t: (Number|*)}}
+             */
+            function adjustPosition(l,t){
+                var maxX = _imgW  - _canvasW / _imgScale;
+                var maxY = _imgH  - _canvasH / _imgScale;
+                if(l < 0) l = 0;
+                else if(l > maxX) l = maxX;
+                if(t < 0) t = 0;
+                else if(t > maxY) t = maxY;
+
+                /** 如果canvas的宽度小于图片宽度 **/
+                if(maxX < 0) l = cPosition['currentX'];
+                if(maxY < 0) t = cPosition['currentY'];
+                l = parseFloat(l);
+                t =	parseFloat(t);
+
+                return {
+                    l:l,
+                    t:t
+                }
+            }
+
+            var cPosition = {}, tPosition= {};
+
+            $('.garden-canvas-container').on('touchstart',function(e){
+                tPosition['tStartX'] = e.changedTouches[0].screenX;
+                tPosition['tStartY'] = e.changedTouches[0].screenY;
+                cPosition['currentX'] = _p.l;
+                cPosition['currentY'] = _p.t
+
+            })
+            $('.garden-canvas-container').on('touchmove',function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                tPosition['tMoveX'] = e.changedTouches[0].screenX;
+                tPosition['tMoveY'] = e.changedTouches[0].screenY;
+
+                var moveingX = tPosition['tMoveX'] - tPosition['tStartX'];
+                var moveingY = tPosition['tMoveY'] - tPosition['tStartY'];
+
+                _p = adjustPosition(cPosition['currentX'] - moveingX,cPosition['currentY'] - moveingY);
+                cPosition['endX'] = _p.l;
+                cPosition['endY'] = _p.t;
+                if(_canMove)
+                    loop = setTimeout(function(){
+                        clearInterval(loop);
+                        reDrawImage(_img,_imgW,_imgH,_p.l,_p.t);
+                    },20)
+            });
+            $('.garden-canvas-container').on('touchend touchcancel',function(e){
+                _ctx.save();
+            });
+
+
+            /**
+             * 缩放操作
+             */
+            $('.scale-big').on('click',function(){
+                _imgScale += 0.1;
+                if(_imgScale > 3){
+                    _imgScale = 3;
+                    return false;
+                }
+                reDrawImage(_img,_imgW,_imgH,_p.l,_p.t,_imgScale);
+            });
+            $('.scale-small').on('click',function(){
+                _imgScale -= 0.1;
+                if(_imgScale < .4){
+                    _imgScale = .4;
+                    return false;
+                }
+                reDrawImage(_img,_imgW,_imgH,_p.l,_p.t,_imgScale);
+            });
 
 		</script>
 	</body>

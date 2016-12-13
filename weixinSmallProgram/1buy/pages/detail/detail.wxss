@@ -1,0 +1,10 @@
+.banner-swipe-box{
+  
+}
+.banner-swipe-item{
+  width:100%;
+}
+.banner-swipe-item image{
+  display: block;
+  width: 100%;
+}
