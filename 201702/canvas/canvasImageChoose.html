@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvas</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+            .canvas-box{
+                position: relative;
+            }
+            .canvas-box canvas{
+                border:1px solid #ccc;
+                cursor: crosshair;
+            }
+            .rec-box{
+                border: 1px solid #fff;
+                position: absolute;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="canvas-box">
+            <canvas id="canvas" height="500" width="500"></canvas>
+            <div class="rec-box"></div>
+        </div>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var recBox = document.querySelector('.rec-box');
+            var _maxCanvasX = canvas.width,
+                _maxCanvasY = canvas.height,
+                mouseInfoOnCanvas = {};
+
+
+            loadImg('./images/1.png',function(imgInfo){
+                context.beginPath();
+                context.drawImage(imgInfo.img,0,0,imgInfo.width,imgInfo.height,0,0,canvas.width,canvas.height);
+            });
+
+
+            var _isMouseDown = false; /** 只有按下之后才记录信息 **/
+            var _setChooseImageLoop = null;
+            canvas.onmousedown = function (e) {
+                recBox.style.display = 'none';
+                mouseInfoOnCanvas.mousedownInfo = windowToCanvas(canvas,e.clientX,e.clientY);
+                _isMouseDown = true;
+            };
+            canvas.onmousemove = function (e) {
+                if(_isMouseDown) {
+                    mouseInfoOnCanvas.mousemoveInfo = windowToCanvas(canvas, e.clientX, e.clientY);
+
+
+                }
+
+            };
+            canvas.onmouseup = function (e) {
+                if(_isMouseDown) {
+                    mouseInfoOnCanvas.mouseupInfo = windowToCanvas(canvas, e.clientX, e.clientY);
+
+                    var recWidth = mouseInfoOnCanvas.mouseupInfo.x - mouseInfoOnCanvas.mousedownInfo.x;
+                    var recHeight = mouseInfoOnCanvas.mouseupInfo.y - mouseInfoOnCanvas.mousedownInfo.y;
+
+                    /** 限制选择的尺寸和canvas的尺寸比例是一样的 **/
+                    if(recWidth >= recHeight){
+                        recHeight = canvas.height * (recWidth / canvas.width);
+                    }else{
+                        recWidth = canvas.width * (recHeight / canvas.height);
+                    }
+
+                    recBox.style.width = Math.abs(recWidth) + 'px';
+                    recBox.style.height = Math.abs(recHeight) + 'px';
+
+                    var recTop = recHeight >= 0 ? mouseInfoOnCanvas.mousedownInfo.y :  mouseInfoOnCanvas.mousedownInfo.y + recHeight;
+                    var recLeft = recWidth >= 0 ? mouseInfoOnCanvas.mousedownInfo.x :  mouseInfoOnCanvas.mousedownInfo.y + recWidth;
+                    recBox.style.top = recTop+ 'px';
+                    recBox.style.left = recLeft+ 'px';
+
+                    recBox.style.display = 'block';
+
+                    clearInterval(_setChooseImageLoop);
+                    _setChooseImageLoop = setTimeout(function () {
+                        var choosedCanvasImgData = context.getImageData(recLeft,recTop,recWidth,recHeight);
+                        //context.clearRect(0,0,canvas.width,canvas.height);
+                        var canvasW = 0, canvasH = 0;
+                        context.drawImage(canvas,recLeft,recTop,recWidth,recHeight,0,0,canvas.width, canvas.height);
+                        //context.putImageData(choosedCanvasImgData,0,0,0,0,canvas.width,canvas.height);
+                        resetRecBox();
+                    },300);
+                }
+                _isMouseDown = false;
+
+            };
+            canvas.onmouseout = function (e) {
+                _isMouseDown = false;
+                //resetRecBox();
+            };
+
+            recBox.onmousedown = function (e) {
+                recBox.style.display = 'none';
+            };
+
+            function resetRecBox() {
+                recBox.style.top = 0;
+                recBox.style.left = 0;
+                recBox.style.width = 0;
+                recBox.style.height = 0;
+                recBox.style.display = 'none';
+            }
+
+            /**
+             * 加载图片获取图片信息
+             * @param src
+             * @param callback
+             */
+            function loadImg(src,callback){
+                var img = new Image();
+                var _imgNaturalWidth = 0, _imgNaturalHeight = 0;
+                img.onload = function(){
+                    _imgNaturalWidth = img.naturalWidth;
+                    _imgNaturalHeight = img.naturalHeight;
+                    var imgInfo = {
+                        img: img,
+                        width: _imgNaturalWidth,
+                        height: _imgNaturalHeight
+                    };
+                    callback && callback.call(this,imgInfo);
+                };
+                img.src = src;
+            }
+
+            /**
+             * 窗口坐标转换成canvas坐标
+             */
+            function windowToCanvas(canvas,x,y){
+                var bbox = canvas.getBoundingClientRect();
+                return {
+                    x: (x - bbox.left) * (canvas.width / bbox.width),
+                    y: (y - bbox.top) * (canvas.height / bbox.height)
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

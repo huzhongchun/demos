@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvas 图片放大镜</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+            .canvas-box canvas{
+                border:1px solid #ccc;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="canvas-box">
+            <canvas id="canvas" height="800" width="800"></canvas>
+        </div>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            var _circleR = 150;
+            var img = new Image();
+            img.onload =function () {
+                var dW = canvas.width;
+                var dH   = img.height *  dW / img.width;
+                //context.scale(1.2,1.2);
+                context.drawImage(img,0,0,img.width,img.height,0,0,dW,dH);
+                context.save();
+            };
+            img.src='./images/1.png';
+
+            var p = {};
+            var isMouseDown = false;
+            canvas.addEventListener('mousedown',function (e) {
+                var lp = windowToCanvas(canvas,e.clientX,e.clientY);
+                p.d = {
+                    x: lp.x,
+                    y: lp.y
+                };
+
+                isMouseDown = true;
+                drawScaleCicle(p.m.x,p.m.y);
+            });
+
+            canvas.addEventListener('mousemove',function (e) {
+                var lp = windowToCanvas(canvas,e.clientX,e.clientY);
+                p.m = {
+                    x: lp.x,
+                    y: lp.y
+                };
+
+                if(isMouseDown)
+                    drawScaleCicle(p.m.x,p.m.y);
+            });
+
+            canvas.addEventListener('mouseup',function (e) {
+                var lp = windowToCanvas(canvas,e.clientX,e.clientY);
+                p.u = {
+                    x: lp.x,
+                    y: lp.y
+                };
+
+                isMouseDown = false;
+
+                context.save();
+                context.clearRect(0,0,canvas.width,canvas.height);
+                drawBgImage();
+                context.restore();
+
+            });
+
+
+
+            /**
+             * 窗口坐标转换成canvas坐标
+             */
+            function windowToCanvas(canvas,x,y){
+                var bbox = canvas.getBoundingClientRect();
+                return {
+                    x: (x - bbox.left) * (canvas.width / bbox.width),
+                    y: (y - bbox.top) * (canvas.height / bbox.height)
+                }
+            }
+
+
+            function drawScaleCicle(x,y) {
+                context.save();
+                context.clearRect(0,0,canvas.width,canvas.height);
+                drawBgImage();
+                context.beginPath();
+                context.arc(x,y,_circleR,0,2*Math.PI);
+                context.strokeStyle = 'rgba(255,255,255,.6)';
+                context.stroke();
+
+                context.clip();
+
+                var scaleN = 1.5;
+                context.scale(scaleN,scaleN);
+                var dW = canvas.width;
+                var dH   = img.height *  dW / img.width;
+
+                // 由于坐标系已经放大scaleN倍
+                var dX = -(scaleN - 1) *x;
+                var dY = -(scaleN - 1) *y;
+                context.drawImage(img,0,0,img.width,img.height,dX / scaleN,dY /scaleN,dW,dH);
+
+                // 或者 图片没有进行缩放
+                //var iX = (scaleN - 1) *x;
+                //var iY = (scaleN - 1) *y;
+                //context.drawImage(img,iX,iY,img.width,img.height,0,0,dW,dH);
+
+                context.restore();
+
+            }
+
+            function drawBgImage() {
+                var dW = canvas.width;
+                var dH   = img.height *  dW / img.width;
+                context.drawImage(img,0,0,img.width,img.height,0,0,dW,dH);
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvas</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+            .canvas-box canvas{
+                border:1px solid #ccc;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="canvas-box">
+            <canvas id="canvas" height="500" width="500"></canvas>
+        </div>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            var img = new Image;
+            img.onload = function () {
+                context.drawImage(img,0,0,img.width,img.height);
+
+                context.save();
+                context.arc(150,150,50,0,2*Math.PI);
+                context.stroke();
+                context.clip();
+                // clip之后可编辑区域就变成了上面的圆的部分,其他区域不能再绘画了;
+                context.clearRect(0,0,canvas.width,canvas.height);
+                context.beginPath();
+                context.font = '15px Verdana';
+                context.fillStyle = 'red';
+                // 坐标系的起始点还是做canvas的左上角
+                context.fillText('剪切区域',120,170);
+                //context.drawImage(img,0,0,img.width,img.height);
+
+                context.restore();
+                //restore 之后 恢复到上次save的状态,可编辑区域恢复成了整个canvas区域;
+                context.beginPath();
+                context.font = '15px Verdana';
+                context.fillStyle = 'blue';
+                context.fillText('恢复',10,20);
+
+
+            };
+            img.src = './images/1.png';
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

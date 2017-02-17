@@ -1,9 +1,0 @@
-/**app.wxss**/
-
-.page-container{
-  display:block;
-  min-height:100%;
-  border-top:2rpx solid #353535;
-  background: #efeff4;
-  padding-bottom:1rpx;
-}

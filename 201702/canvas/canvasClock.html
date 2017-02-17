@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvas</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+            .canvas-box canvas{
+                border:1px solid #ccc;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="canvas-box">
+            <canvas id="canvas" height="500" width="500"></canvas>
+        </div>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            console.dir(context);
+
+
+            var _r = 200,
+                _circleCenterX = context.canvas.width/2,
+                _circleCenterY = context.canvas.height/2,
+                _fontHeight = 15;
+
+            context.font = _fontHeight+'px Arial';
+            /**
+             * 画圆
+             */
+            function drawCircle(r){
+                context.beginPath();
+                context.arc(_circleCenterX,_circleCenterY,r,0,2*Math.PI,true);
+                context.stroke()
+            }
+
+
+            /**
+             * 画时钟数字
+             *
+             * 把数字画到更大的外环圆上
+             */
+            var _numbTextR = _r + 10;
+
+            function drawNumerals(){
+                var numerals = [1,2,3,4,5,6,7,8,9,10,11,12],
+                    angle = 0,
+                    numeralWidth = 0;
+
+                numerals.forEach(function (numb) {
+                    angle = (numb - 3) *(30 * 2 * Math.PI / 360);
+                    numeralWidth = context.measureText(numb).width;
+                    context.fillText(numb,_circleCenterX+Math.cos(angle) * _numbTextR - numeralWidth / 2,_circleCenterY+Math.sin(angle) * _numbTextR + _fontHeight / 3)
+                });
+            }
+
+
+            /**
+             * 画圆心
+             */
+            function drawCircleCenter(){
+                context.beginPath();
+                context.arc(_circleCenterX,_circleCenterY,5,0,Math.PI * 2);
+                context.fill();
+            }
+
+
+            /**
+             * 画指针
+             */
+            function drawHand(lineToX,lineToY) {
+                context.beginPath();
+                context.moveTo(_circleCenterX,_circleCenterY);
+                context.lineTo(lineToX,lineToY);
+                context.stroke();
+            }
+
+            function drawHands() {
+                var time = new Date();
+                var h = time.getHours() % 12;
+                var m = time.getMinutes();
+                var s = time.getSeconds();
+
+                /** 画时针 **/
+                var angleHour = (h * 30 + m / 60 * 30 ) * (2 * Math.PI / 360);
+                var lineToXH = Math.sin(angleHour) * (_r - 80) + _circleCenterX;
+                var lineToYH = _circleCenterY - Math.cos(angleHour) * (_r - 80);
+                drawHand(lineToXH,lineToYH);
+
+                /** 画分针 **/
+                var angleMinute = (m / 60 * 360 ) * (2 * Math.PI / 360);
+                var lineToXM = Math.sin(angleMinute) * (_r - 50) + _circleCenterX;
+                var lineToYM = _circleCenterY - Math.cos(angleMinute) * (_r - 50);
+                drawHand(lineToXM,lineToYM);
+
+                /** 画秒针 **/
+                var angleSecond = (s / 60 * 360 ) * (2 * Math.PI / 360);
+                var lineToXS = Math.sin(angleSecond) * (_r - 20) + _circleCenterX;
+                var lineToYS = _circleCenterY - Math.cos(angleSecond) * (_r - 20);
+                drawHand(lineToXS,lineToYS);
+            }
+
+
+            function drawClock() {
+                context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                drawCircle(_r);
+                drawNumerals();
+                drawScale();
+                drawCircleCenter();
+                drawHands();
+
+            }
+
+            /**
+             * 画刻度
+             */
+            function drawScale() {
+                var numerals = [1,2,3,4,5,6,7,8,9,10,11,12],
+                        angle = 0;
+
+                numerals.forEach(function (numb) {
+                    angle = numb * (30 * 2 * Math.PI / 360);
+
+                    var moveToX = _circleCenterX + Math.sin(angle) * _r;
+                    var moveToY = _circleCenterY - Math.cos(angle) * _r;
+
+                    var lineToX = _circleCenterX + Math.sin(angle) * (_r - 5);
+                    var lineToY = _circleCenterY - Math.cos(angle) * (_r - 5);
+                    context.beginPath();
+                    context.moveTo(moveToX,moveToY);
+                    context.lineTo(lineToX,lineToY);
+                    context.stroke();
+                });
+            }
+
+            setInterval(function () {
+                drawClock();
+            },1000)
+
+
+            /**
+             * 窗口坐标转换成canvas坐标
+             */
+            function windowToCanvas(canvas,x,y){
+                var bbox = canvas.getBoundingClientRect();
+                return {
+                    x: (x - bbox.left) * (canvas.width / bbox.width),
+                    y: (y - bbox.top) * (canvas.height / bbox.height)
+                }
+            }
+
+            canvas.onmousemove = function(e){
+                var loc = windowToCanvas(canvas,e.clientX,e.clientY);
+                console.dir(loc.x);
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
