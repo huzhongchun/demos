@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>csv</title>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="./papaparse.min.js"></script>
+    <style>
+        html,body{
+            font-size: 14px;
+            font-family: 'Microsoft Yahei',Tahoma,Verdana,simsun,sans-serif;
+            opacity: .9
+        }
+        table {width: 50%;margin: 0 30px 40px 0;}
+        .label{
+            text-align: center;
+            font-size: 13px;
+            opacity: .5;
+        }
+        .table-list{
+            display: flex;
+            justify-content: flex-start;
+            align-item: center;
+        }
+        .fixed-data-detail{
+            width: 40%;
+            height: calc(100% - 80px);
+            overflow: scroll;
+            position: fixed;
+            right: 0px;
+            top:40px;
+        }
+        .fixed-data-detail #data-detail{
+            width: 100%;
+        }
+        .fixed-data-detail #out-percent{
+            width: 100%;
+        }
+        .fixed-data-detail #buy-percent{
+            width: 100%;
+        }
+        .visit-label{
+            padding: 5px 0;
+            color: #004b6d;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="count">
+        <div class="item">记录到的总访问数：<span class="pv-count">0</span></div>
+        <div class="item">记录到的支付总数：<span class="pay-count">0</span></div>
+    </div>
+    <div class="table-list">
+        <table id="total-data" border="1">
+            <caption>总访问统计</caption>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>访问标识</th>
+                    <th>记录数量</th>
+                    <th>最大百分比</th>
+                    <th>是否购买</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="fixed-data-detail">
+        <table id="out-percent" border="1">
+            <caption>跳出分析</caption>
+            <caption class="label"></caption>
+            <thead>
+            <tr>
+                <th width="100">位置</th>
+                <th width="100">数量</th>
+                <th width="100">占比</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="buy-percent" border="1">
+            <caption>购买分析</caption>
+            <caption class="label"></caption>
+            <thead>
+            <tr>
+                <th width="100">位置</th>
+                <th width="100">数量</th>
+                <th width="100">占比</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="data-detail" border="1">
+            <caption>单次访问详情</caption>
+            <caption class="label"></caption>
+            <thead>
+            <tr>
+                <th>滚动百分比</th>
+                <th>记录时间点</th>
+                <th>是否支付</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+
+        //阶段列表
+        let stepList = [
+            {min:1,max: 10},{min:11,max: 20},{min:21,max: 30},{min:31,max: 40},{min:41,max: 50},
+            {min:51,max: 60},{min:61,max: 70},{min:71,max: 80},{min:81,max: 90},{min:91,max: 100}
+        ];
+
+    $('#total-data').on('click','.visit-label',function(){
+        let label = $(this).text();
+        let item = englishData[label], tpl= '';
+        $('#data-detail .label').text(label)
+        for(let i=0;i<item.list.length;i++) {
+            let itemData = item.list[i];
+            tpl += '<tr><th>'+itemData.percent+'</th><th>'+itemData.time+'</th><th>'+(itemData.payTime ? '是':'')+'</th></tr>';
+        }
+        $('#data-detail tbody').html(tpl)
+
+    })
+
+    let englishData={},englishPayedData = {},englishPayedDetailData = {},payedCount = 0,pvCount = 0;
+
+    Papa.parse('./20181022-20181031-11.csv?v='+(+new Date()), {
+        download: true,
+        complete: function(results) {
+            let data = results.data;
+            console.log('处理的数据总数：'+data.length);
+            for(let i = 0; i < data.length; i++) {
+                let item = data[i];
+                if(item && item[1] && item[1].toLocaleLowerCase().match(/a_english/)){
+                    let countStr = item[1].split('+')[2];
+                    let countSplit = countStr.split('_');
+                    let itemData = {};
+                    let key = countSplit[0]+'_'+countSplit[1];
+                    if(parseInt(countSplit[2]) <= 100) {  //过滤大于100的异常数据
+                        itemData = {
+                            percent: countSplit[2],
+                            time: countSplit[3],
+                            payTime: countSplit[4] || ''
+                        }
+
+                        if (itemData.payTime) {
+                            payedCount++;
+                            englishPayedData[key] = itemData;
+                        }
+                        //10月的UId丢了
+//                    if(countSplit[0] && countSplit[1] && !(countSplit[2] && countSplit[2].match(/NaN/))){
+                        if (countSplit[1] && !(countSplit[2] && countSplit[2].match(/NaN/))) {
+
+                            if (!englishData[key]) {
+                                englishData[key] = {
+                                    list: [],
+                                    payInfo: ''
+                                };
+                            }
+
+                            if (!englishData[key].payInfo && itemData.payTime) {
+                                englishData[key].payInfo = itemData;
+                            }
+                            englishData[key].list.push(itemData);
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+            
+            for(let k in englishData){
+                pvCount++;
+                let list = englishData[k].list.sort(function(a,b){
+                    return parseInt(a.percent) - parseInt(b.percent);
+                })
+
+                englishData[k].list = list;
+
+            }
+
+
+
+            $('.pv-count').text(pvCount);
+            $('.pay-count').text(payedCount);
+
+            for(let k in englishPayedData){
+                englishPayedDetailData[k] = englishData[k];
+            }
+//            console.log(englishPayedDetailData)
+
+
+            let keys = Object.keys(englishData);
+            for(let i = 0;i<keys.length;i++){
+                for(let j = 0;j<keys.length;j++){
+                    let time1 = new Date(keys[i].split('_')[1]).getTime();
+                    let time2 = new Date(keys[j].split('_')[1]).getTime();
+                    if(time1 < time2){
+                        let temp = keys[i];
+                        keys[i] = keys[j];
+                        keys[j] = temp;
+                    }
+                }
+            }
+
+
+            let finalEnglishData = {};
+            for(let i = 0;i<keys.length;i++){
+                finalEnglishData[keys[i]] = englishData[keys[i]];
+            }
+
+
+
+
+            let order = 0,stepCount = {},payStepCount = {};
+            for(let k in finalEnglishData) {
+                let itemData = finalEnglishData[k];
+                let maxPercent = itemData.list[itemData.list.length-1].percent;
+
+                $('#total-data tbody').append('<tr><th>'+(++order)+'</th><th><span class="visit-label">'+k+'</span></th><th>'+itemData.list.length+'</th><th>'+maxPercent+'</th><th>'+(itemData.payInfo ? '是':'')+'</th></tr>');
+
+                for(let i =0;i<stepList.length;i++){
+                    let item = stepList[i], k = item.min+'-'+item.max;
+                    stepCount[k]= stepCount[k] || {count:0};
+                    payStepCount[k]= payStepCount[k] || {count:0};
+                    if(item.min < parseInt(maxPercent) && item.max >= parseInt(maxPercent)){
+                        let count = stepCount[k].count;
+                        //最大访问位置占比统计
+                        stepCount[k] = {
+                            count: count+1,
+                            percent: parseInt(((count+1) / pvCount) * 10000) / 100 + '%'
+                        }
+                        //售卖转化位置占比统计
+                        if(itemData.payInfo) {
+                            let payCount = payStepCount[k].count;
+                            payStepCount[k] = {
+                                count: payCount + 1,
+                                percent:parseInt(((payCount+1) / payedCount) * 10000) / 100 + '%'
+                            }
+                        }
+                    }
+                }
+            }
+
+            //渲染跳转分析
+            for(let k in stepCount){
+                $('#out-percent tbody').append('<tr><th>'+(k)+'</th><th><span class="visit-label">'+stepCount[k].count+'</span></th><th>'+stepCount[k].percent+'</th></tr>');
+            }
+            //购买转化分析
+            for(let k in payStepCount){
+                $('#buy-percent tbody').append('<tr><th>'+(k)+'</th><th><span class="visit-label">'+(payStepCount[k].count || 0)+'</span></th><th>'+(payStepCount[k].percent || 0)+'</th></tr>');
+            }
+
+        }
+    });
+
+    </script>
+</body>
+</html>
