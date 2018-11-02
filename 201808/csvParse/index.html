@@ -227,26 +227,29 @@
             for(let k in finalEnglishData) {
                 let itemData = finalEnglishData[k];
                 let maxPercent = itemData.list[itemData.list.length-1].percent;
+                let maxTime = itemData.list[itemData.list.length-1].time;
 
-                $('#total-data tbody').append('<tr><th>'+(++order)+'</th><th><span class="visit-label">'+k+'</span></th><th>'+itemData.list.length+'</th><th>'+maxPercent+'</th><th>'+(itemData.payInfo ? '是':'')+'</th></tr>');
+                if(maxTime >= 10 || itemData.payInfo) {
+                    $('#total-data tbody').append('<tr><th>' + (++order) + '</th><th><span class="visit-label">' + k + '</span></th><th>' + itemData.list.length + '</th><th>' + maxPercent + '</th><th>' + (itemData.payInfo ? '是' : '') + '</th></tr>');
 
-                for(let i =0;i<stepList.length;i++){
-                    let item = stepList[i], k = item.min+'-'+item.max;
-                    stepCount[k]= stepCount[k] || {count:0};
-                    payStepCount[k]= payStepCount[k] || {count:0};
-                    if(item.min < parseInt(maxPercent) && item.max >= parseInt(maxPercent)){
-                        let count = stepCount[k].count;
-                        //最大访问位置占比统计
-                        stepCount[k] = {
-                            count: count+1,
-                            percent: parseInt(((count+1) / pvCount) * 10000) / 100 + '%'
-                        }
-                        //售卖转化位置占比统计
-                        if(itemData.payInfo) {
-                            let payCount = payStepCount[k].count;
-                            payStepCount[k] = {
-                                count: payCount + 1,
-                                percent:parseInt(((payCount+1) / payedCount) * 10000) / 100 + '%'
+                    for (let i = 0; i < stepList.length; i++) {
+                        let item = stepList[i], k = item.min + '-' + item.max;
+                        stepCount[k] = stepCount[k] || {count: 0};
+                        payStepCount[k] = payStepCount[k] || {count: 0};
+                        if (item.min < parseInt(maxPercent) && item.max >= parseInt(maxPercent)) {
+                            let count = stepCount[k].count;
+                            //最大访问位置占比统计
+                            stepCount[k] = {
+                                count: count + 1,
+                                percent: parseInt(((count + 1) / pvCount) * 10000) / 100 + '%'
+                            }
+                            //售卖转化位置占比统计
+                            if (itemData.payInfo) {
+                                let payCount = payStepCount[k].count;
+                                payStepCount[k] = {
+                                    count: payCount + 1,
+                                    percent: parseInt(((payCount + 1) / payedCount) * 10000) / 100 + '%'
+                                }
                             }
                         }
                     }
