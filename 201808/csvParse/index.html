@@ -229,7 +229,7 @@
                 let maxPercent = itemData.list[itemData.list.length-1].percent;
                 let maxTime = itemData.list[itemData.list.length-1].time;
 
-                if(maxTime >= 10 || itemData.payInfo) {
+                if(maxTime >= 10 || itemData.payInfo) {  //排除小于10s的，但是不排除购买了的
                     $('#total-data tbody').append('<tr><th>' + (++order) + '</th><th><span class="visit-label">' + k + '</span></th><th>' + itemData.list.length + '</th><th>' + maxPercent + '</th><th>' + (itemData.payInfo ? '是' : '') + '</th></tr>');
 
                     for (let i = 0; i < stepList.length; i++) {
