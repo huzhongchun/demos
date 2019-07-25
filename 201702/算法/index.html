@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvas</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+
+            .problem-box{
+                padding: 20px;
+                margin-bottom: 40px;
+                word-break: break-all;
+            }
+            .item-box{
+                background: #F1F1F1;
+                margin-bottom: 10px;
+                padding: 20px;
+            }
+            .item-name{
+                margin-bottom: 20px;
+            }
+            .run-time{
+                margin-bottom: 10px;
+                color: red;
+                padding-left: 20px;
+            }
+            .run-result{
+                padding-left: 20px;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="canvas-box">
+            <h3 class="problem-box">
+                将数组[2,33,45,672,3,0,4,68,20,30,200,345,12,36,344,211,33,5,69,9,0]由小到大排序
+            </h3>
+            <div class="item-box">
+                <div class="item-name"> 1. 普通冒泡算法排序</div>
+                <div class="run-time" id="run-time-1"></div>
+                <div class="run-result" id="result1"></div>
+            </div>
+            <div class="item-box">
+                <div class="item-name"> 1. 普通冒泡算法排序</div>
+                <div class="run-time" id="run-time-2"></div>
+                <div class="run-result" id="result2"></div>
+            </div>
+        </div>
+		<script type="text/javascript">
+            var list = [2,33,5,672,3,0,4,68,20,30,200,345,12,36,344,211,33,5,69,9,0];
+            var list = [2,44,3,0,6];
+
+            function sleep(n) {
+                for(var i=0;i<n;i++){
+
+                }
+            }
+
+            /**
+             * 普通冒泡算法
+             */
+            var list1 = list,temp1;
+            var startTime1 = +new Date();
+            for(var i = 0;i<list1.length;i++){
+                for(var j =0;j<list1.length;j++){
+                    sleep(50000);
+                    if(list1[j] > list1[i]){
+                        temp1 = list1[i];
+                        list1[i] = list1[j];
+                        list1[j] = temp1;
+                    }
+                    //console.log(list1[j] +'-'+list1[i]);
+                    //console.log(list1);
+
+                }
+
+            }
+            var runTime1 = +new Date() - startTime1;
+            document.getElementById('run-time-1').innerHTML = '运行时间: '+runTime1+'ms';
+            document.getElementById('result1').innerHTML = '结果: '+list1.join(',');
+
+            /**
+             * 普通冒泡算法
+             */
+            var list2 = list,temp2;
+            var startTime2 = +new Date();
+            for(var i = 0;i<list2.length;i++){
+                for(var j =0;j<list2.length;j++){
+                    sleep(50000);
+                    if(list2[j] > list2[i]){
+                        temp2 = list2[i];
+                        list2[i] = list2[j];
+                        list2[j] = temp2;
+                    }
+                }
+            }
+            var runTime2 = +new Date() - startTime2;
+            document.getElementById('run-time-2').innerHTML = '运行时间: '+runTime2+'ms';
+            document.getElementById('result2').innerHTML = '结果: '+list2.join(',');
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

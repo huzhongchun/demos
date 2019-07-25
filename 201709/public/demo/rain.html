@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>雨中城</title>
+    <meta name="viewport" content="width=375, user-scalable=no">
+    <style>
+        body {
+            position: relative;
+            overflow: hidden;
+            min-height: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #666;
+            background-image: url('./images/rain_thumbnail.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .body-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            /*animation: bg_shine 5s linear forwards;*/
+            z-index: 2;
+        }
+
+        .body-content {
+            float: left;
+            margin: 0;
+            display: block;
+            position: relative;
+            z-index: 4;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #canvas-club {
+            position: absolute;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.1);
+            right: 0;
+            bottom: 0;
+            width: 120vw;
+            height: 120vh;
+            transition: all ease 1s;
+            transform-origin: center;
+        }
+
+        .g-bg-image {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .body-content .title {
+            color: #fff;
+            font-size: 24px;
+            letter-spacing: 1em;
+            text-align: center;
+            line-height: 2em;
+            /*animation: shine 3s linear infinite alternate;*/
+            margin-top: 50vh;
+            transform: translateY(-50%);
+        }
+
+        .body-content .title div {
+            text-indent: 2em;
+        }
+
+        .baidu-guide {
+            cursor: pointer;
+        }
+
+        .baidu-guide:hover {
+            color: #3266ff;
+        }
+
+        #allmap {
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            display: none;
+        }
+
+        .back_div {
+            position: absolute;
+            overflow: hidden;
+            font-size: 24px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 6;
+            min-width: 960px;
+            display: none;
+            cursor: pointer;
+        }
+
+        @keyframes shine {
+            from {
+                color: rgba(255, 255, 255, 0.7);
+                text-shadow: 0 0 0px #fff;
+            }
+            to {
+                color: rgba(255, 255, 255, 0.4);
+                text-shadow: 0 0 15px #fff;
+            }
+        }
+
+        @keyframes bg_shine {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.6;
+            }
+        }
+
+        .m-ring-btn {
+            display: block;
+            position: absolute;
+            background-size: 74px 74px;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 98px;
+            height: 98px;
+            z-index: 10;
+            text-decoration: none;
+
+            transform: scale(0);
+            opacity: 0;
+            transition: all ease-out 0.6s 0.5s;
+        }
+
+        .m-ring-btn:hover, .m-ring-btn:hover + .m-ring-guide-line {
+            opacity: 1;
+        }
+
+        .m-ring-btn .before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 82px;
+            height: 82px;
+            top: 8px;
+            left: 8px;
+            transform: scale(0);
+            transition: transform ease-in-out 0.7s 0.7s;
+        }
+
+        .m-ring-btn .before:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 82px;
+            height: 82px;
+            left: 0;
+            top: 0;
+            background-image: url('./images/rain/circle-inner.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: ring0 5s linear infinite;
+        }
+
+        .m-ring-btn .after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 98px;
+            height: 98px;
+            transform: scale(0);
+            transition: transform ease 0.5s 1.2s;
+        }
+
+        .m-ring-btn .after:after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: url('./images/rain/circle-out.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 98px;
+            height: 98px;
+            animation: ring1 5s linear infinite;
+            /*transition: transform ease 3s 5s;*/
+        }
+
+        .m-ring-btn.left {
+            top: 210px;
+            left: 58px;
+            background-image: url('./images/rain/text_left.png');
+        }
+
+        .m-ring-btn.right {
+            top: 385px;
+            right: 57px;
+            background-image: url('./images/rain/text_right.png');
+        }
+
+        .m-ring-btn.show, .m-ring-btn.show .before, .m-ring-btn.show .after {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+
+        .m-ring-guide-line {
+            display: block;
+            position: absolute;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity ease 0.3s;
+        }
+
+        .m-ring-guide-line:before {
+            display: block;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .m-ring-guide-line:after {
+            display: block;
+            position: absolute;
+            content: "";
+            border-top: 1px solid #fff;
+            transition: all ease .3s 0.3s;
+        }
+
+        .m-ring-guide-line.left {
+            left: 65px;
+            top: 350px;
+        }
+
+        .m-ring-guide-line.left:after {
+            width: 55px;
+            height: 0;
+            top: 4px;
+            left: 4px;
+            transform: rotate(-67deg) scale(0);
+            transform-origin: left bottom;
+        }
+
+        .m-ring-btn.show + .m-ring-guide-line {
+            opacity: 0.5;
+        }
+
+        .m-ring-btn.left.show + .m-ring-guide-line:after {
+            transform: rotate(-67deg) scale(1);
+        }
+
+        @keyframes ring0 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
+
+        @keyframes ring1 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-359deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="body-bg" id="bg_wrap">
+
+</div>
+<div class="body-content">
+    <!--<a href="http://map.baidu.com/mobile/webapp/index/streetview/pid=0900220001150514024452972T5&from=indexMap">雨中城</a>-->
+</div>
+<canvas id="canvas-club"></canvas>
+<div class="m-ring-btn left" id="nav_left">
+    <div class="before"></div>
+    <div class="after"></div>
+</div>
+<div class="m-ring-guide-line left"></div>
+<div class="m-ring-btn right" id="nav_right">
+    <div class="before"></div>
+    <div class="after"></div>
+</div>
+<!--<div id="back_div" class="back_div" onclick="quan_back()">返回</div>-->
+<script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=2.0&ak=9uMFS6fIQvQpFcZZXXXw3Q20u7em3LcP"></script>
+<script type="text/javascript" src="./js/indexRain.js?v=1"></script>
+<script type="text/javascript" src="./js/baiduMap.js"></script>
+<script type="text/javascript" src="./js/orienter.js"></script>
+<script type="text/javascript">
+	window.addEventListener('touchstart', function (ev) {
+		ev.preventDefault();
+	});
+
+	function goLoading() {
+		window.location.href = './loading.html';
+	}
+	document.getElementById('nav_left').addEventListener('touchend',  getMap);
+	document.getElementById('nav_right').addEventListener('touchend', goLoading);
+</script>
+<script>
+	(function () {
+		var x = 0;
+		var o = 0;
+//		var g = new Orienter({
+//			onOrient: function (t) {
+//				if (o != t.lon) {
+//					deg = Math.sin(t.lon * Math.PI / 180) * 40;
+//                    o = t.lon;
+//				}
+//			}
+//		});
+//		g.init();
+	})();
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>csv</title>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="./papaparse.min.js"></script>
+    <style>
+        /*html,body{*/
+            /*font-size: 14px;*/
+            /*font-family: 'Microsoft Yahei',Tahoma,Verdana,simsun,sans-serif;*/
+            /*opacity: .9*/
+        /*}*/
+        /*.label{*/
+            /*text-align: center;*/
+            /*font-size: 13px;*/
+            /*opacity: .5;*/
+        /*}*/
+        /*.table-list{*/
+            /*display: flex;*/
+            /*justify-content: flex-start;*/
+            /*align-item: center;*/
+        /*}*/
+        /*.fixed-data-detail{*/
+            /*width: 40%;*/
+            /*height: calc(100% - 80px);*/
+            /*overflow: scroll;*/
+            /*position: fixed;*/
+            /*right: 0px;*/
+            /*top:40px;*/
+        /*}*/
+        /*.fixed-data-detail #data-detail{*/
+            /*width: 100%;*/
+        /*}*/
+        /*.visit-label{*/
+            /*padding: 5px 0;*/
+            /*color: #004b6d;*/
+            /*cursor: pointer;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="table-list">
+        <table id="total-data" border="1">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>UID</th>
+                    <th>PLANID</th>
+                    <th>创建时间</th>
+                    <th>姓名</th>
+                    <th>你的微信昵称和微信号</th>
+                    <th>你的手机号</th>
+                    <th>你的收货地址</th>
+                    <th>选择的礼物</th>
+                    <th>是否购买</th>
+                    <th>打卡天数</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script>
+
+    $('#total-data').on('click','.visit-label',function(){
+        var label = $(this).text();
+        var item = englishData[label], tpl= '';
+        $('#data-detail .label').text(label)
+        for(var i=0;i<item.list.length;i++) {
+            var itemData = item.list[i];
+            tpl += '<tr><th>'+itemData.percent+'</th><th>'+itemData.time+'</th><th>'+(itemData.payTime ? '是':'')+'</th></tr>';
+        }
+        $('#data-detail tbody').html(tpl)
+
+    })
+
+    var englishData={},englishPayedData = {},englishPayedDetailData = {},payedCount = 0,pvCount = 0;
+
+    Papa.parse('./data.csv?v='+(+new Date()), {
+        download: true,
+        complete: function(results) {
+            var data = results.data,result = {};
+            for(var i = 1; i < data.length; i++) {
+                var uid = data[i][3];
+                var planId = data[i][10];
+                result[uid+'_'+planId] = data[i];
+            }
+
+
+            var index= 0;
+            for(var k in result){
+                var item = result[k];
+                index++;
+                console.log(item[9]);
+                var tpl = '<tr>' +
+                    '<th>'+index+'</th>' +
+                    '<th>'+item[3].substring(0)+'</th>' +
+                    '<th>'+item[10].substring(0)+'</th>' +
+                    '<th>'+item[4].substring(0)+'</th>' +
+                    '<th>'+item[5].substring(0)+'</th>' +
+                    '<th>'+item[6].substring(0)+'</th>' +
+                    '<th>'+item[7].substring(0)+'</th>' +
+                    '<th>'+item[8].substring(0)+'</th>' +
+                    '<th>'+item[11]+'</th>' +
+                    '<th>'+item[13]+'</th>' +
+                    '<th>'+item[14]+'</th>' +
+                    '</tr>'
+                    '</tr>';
+                $('#total-data tbody').append(tpl);
+            }
+        }
+    });
+
+    </script>
+</body>
+</html>

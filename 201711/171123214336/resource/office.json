@@ -1,0 +1,5 @@
+{"file":"office.png","frames":{
+"clock":{"x":490,"y":1,"w":438,"h":243,"offX":0,"offY":0,"sourceW":438,"sourceH":243},
+"pad":{"x":1,"y":1,"w":487,"h":302,"offX":0,"offY":0,"sourceW":487,"sourceH":302},
+"btnmore":{"x":490,"y":246,"w":112,"h":220,"offX":0,"offY":0,"sourceW":112,"sourceH":220},
+"btnwrite":{"x":930,"y":1,"w":85,"h":221,"offX":0,"offY":0,"sourceW":85,"sourceH":221}}}

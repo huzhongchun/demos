@@ -1,0 +1,133 @@
+<html>
+	<head>
+     <meta http-equiv="content-type" content="text/html; charset=UTF-8">   
+    </head>
+	<body>
+        <img id="img" />
+		<canvas id="canvas-1"></canvas>
+		<script type="text/javascript">
+            let data = {
+                canvas:{
+                    width: 750,
+                    height: 1218
+                },
+                item_list:[
+                    {
+                        type: 'image',
+                        url: 'http://static.thefair.net.cn/note/cover/20180615/fd857dd75ea4cd1b4d02e184af8ba7c8.jpg',
+                        img_info: {
+                            width: 750,
+                            height: 1218
+                        },
+                        draw_info:{
+                            x: 0,
+                            y: 0,
+                            width: 750,
+                            height: 1218
+                        }
+                    },
+                    {
+                        type: 'text',
+                        text: '胡仲春的甜心之一',
+                        draw_info:{
+                            x: 375,
+                            y: 180,
+                            font: 'Bold 48px Arial',
+                            text_align: 'center',
+                            color: '#3A2920'
+                        }
+                    },
+                    {
+                        type: 'image',
+                        url: './qrcode.png',
+                        img_info: {
+                            width: 750,
+                            height: 1218
+                        },
+                        draw_info:{
+                            x: 584,
+                            y: 1068,
+                            width: 130,
+                            height: 130
+                        }
+                    }
+                ]
+            }
+
+            canvasDrawPoster(data);
+
+            function canvasDrawPoster(data){
+                let canvas = document.createElement('canvas');
+                let cxt = canvas.getContext('2d');
+
+                //筛选出要使用的图片做预加载，所以图片加载完成之后，再进行绘制，否则无法保证绘制的层级
+                let images = [],imagesCount = 0;
+                let itemList = data.item_list;
+                for (var i = 0; i < itemList.length; i++) {
+                    let item = itemList[i];
+                    if(item.type === 'image'){
+                        imagesCount++;
+                        images[i] = item;
+                    }
+                }
+
+                //预加载图片
+                function preloadImage(images,callback) {
+                    let count = 0,len = images.length;
+                    for(let  i = 0;i < len;i++){
+                        let item = images[i];
+                        if(item){
+                            let img = new Image();
+                            img.src = images[i].url;
+                            data.item_list[i].img= img;
+                            img.onload = function(){
+                                ++count;
+                                if(count === imagesCount){
+                                    callback && callback(images);
+                                }
+                            };
+                        }
+                    }
+                }
+
+                
+
+
+                function start(data) {
+                    canvas.width = data.canvas.width;
+                    canvas.height = data.canvas.height;
+
+                    let itemList = data.item_list;
+                    for (var i = 0; i < itemList.length; i++) {
+                        let item = itemList[i];
+                        if(item.type === 'image'){
+                            cxt.drawImage(item.img,item.draw_info.x,item.draw_info.y,item.draw_info.width,item.draw_info.height);
+                        }else if(item.type === 'text'){
+                            drawText(item);
+                        }
+                    }
+                    
+                    setTimeout(()=>{
+                        var dataURL =canvas.toDataURL('image/png');
+                        document.getElementById('img').src = dataURL;
+                    },100)
+                    
+                }
+
+                // 绘制文字
+                function drawText(item) {
+                    cxt.font = item.draw_info.font;
+                    cxt.textAlign = item.draw_info.text_align;
+                    cxt.fillStyle = item.draw_info.color;
+                    cxt.fillText(item.text, item.draw_info.x, item.draw_info.y);
+                }
+
+                preloadImage(images,(images)=>{
+                    start(data);
+                })
+            }
+			
+   
+		</script>
+	</body>
+</html>

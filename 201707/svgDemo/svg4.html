@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+</head>
+<body>
+
+<!--动画对象坐标在原点-->
+<svg width="500" height="500" style="border: 1px solid #000;">
+    <text font-family="microsoft yahei" font-size="25" x="0" y="0" opacity="1">飞
+        <animateMotion id="animate1" path="M20,100 C50 150,80 50,140 100" rotate="auto" fill="freeze"/  begin="0s" dur="2s" />
+    </text>
+    <path d="M20,100 C50 150,80 50,140 100" stroke="black" fill="none" />
+</svg>
+
+<!--在上一个动画结束后 开始动画-->
+<svg width="500" height="500" style="border: 1px solid #000;">
+    <text font-family="microsoft yahei" font-size="25" x="100" y="100" opacity="1">飞
+        <animateMotion path="M20,100 C50 150,80 50,140 100"  begin="animate1.end" dur="2s" fill="freeze"/>
+    </text>
+    <path d="M20,100 C50 150,80 50,140 100" stroke="black" fill="none" />
+    <path d="M120,200 C150 250,180 150,240 200" stroke="black" fill="none" />
+</svg>
+
+</body>
+</html>

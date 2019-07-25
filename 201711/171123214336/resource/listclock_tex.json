@@ -1,0 +1,1 @@
+{"width":512,"imagePath":"listclock_tex.png","height":256,"name":"listclock","SubTexture":[{"width":215,"y":1,"height":239,"name":"clock","x":1},{"width":62,"y":73,"height":33,"name":"h","x":218},{"width":30,"y":1,"height":70,"name":"m","x":218},{"width":30,"y":1,"height":59,"name":"s","x":250}]}

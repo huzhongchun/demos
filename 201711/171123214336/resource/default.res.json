@@ -1,0 +1,64 @@
+{
+  "resources": [
+    {
+      "name": "sharetip",
+      "type": "image",
+      "url": "sharetip.png"
+    },
+    {
+      "name": "sharebg",
+      "type": "image",
+      "url": "sharebg.png"
+    },
+    {
+      "name": "loadingbgcolor",
+      "type": "image",
+      "url": "loadingbgcolor.jpg"
+    },
+    {
+      "name": "list",
+      "type": "sheet",
+      "url": "list.json"
+    },
+    {
+      "name": "listbg",
+      "type": "image",
+      "url": "listbg.jpg"
+    },
+    {
+      "name": "debugimg",
+      "type": "image",
+      "url": "share.jpg"
+    },
+    {
+      "name": "mailfly.png",
+      "type": "image",
+      "url": "mailfly.png"
+    },
+    {
+      "name": "mailfly.json",
+      "type": "json",
+      "url": "mailfly.json"
+    },
+    {
+      "name": "officebg",
+      "type": "image",
+      "url": "officebg.jpg"
+    },
+    {
+      "name": "office",
+      "type": "sheet",
+      "url": "office.json"
+    },
+    {
+      "name": "mail",
+      "type": "sheet",
+      "url": "mail.json"
+    },
+    {
+      "name": "buttonSound",
+      "type": "sound",
+      "url": "buttonSound.mp3"
+    }
+  ]
+}

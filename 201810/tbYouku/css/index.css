@@ -1,0 +1,214 @@
+.content{
+    display: none;
+}
+.img{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.list-title{
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 10px;
+}
+.item-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: center;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+.item{
+    display: block;
+    width: 50%;
+}
+.item .cover{
+    display: block;
+    width: 100%;
+    min-height: 150px;
+}
+.item .info{
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background: rgba(0,0,0,.8);
+}
+.item .info .name{
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    line-height: 12px;
+    height: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.item .info .handle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: center;
+}
+.price{
+    color: #ffbd00;
+    font-size: 11px;
+}
+.price .numb{
+    font-size: 14px;
+    font-weight: bold;
+}
+.handle .btn{
+    width: 52px;
+    height: 12px;
+    font-size: 8px;
+    color: #fff;
+    letter-spacing: 2px;
+    background: #ffb600;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+}
+
+
+.start-page{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 100;
+    background: url("../image/bg.jpg") #000 0 0 no-repeat;
+    background-size: 100% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    opacity: 1;
+}
+.start-page.hide{
+    opacity: 0;
+    -webkit-transition: opacity .4s ease 0s;
+    -moz-transition: opacity .4s ease 0s;
+    -ms-transition: opacity .4s ease 0s;
+    -o-transition: opacity .4s ease 0s;
+    transition: opacity .4s ease 0s;
+}
+.video-box{
+    display: none;
+}
+video{
+    display: block;
+    width:100%;
+}
+.select-box .text{
+    width: 305px;
+    height: 112px;
+    background: url("../image/t.png") center no-repeat;
+    background-size: 100% auto;
+    margin: 0 auto 130px;
+}
+.select-box .select{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: center;
+    width: 230px;
+    margin: 0 auto;
+}
+.select-box .select .s{
+    display: block;
+    width: 96px;
+    height: 55px;
+    background: url("../image/text.png") 0 0 no-repeat;
+    background-size: 254px auto;
+    border-radius: 90px;
+}
+.select-box  .select .s-1{
+    background-position: 0 0;
+}
+.select-box  .select .s-1.active{
+    background-position: 0 -53px;
+}
+.select-box  .select .s-2{
+    background-position: -158px 0;
+}
+.select-box  .select .s-2.active{
+    background-position: -158px -53px;
+}
+.skip{
+    font-size: 14px;
+    margin: 20px auto 0;
+    color: #fff;
+    padding: 0 30px;
+    text-align: right;
+}
+
+.img-7 .text{
+    width: 305px;
+    height: 112px;
+    background: url("../image/t.png") center no-repeat;
+    background-size: 100% auto;
+    margin: 0 auto 130px;
+}
+.img-7{
+    position: relative;
+}
+.img-7 .select{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 0 73px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 0;
+    bottom: 50px;
+}
+
+.img-7 .select .s{
+    display: block;
+    width: 96px;
+    height: 55px;
+    background: url("../image/text.png") 0 0 no-repeat;
+    background-size: 254px auto;
+    border-radius: 90px;
+    zoom: .8
+}
+.img-7  .select .s-1{
+    background-position: 0 0;
+}
+.img-7  .select .s-1.active{
+    background-position: 0 -53px;
+}
+.img-7  .select .s-2{
+    background-position: -158px 0;
+}
+.img-7  .select .s-2.active{
+    background-position: -158px -53px;
+}

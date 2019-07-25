@@ -1,0 +1,11 @@
+{"file":"mail.png","frames":{
+"bgwrite":{"x":659,"y":1,"w":732,"h":1030,"offX":0,"offY":0,"sourceW":732,"sourceH":1030},
+"btnclose":{"x":659,"y":1285,"w":56,"h":55,"offX":4,"offY":3,"sourceW":60,"sourceH":58},
+"btnget":{"x":659,"y":1092,"w":190,"h":57,"offX":0,"offY":0,"sourceW":190,"sourceH":57},
+"btnpic":{"x":659,"y":1210,"w":73,"h":73,"offX":0,"offY":0,"sourceW":73,"sourceH":73},
+"btnshare":{"x":659,"y":1033,"w":190,"h":57,"offX":0,"offY":0,"sourceW":190,"sourceH":57},
+"btnwrite":{"x":659,"y":1151,"w":190,"h":57,"offX":0,"offY":0,"sourceW":190,"sourceH":57},
+"cbl":{"x":1393,"y":468,"w":341,"h":642,"offX":0,"offY":0,"sourceW":341,"sourceH":642},
+"cblmsg":{"x":1393,"y":1,"w":651,"h":465,"offX":0,"offY":0,"sourceW":651,"sourceH":465},
+"bgget":{"x":1,"y":1351,"w":750,"h":1040,"offX":0,"offY":0,"sourceW":750,"sourceH":1040},
+"bggetsuccess":{"x":1,"y":1,"w":656,"h":1348,"offX":0,"offY":0,"sourceW":669,"sourceH":1348}}}

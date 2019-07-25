@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <!--<script id="_wxComJsApiJs" src="http://h1v.cn/WxCom/js/jsapi.js"></script>-->
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script src="./resource/sound.js"></script>
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #fff;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+     data-entry-class="Main"
+     data-orientation="auto"
+     data-scale-mode="fixedWidth"
+     data-frame-rate="50"
+     data-content-width="750"
+     data-content-height="1136"
+     data-show-paint-rect="false"
+     data-multi-fingered="2"
+     data-show-fps="false" data-show-log="false"
+     data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+</div>
+
+<div id="vBox"
+     style="width: 100%;height: 100%;position: absolute;top:0;left:0;z-index: 99999;overflow: hidden;display: none;">
+    <video id="v" src="http://p.sjzzimu.com/dreamingMan/v.mp4" width="640"
+           height="1008" x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true"
+           playsinline="true" x5-video-player-fullscreen="true" x5-video-orientation="portraint"
+           style="width: 100%;height: 100%;position: absolute;top:0;left:0;object-fit: fill;"
+           poster="./resource/loadingbgcolor.jpg"></video>
+</div>
+
+
+<div id="loading"
+     style="position: absolute;width: 100%;height:100%;background: url('./resource/loading.gif') rgba(255,255,255,.3) no-repeat center 45%;background-size: 15%;top: 0;left:0;display: none;"></div>
+
+<img id="audioBtn" src="./resource/audio_on.png" class="audio_on"
+     style="position: absolute;right:2%;top:3%;z-index: 999;width:8%;display: none;"/>
+
+<script>
+
+    document.getElementById("vBox").addEventListener("touchstart", function (e) {
+        e.preventDefault();
+    }, true);
+
+
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
+
+    var startGame = function (func) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+        xhr.addEventListener("load", function () {
+            var manifest = JSON.parse(xhr.response);
+//            console.log(manifest);
+            manifest.initial.push("resource/apiObj.js");
+            var list = manifest.initial.concat(manifest.game);
+            loadScript(list, function () {
+                func();
+                /**
+                 * {
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "calculateCanvasScaleFactor": //a function return canvas scale factor
+             * }
+                 **/
+                egret.runEgret({
+                    renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor: function (context) {
+                        var backingStore = context.backingStorePixelRatio ||
+                            context.webkitBackingStorePixelRatio ||
+                            context.mozBackingStorePixelRatio ||
+                            context.msBackingStorePixelRatio ||
+                            context.oBackingStorePixelRatio ||
+                            context.backingStorePixelRatio || 1;
+                        return (window.devicePixelRatio || 1) / backingStore;
+                    }
+                });
+            });
+        });
+        xhr.send(null);
+
+    };
+
+    window.DEBUG = false;
+    function onWXConfigReady(){
+        soundManager.put("bgm", "./resource/bgm.mp3", {"loop": true});
+        startGame(function () {
+            initSoundController("#audioBtn");
+
+            if (window.location.href.toString().indexOf("//localhost") > 0 || /\/\/\d\.\d\.\d\.\d/i.test(window.location.href.toString())) {
+                DEBUG = true;
+            }
+        });
+    }
+
+    onWXConfigReady();
+
+</script>
+</body>
+
+</html>

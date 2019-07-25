@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pixi.js</title>
+</head>
+<body>
+
+<script src="pixi.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded',function () {
+
+        // 将默认的缩放模式定义为 Nearest
+        PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
+
+
+        // 通过自动选择的方式创建画布（800x450）
+        // 并设置背景为黑色
+        // 然后将其添加到文档中
+        var renderer = PIXI.autoDetectRenderer(800, 450, {backgroundColor : 0x000000});
+        document.body.appendChild(renderer.view);
+
+        // 创建舞台 Container
+        // 之后的对象都存在于舞台之上
+        var stage = new PIXI.Container();
+
+
+        // 创建背景精灵
+        var background = new PIXI.Sprite.fromImage('./images/01.png');
+        // 设置和画布同样的尺寸
+        background.width = renderer.width;
+        background.height = renderer.height;
+
+        // 将背景精灵放置于舞台之上
+        stage.addChild(background);
+
+        // 创建一个玩家精灵
+        var player = new PIXI.Sprite.fromImage('./images/characters.png');
+        // 将中心点定在角色图片的中心
+        player.anchor.set(0.5);
+        // 放置在画面中间靠下的位置
+        player.position.set(renderer.width / 2, renderer.height / 2 + 136);
+        // 设置放大倍数，因为原图很小，只有 24x24，所以需要放大一下
+        player.scale.x = 2;
+        player.scale.y = 2;
+        // 将玩家精灵加入到舞台上
+
+        stage.addChild(player);
+
+
+        //加载方法
+        PIXI.loader.add('./images/characters.png').load(function () {
+            console.log('load finished');
+            console.log(PIXI.utils.TextureCache);
+        });
+
+
+
+        // 画布必须要保持不停的绘制才能将画布上的内容正确显示出来。所以我们需要使用 requestAnimationFrame() 方法来保持画布的重绘。
+        // 如果没有动态更新，则只需要渲染一次
+        animate();
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // 渲染 Container
+            renderer.render(stage);
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+	<head>
+		<title>精灵</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+		<style type="text/css">
+            .canvas-box canvas{
+                border:1px solid #ccc;
+                margin: 0 auto;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="canvas-box">
+            <canvas id="canvas" height="1000" width="900"></canvas>
+        </div>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            var spriteObj = function (options) {
+                var opt = extend({
+                    'name': 'sprite',
+                    'top': 0,
+                    'left': 10,
+                    'width': 30,
+                    'height': 30,
+                    'velocityX': 0,
+                    'velocityY': 0,
+                    'visible': true,
+                    'animating': false,
+                    'behaviors': [],
+                    'painter': null
+                },options);
+                this.name = opt.name;
+                this.top = opt.top;
+                this.left = opt.left;
+                this.width = opt.width;
+                this.height = opt.height;
+                this.velocityX = opt.velocityX;
+                this.velocityY = opt.velocityY;
+                this.visible = opt.visible;
+                this.animating = opt.animating;
+                this.behaviors = opt.behaviors;
+                this.painter = opt.painter;
+            };
+
+            spriteObj.prototype = {
+                'constructor': spriteObj,
+                'paint': function (context) {
+                    if(this.painter && this.visible == true){
+                        this.painter.paint(this,context);
+                    }
+                },
+                'update': function (context,time) {
+                    for (var i=0;i<this.behaviors.length;i++){
+                        this.behaviors[i].execute(this,context,time);
+                    }
+                }
+            };
+
+            /**
+             * 每个表现对象,都需要实现execute方法
+             * @type {{lastMove: number, execute: moveLeftToRight.execute}}
+             */
+            var moveLeftToRight = {
+                lastMove: 0,
+                execute: function (sprite, context, time) {
+                    if (this.lastMove !== 0) {
+                        sprite.left -= sprite.velocityX * ((time - this.lastMove) / 1000);
+                        if (sprite.left < 0) {
+                            sprite.left = canvas.width;
+                        }
+                    }
+                    this.lastMove = time;
+                }
+            };
+            var moveTopToBottom = {
+                lastMove: 0,
+                execute: function (sprite, context, time) {
+                    if (this.lastMove !== 0) {
+                        sprite.top -= sprite.velocityY * ((time - this.lastMove) / 1000);
+                        if (sprite.top < 0) {
+                            sprite.top = canvas.height;
+                        }
+                    }
+                    this.lastMove = time;
+                }
+            };
+
+            var behaviors = [moveLeftToRight,moveTopToBottom];
+            
+            var ball = new spriteObj({
+                name: 'ball',
+                'velocityX': 10,
+                'velocityY': 30,
+                painter: {
+                    paint: function (sprite,context) {
+                        context.clearRect(0,0,canvas.width,canvas.height);
+                        context.beginPath(context,+new Date());
+                        context.arc(sprite.left + sprite.width/2,sprite.top + sprite.height/2,sprite.width/2,0,2*Math.PI);
+                        context.fill();
+                    }
+                },
+                behaviors: behaviors
+            });
+
+            ball.paint(context);
+
+
+            function animate() {
+                ball.update(context,+new Date());
+                ball.paint(context);
+                window.requestAnimationFrame(animate);
+            }
+            window.requestAnimationFrame(animate);
+
+
+
+
+
+            function extend(parentObj,childObj) {
+                if(type(parentObj) == 'object' && type(childObj) == 'object'){
+                    for(var key in childObj){
+                        parentObj[key] = childObj[key];
+                    }
+                    return parentObj;
+                }
+                return obj;
+            }
+
+            function type(arg) {
+                var typeofResult = typeof arg, result = 'undefined';
+                switch(typeofResult){
+                    case 'undefined':
+                        result = 'undefined';
+                        break;
+                    case 'string':
+                        result = 'string';
+                        break;
+                    case 'object':
+                            if(arg === null){
+                                result = 'null';
+                            }else if(arg instanceof Array){
+                                result = 'array';
+                            }else{
+                                result = 'object';
+                            }
+                        break;
+                }
+                return result;
+            }
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

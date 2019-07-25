@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+</head>
+<body>
+
+<!--动画对象坐标在原点-->
+<svg width="500" height="500" style="border: 1px solid #000;">
+    <text font-family="microsoft yahei" font-size="25" x="0" y="0" opacity="1">😂😂
+        <animateMotion path="M20,100 C50 150,80 50,140 100" rotate="auto"  begin="click" dur="2s" repeatCount="indefinite" />
+    </text>
+    <path d="M20,100 C50 150,80 50,140 100" stroke="black" fill="none" />
+</svg>
+
+<!--动画对象坐标在（100，100）-->
+<svg width="500" height="500" style="border: 1px solid #000;">
+    <text font-family="microsoft yahei" font-size="25" x="100" y="100" opacity="1">飞
+        <animateMotion path="M20,100 C50 150,80 50,140 100"  begin="0s" dur="2s" repeatCount="indefinite"/>
+    </text>
+    <path d="M20,100 C50 150,80 50,140 100" stroke="black" fill="none" />
+    <path d="M120,200 C150 250,180 150,240 200" stroke="black" fill="none" />
+
+</svg>
+
+
+<!--动画对象坐标在（100，100），增加rotate="auto"属性 -->
+<svg width="500" height="500" style="border: 1px solid #000;">
+    <text font-family="microsoft yahei" font-size="25" x="100" y="100" opacity="1">飞
+        <animateMotion path="M20,100 C50 150,80 50,140 100"  rotate="auto" begin="0s" dur="2s"repeatCount="indefinite"/>
+    </text>
+    <path d="M20,100 C50 150,80 50,140 100" stroke="black" fill="none" />
+    <path d="M120,200 C150 250,180 150,240 200" stroke="black" fill="none" />
+</svg>
+</body>
+</html>

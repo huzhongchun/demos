@@ -1,0 +1,2 @@
+resource/apiObj.js 里边是接口 需要把图片上传这块儿改一下 得是同域名下才能使用
+index.html里onWXConfigReady() 需要放在wx.config() ready之后调用

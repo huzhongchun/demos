@@ -11,5 +11,5 @@ app.post('/log',function(req,res){
 
 app.use(express.static('public'));
 app.listen(8000, function () {
-  console.log('Example app listening on port 80!');
+  console.log('Example app listening on port 8000!');
 });
